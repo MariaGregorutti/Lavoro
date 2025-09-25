@@ -61,7 +61,7 @@ html {
 
 .fundobarra {
     background-color: var(--BegeEscuro--);
-    height: 70vh;
+    height: 75vh;
     width: 35vh;
     color: var(--Branco--);
 }
@@ -296,7 +296,7 @@ background-color: var(--verdebotaosalvar--);
 color: var(--Branco--);
 font-weight: bold;
 border: none;
-padding: 0.7rem 2rem;
+padding: 0.4rem 2rem;
 border-radius: 1rem;
 cursor: pointer;
 }
@@ -686,7 +686,7 @@ font-family: "Merriweather", serif;
 
 
  .fundo-cadastro {
-    background-image: url(/static/img/imgcadastro.png);
+    background-image: url('/static/img/imgcadastro.png');
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -821,7 +821,7 @@ font-family: "Merriweather", serif;
 
 
 /*Matheus Produtos*/
-.campo-demonstrar-produto{
+.campo-demonstrar{
     margin: 0 auto;
     flex-direction: column;
     margin-top: 2em;
@@ -869,4 +869,92 @@ font-family: "Merriweather", serif;
     background-color: var(--BegeEscuro--);
     border-radius: 1em;
     padding: 0.6em 1em 0.7em 1em;
+}
+
+.insumos{
+    align-items: center;
+    text-align: center;
+    gap: 2.8em;
+    margin: 0 1.2em 0 1.2em;
+    background-color: var(--Branco--);
+    padding: 0em 1em 0em 1em;
+    border-radius: 2em;
+    color: var(--Preto--);
+}
+
+.insumos a{
+    color: var(--Preto--);
+}
+
+.insumos .BotaoVermelho{
+    background-color: var(--VermelhoPastel--);
+    padding: 0.6em;
+}
+/*Campo de produto individual*/
+
+.campo-produto-indiv{
+    background-color: var(--CinzaEscuro--);
+    margin: 0 auto;
+    margin-top: 2em;
+    margin-bottom: 2em;
+    width: 30em;
+    padding: 1em;
+    border-radius: 1em;
+}
+
+.adicionar{
+    background-color: var(--BegeEscuro--);
+    border-radius: 0.6em;
+    padding: 0.3em 0.5em 0.3em 0.5em;
+    color: var(--Preto--);
+}
+
+.ad-insumos{
+    align-items: center;
+    gap: 16em;
+}
+
+.TempoDoP{
+    margin: 1em 0 1em 0;
+}
+
+.campo-lucro{
+    margin-top: 1em;
+    align-items: center;
+    gap: 6em;
+    margin-left: 2em;
+}
+
+.insumosP{
+    align-items: center;
+    text-align: center;
+    gap: 3.8em;
+    margin: 0.8em 0em 0.6em 0em;
+    background-color: var(--Branco--);
+    padding: 0em 1em 0em 1em;
+    border-radius: 2em;
+    color: var(--Preto--);
+}
+
+.insumosP .BotaoVermelho{
+    background-color: var(--VermelhoPastel--);
+    padding: 0.4em;
+}
+
+.voltarP{
+    gap: 13em;
+    margin-top: 2em;
+    align-items: center;
+    text-align: center;
+}
+
+.voltarP .BotaoVermelho{
+    background-color: var(--VermelhoPastel--);
+    padding: 0.4rem 2rem;
+    color: var(--Branco--);
+    border-radius: 1em;
+}
+
+.ajustP{
+    margin-left: 2em;
 }
