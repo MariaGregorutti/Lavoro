@@ -7,12 +7,29 @@
     <title>Perfil</title>
     <link rel="stylesheet" href="../../static/css/style.css">
     <link rel="stylesheet" href="../../static/css/responsivo.css">
+    
 </head>
 
 <body>
-    <header>
+     <header>
         <img src="../../static/img/logo.png" alt="Logo da Lavoro">
-        <button type="submit" class="botao-sair">Sair</button>
+        <div class="celularCabe">
+            <button type="submit" class="botao-sair"><a class="linkUnico" href="home.html">Sair</a></button>
+            <button id="tresRiscos" class="botaohomeLogado" aria-label="Abrir menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+        <div class="fundobarra2 d-flex">
+            <nav class="navegar d-flex">
+                <button id="Fechar" class="fechar">Fechar</button>
+                <a href="perfil.html" class=""' d-flex"><img src="../../static/img/Pessoa.png" alt="Icone de pessoa">Perfil</a>
+                <a href="insumos.html" class="linksn d-flex"><img src="../../static/img/carrinho_insumos.png" alt="Icone de Insumos">Insumos</a>
+                <a href="produto.html" class="linksn d-flex"><img src="../../static/img/caixa_de_produto.png" alt="Icone da caixa de produtos">Produtos</a>
+                <a href="lucro.html" class="linksn d-flex"><img src="../../static/img/icone_lucratividade.png" alt="Icone de um saco de dinheiro">Lucratividade</a>
+            </nav>
+        </div>
     </header>
     <main class="d-flex">
         <div class="fundobarra">
@@ -27,7 +44,7 @@
 
         <section class="infPessoa d-flex">
             <div class="boxPessoa">
-                <img class="foto-pessoa" src="/static/img/icone-pessoa.png" alt="icone com a foto de uma pessoa">
+                <img class="foto-pessoa" src="../../static/img/icone-pessoa.png" alt="icone com a foto de uma pessoa">
                 <a class="BotaoVerde PessoaB d-flex" href="edicao_perfil.html" role="button">Editar</a>
             </div>
 
