@@ -1010,3 +1010,39 @@ form input {
     font-size: 15px;
 
 }
+
+
+
+
+/* Magem de lucro*/
+
+.margem-lucro {
+  background-color: #c8b294;
+  margin: 80px auto;
+  padding: 25px;
+  border-radius: 15px;
+  text-align: center;
+  
+}
+
+.margem-lucro input {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 10px;
+  outline: none;
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+
+.botao-verde {
+  background-color: #7d8d4c; 
+  color: white;
+  padding: 10px 25px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
