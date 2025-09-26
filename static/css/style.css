@@ -11,7 +11,7 @@ html {
     font-family: "Lato", sans-serif;
 }
 
-:root {
+ :root {
     --BegeEscuro--: #A68C69;
     /*Cor principal*/
     --BegeClaro--: #F0E5C9;
@@ -39,11 +39,16 @@ html {
     --textobeneficiosh4--: #343724;
     --titulobeneficios--: #A68C69;
     --fundoformulario--: #BBC09D;
-    --verdebotaosalvar--: #8B9550;
     --funcionalidades--: #D7DFAA;
     --funcoeslucro--: #9BA657;
     --tabela--: #ADB86C;
     --fundo--tabela: #B9A07D;
+    /*Numeração*/
+    --BordaMuitoRedonda--: 2em;
+    --BordaPoucoRedonda--: 0.6em;
+    --TamanhoBotaoSair--: 0.9em 1.6em;
+    --TamanhoBotao--: 0.5rem 2rem;
+    --TamanhoBotaoAd--: 0.4rem 1rem;
 }
 
 .d-flex {
@@ -53,6 +58,90 @@ html {
 .d-block {
     display: block;
 }
+
+a {
+    color: var(--Preto--);
+    text-decoration: none;
+}
+
+
+/*Botões Em Geral*/
+
+.botao-sair {
+    background-color: var(--VermelhoPastel--);
+    padding: var(--TamanhoBotaoSair--);
+    border: none;
+    border-radius: var(--BordaMuitoRedonda--);
+    margin-right: 6em;
+    color: var(--Branco--);
+}
+
+.botao-sair:hover {
+    transform: scale(1.05);
+    /* Cresce um pouco ao passar o mouse */
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.3);
+    background-color: var(--Branco--);
+    border: var(--Preto--) 0.1em solid;
+    color: var(--Preto--);
+}
+
+.BotaoVermelho {
+    background: var(--VermelhoPastel--);
+    padding: var(--TamanhoBotao--);
+    color: var(--Branco--);
+    border: none;
+    border-radius: var(--BordaMuitoRedonda--);
+}
+
+.BotaoVerde {
+    background: var(--VerdeEscuro--);
+    padding: var(--TamanhoBotao--);
+    color: var(--Branco--);
+    border: none;
+    border-radius: var(--BordaMuitoRedonda--);
+}
+
+.botaocadastro {
+    background-color: var(--BegeEscuro--);
+    color: var(--Branco--);
+    padding: 0.7rem 3rem;
+    text-align: center;
+    border-radius: var(--BordaMuitoRedonda--);
+    position: absolute;
+    margin-left: 51rem;
+    margin-top: 13rem;
+}
+
+.BotaoMarrom {
+    background: var(--BegeEscuro--);
+    padding: var(--TamanhoBotaoAd--);
+    color: var(--Branco--);
+    border: none;
+    border-radius: var(--BordaPoucoRedonda--);
+}
+
+.botaohome {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 3em;
+    height: 1.6em;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    margin-right: 4em;
+}
+
+.botaohome span {
+    display: block;
+    height: 0.4em;
+    background: var(--BegeEscuro--);
+    border-radius: var(--BordaMuitoRedonda--);
+}
+
+
+/*Barra de navegação desktop*/
 
 .navegar {
     flex-direction: column;
@@ -84,25 +173,6 @@ header {
     padding: 0.5rem 0.5rem;
     background-color: var(--BegeClaro--);
     font-family: "Merriweather", serif;
-}
-
-.botaohome {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    width: 40px;
-    height: 30px;
-    background: none;
-    border: none;
-    cursor: pointer;
-    padding: 0;
-}
-
-.botaohome span {
-    display: block;
-    height: 4px;
-    background: var(--BegeEscuro--);
-    border-radius: 2px;
 }
 
 .paginainicial {
@@ -141,16 +211,6 @@ header {
     text-align: right;
 }
 
-.botaocadastro {
-    background-color: var(--BegeEscuro--);
-    color: var(--Branco--);
-    padding: 0.7rem 3rem;
-    text-align: center;
-    border-radius: 20px;
-    position: absolute;
-    margin-left: 35rem;
-}
-
 .beneficios {
     text-align: center;
     padding: 50px 20px;
@@ -185,7 +245,7 @@ header {
     background-color: var(--fundobeneficios--);
     color: var(--textobeneficiosh4--);
     padding: 8px 16px;
-    border-radius: 20px;
+    border-radius: var(--BordaMuitoRedonda--);
     font-size: 1rem;
     font-family: "Merriweather", serif;
     display: inline-block;
@@ -205,7 +265,7 @@ header {
 
 .container-funcionalidades {
     display: flex;
-    gap: 10px;
+    gap: 10em;
     margin-top: 4rem;
     margin-left: 50px;
     margin-bottom: 2rem;
@@ -214,13 +274,13 @@ header {
 .card-funcionalidade {
     position: relative;
     width: 300px;
-    border-radius: 15px;
+    border-radius: var(--BordaMuitoRedonda--);
 }
 
 .card-funcionalidade img {
     width: 100%;
     display: block;
-    border-radius: 15px;
+    border-radius: var(--BordaMuitoRedonda--);
 }
 
 .card-funcionalidade p {
@@ -248,7 +308,7 @@ header {
     background-color: var(--depoimentos--);
     display: inline-block;
     padding: 10px 40px;
-    border-radius: 20px;
+    border-radius: var(--BordaMuitoRedonda--);
     color: var(--Branco--);
 }
 
@@ -262,7 +322,7 @@ header {
     background: var(--Branco--);
     padding: 20px;
     width: 320px;
-    border-radius: 8px;
+    border-radius: var(--BordaPoucoRedonda--);
     box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
     text-align: left;
 }
@@ -307,7 +367,7 @@ textarea.avaliacao {
     width: 100%;
     background-color: var(--Branco--);
     border: none;
-    border-radius: 3vh;
+    border-radius: var(--BordaMuitoRedonda--);
     padding: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
     margin-top: 10px;
@@ -318,20 +378,6 @@ textarea.avaliacao {
     display: flex;
     gap: 0.5rem;
     margin: 0.5rem 0 1rem;
-}
-
-button {
-    background-color: var(--verdebotaosalvar--);
-    color: var(--Branco--);
-    font-weight: bold;
-    border: none;
-    padding: 0.4rem 2rem;
-    border-radius: 1rem;
-    cursor: pointer;
-}
-
-button:hover {
-    background-color: var(--VerdeEscuro--);
 }
 
 
@@ -376,7 +422,7 @@ footer {
     background-color: var(--funcoeslucro--);
     padding: 3rem 3rem;
     margin: 1rem;
-    border-radius: 20px;
+    border-radius: var(--BordaMuitoRedonda--);
 }
 
 .funcoes-card p {
@@ -413,6 +459,10 @@ footer {
     margin-top: 20px;
     font-weight: 700;
     font-size: 1.5em;
+}
+
+.lucro {
+    margin-left: 16em;
 }
 
 
@@ -472,7 +522,7 @@ footer {
 .card {
     background-color: var(--fundo--tabela);
     padding: 30px;
-    border-radius: 12px;
+    border-radius: var(--BordaPoucoRedonda--);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     text-align: center;
     max-width: 600px;
@@ -490,7 +540,7 @@ footer {
     width: 100%;
     border-collapse: collapse;
     background-color: var(--Branco--);
-    border-radius: 8px;
+    border-radius: var(--BordaPoucoRedonda--);
 }
 
 .card thead {
@@ -498,24 +548,10 @@ footer {
     color: var(--Branco--);
 }
 
-.card th,
 .card td {
     padding: 12px;
     text-align: center;
     border-bottom: 1px solid var(--Branco--);
-}
-
-.botao-ok {
-    margin-top: 100px;
-    padding: 10px 25px;
-    background-color: var(--verdebotaosalvar--);
-    color: var(--Branco--);
-    font-size: 16px;
-    font-weight: bold;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    font-family: "Merriweather", serif;
 }
 
 
@@ -575,81 +611,15 @@ footer {
     width: 55vh;
 }
 
-.salvar-edicao-perfil {
-    background-color: rgba(155, 166, 87, 1);
-    height: 5vh;
-    width: 20vh;
-    border-radius: 25vh;
-    font-family: Merriweather;
-    color: #FFFFFF;
-    border: none;
-    box-shadow: 0 4px 6px rgb(0 0 0 / 30%);
-    margin-top: 5vh;
-    margin-left: 85vh;
-    font-size: 2.7vh;
-}
-
-.cancelar-edicao {
-    margin-top: 5vh;
-    margin-left: 116vh;
-    color: #665237;
-    font-family: Merriweather;
-}
-
 
 /*css perfil*/
-
-.fundobarra h4 {
-    margin-left: 3vh;
-    margin-top: 5vh;
-}
-
-.info-pessoal h4 {
-    margin-left: 70vh;
-    color: rgba(155, 166, 87, 1);
-    font-family: Merriweather;
-}
-
-.foto-pessoa {
-    margin-left: 15vh;
-    margin-top: 15vh
-}
-
-.nome-peril {
-    margin-top: 12vh;
-    margin-left: -35vh;
-}
-
-.email-perfil {
-    margin-left: -35vh;
-    margin-top: 4vh;
-}
-
-.telefone-perfil {
-    margin-left: -35vh;
-    margin-top: 12vh;
-}
-
-.botao-editar {
-    background-color: rgba(155, 166, 87, 1);
-    height: 5vh;
-    width: 20vh;
-    border-radius: 25vh;
-    font-family: Merriweather;
-    color: #FFFFFF;
-    padding: 1vh;
-    border: none;
-    box-shadow: 0 4px 6px rgb(0 0 0 / 30%);
-    margin-top: 15vh;
-    margin-left: -70vh;
-}
 
 
 /*css login:*/
 
 .titulo-login {
-    margin-top: 20vh;
-    text-align: center;
+    margin-top: 8vh;
+    margin-left: 88vh;
     color: #878F55;
 }
 
@@ -657,12 +627,11 @@ footer {
     background-color: rgba(245, 245, 245, 0.6);
     padding: 8vh;
     width: 80vh;
-    margin-left: 71vh;
-    border-radius: 5vh;
+    border-radius: var(--BordaMuitoRedonda--);
     height: 40vh;
-    justify-content: center;
     box-shadow: 0 4px 6px rgb(0 0 0 / 20%);
     margin-left: 50vh;
+    margin-bottom: 4em;
 }
 
 .email-login {
@@ -681,17 +650,24 @@ footer {
     background-color: rgba(155, 166, 87, 1);
     height: 5vh;
     width: 20vh;
-    border-radius: 25vh;
+    border-radius: var(--BordaMuitoRedonda--);
     font-family: Merriweather;
     color: #FFFFFF;
     border: none;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
-    margin-top: 5vh;
 }
 
 .cadastro-login {
     color: #2d3018;
     text-align: center;
+    border: var(--Preto--) 0.1em solid;
+}
+
+.conjunto-login {
+    align-items: center;
+    gap: 6em;
+    margin-left: 10em;
+    margin-top: 4em;
 }
 
 
@@ -707,8 +683,8 @@ footer {
     padding: 8vh;
     width: 50vh;
     margin-left: 71vh;
-    border-radius: 5vh;
-    height: 80vh;
+    border-radius: var(--BordaMuitoRedonda--);
+    height: 63vh;
     justify-content: center;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
 }
@@ -716,17 +692,6 @@ footer {
 .titulo-cadastro {
     color: rgba(155, 166, 87, 1);
     font-family: Merriweather;
-}
-
-.botao-cadas {
-    background-color: rgba(155, 166, 87, 1);
-    height: 5vh;
-    width: 20vh;
-    border-radius: 25vh;
-    font-family: Merriweather;
-    color: #FFFFFF;
-    border: none;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
 }
 
 .cadastro-nome {
@@ -770,11 +735,11 @@ footer {
 }
 
 input {
-    height: 5vh;
-    width: 50vh;
+    height: 3vh;
+    width: 34vh;
     background-color: #F5F5F5;
     border: none;
-    border-radius: 3vh;
+    border-radius: var(--BordaMuitoRedonda--);
     padding: 5px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
     margin-top: 10px;
@@ -785,18 +750,21 @@ input {
 
 /* MARCELA CADASTRAR Produto e Insumo*/
 
-.cadastro-insumo h2 {
-    color: #7d8b41;
-    margin-bottom: 20px;
+.cadastro-geral {
+    color: var(--VerdeEscuro--);
+    margin-bottom: 2em;
     text-align: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 0 auto;
+    margin-top: 8em;
 }
 
 .cardastro {
     background: #c8b394;
     padding: 30px;
-    border-radius: 10px;
+    border-radius: var(--BordaPoucoRedonda--);
     width: 480px;
-    margin: auto;
     text-align: left;
 }
 
@@ -804,18 +772,15 @@ input {
     width: 100%;
     padding: auto;
     margin-top: 20px;
-    border-radius: 20px;
+    border-radius: var(--BordaMuitoRedonda--);
     border: none;
     box-shadow: 1px 1px 3px rgba(37, 33, 33, 0.267)
 }
 
-.cardastro button {
-    margin-top: 15px;
-    padding: 8px 15px;
-    border: none;
-    border-radius: 6px;
-    font-weight: bold;
-    cursor: pointer;
+.ingredientes {
+    gap: 22em;
+    margin-bottom: 1EM;
+    color: var(--Preto--);
 }
 
 .botoes {
@@ -823,29 +788,21 @@ input {
     justify-content: space-between;
 }
 
-.botao-cancelar {
-    background: #d9534f;
-    color: white;
-}
-
-.botao-cadastrar {
-    background: #7d8b41;
-    color: white;
-    align-items: center;
-}
-
 
 /* editar insumo  e produto Marcela */
 
-.edicao-produto {
+.edicao {
     background-color: #f5f1ed;
     padding: 20px 30px;
-    border-radius: 12px;
+    border-radius: var(--BordaPoucoRedonda--);
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    width: 400px;
+    width: 32em;
+    margin-left: 24em;
+    height: 28em;
+    margin-top: 5em;
 }
 
-.edicao-produto h2 {
+.edicao h2 {
     text-align: center;
     color: #7d8b41;
     margin-bottom: 25px;
@@ -862,33 +819,12 @@ form input {
     width: 100%;
     padding: 10px;
     margin-bottom: 20px;
-    border-radius: 8px;
+    border-radius: var(--BordaPoucoRedonda--);
     font-size: 14px;
 }
 
 .botoes-edicao {
-    display: flex;
-    justify-content: space-between;
-}
-
-.btn-cancelar,
-.btn-salvar {
-    padding: 10px 25px;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    font-weight: bold;
-    font-size: 14px;
-}
-
-.btn-cancelar {
-    background-color: #bfa982;
-    color: white;
-}
-
-.btn-salvar {
-    background-color: #7d8b41;
-    color: white;
+    gap: 18em;
 }
 
 
@@ -902,7 +838,7 @@ form input {
     width: 36em;
     background-color: var(--CinzaClaro--);
     padding: 1em;
-    border-radius: 2em;
+    border-radius: var(--BordaMuitoRedonda--);
     color: var(--VerdeEscuro--);
 }
 
@@ -913,7 +849,7 @@ form input {
     margin: 0 1.2em 0 1.2em;
     background-color: var(--Branco--);
     padding: 0em 1em 0em 1em;
-    border-radius: 2em;
+    border-radius: var(--BordaMuitoRedonda--);
     color: var(--Preto--);
 }
 
@@ -934,16 +870,6 @@ form input {
     padding: 0.6em;
 }
 
-.buscar .BotaoVerde {
-    margin-left: 2em;
-}
-
-.buscar .BotaoMarrom {
-    background-color: var(--BegeEscuro--);
-    border-radius: 1em;
-    padding: 0.6em 1em 0.7em 1em;
-}
-
 .insumos {
     align-items: center;
     text-align: center;
@@ -951,7 +877,7 @@ form input {
     margin: 0 1.2em 0 1.2em;
     background-color: var(--Branco--);
     padding: 0em 1em 0em 1em;
-    border-radius: 2em;
+    border-radius: var(--BordaMuitoRedonda--);
     color: var(--Preto--);
 }
 
@@ -974,14 +900,7 @@ form input {
     margin-bottom: 2em;
     width: 30em;
     padding: 1em;
-    border-radius: 1em;
-}
-
-.adicionar {
-    background-color: var(--BegeEscuro--);
-    border-radius: 0.6em;
-    padding: 0.3em 0.5em 0.3em 0.5em;
-    color: var(--Preto--);
+    border-radius: var(--BordaMuitoRedonda--);
 }
 
 .ad-insumos {
@@ -1007,13 +926,8 @@ form input {
     margin: 0.8em 0em 0.6em 0em;
     background-color: var(--Branco--);
     padding: 0em 1em 0em 1em;
-    border-radius: 2em;
+    border-radius: var(--BordaMuitoRedonda--);
     color: var(--Preto--);
-}
-
-.insumosP .BotaoVermelho {
-    background-color: var(--VermelhoPastel--);
-    padding: 0.4em;
 }
 
 .voltarP {
@@ -1021,13 +935,6 @@ form input {
     margin-top: 2em;
     align-items: center;
     text-align: center;
-}
-
-.voltarP .BotaoVermelho {
-    background-color: var(--VermelhoPastel--);
-    padding: 0.4rem 2rem;
-    color: var(--Branco--);
-    border-radius: 1em;
 }
 
 .ajustP {

@@ -2,83 +2,80 @@
 <html lang="pt-BR">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Cadastro de Produtos</title>
-  <link rel="stylesheet" href="../../static/css/style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Produtos</title>
+    <link rel="stylesheet" href="../../static/css/style.css">
 </head>
 
 <body>
 
-  <header>
-    <img src="../../static/img/logo.png" alt="Logo da Lavoro">
-    <button type="submit" class="botao-sair">Sair</button>
-  </header>
+    <header>
+        <img src="../../static/img/logo.png" alt="Logo da Lavoro">
+        <button type="submit" class="botao-sair">Sair</button>
+    </header>
 
 
-  <main class="d-flex">
-    <div class="fundobarra">
-      <h4> Funcionalidades </h4>
-      <nav class="navegar d-flex">
-        <a href="perfil.html" class="linksn d-flex"><img src="../../static/img/Pessoa.png"
-            alt="Icone de pessoa">Perfil</a>
-        <a href="insumos.html" class="linksn d-flex"><img src="../../static/img/carrinho_insumos.png"
-            alt="Icone de Insumos">Insumos</a>
-        <a href="produto.html" class="linksn d-flex"><img src="../../static/img/caixa_de_produto.png"
-            alt="Icone da caixa de produtos">Produtos</a>
-        <a href="lucro.html" class="linksn d-flex"><img src="../../static/img/icone_lucratividade.png"
-            alt="Icone de um saco de dinheiro">Lucratividade</a>
-      </nav>
-    </div>
+    <main class="d-flex">
+        <div class="fundobarra">
+            <h4> Funcionalidades </h4>
+            <nav class="navegar d-flex">
+                <a href="perfil.html" class="linksn d-flex"><img src="../../static/img/Pessoa.png" alt="Icone de pessoa">Perfil</a>
+                <a href="insumos.html" class="linksn d-flex"><img src="../../static/img/carrinho_insumos.png" alt="Icone de Insumos">Insumos</a>
+                <a href="produto.html" class="linksn d-flex"><img src="../../static/img/caixa_de_produto.png" alt="Icone da caixa de produtos">Produtos</a>
+                <a href="lucro.html" class="linksn d-flex"><img src="../../static/img/icone_lucratividade.png" alt="Icone de um saco de dinheiro">Lucratividade</a>
+            </nav>
+        </div>
 
 
 
 
-    <section class="cadastro-produto">
-      <h2>Cadastro de Produtos</h2>
-      <div class="cardastro">
-        <form>
-          <label for="produto">Nome do produto</label>
-          <input type="text" id="produto" name="produto">
+        <section class="cadastro-geral d-flex">
+            <h2>Cadastro de Produtos</h2>
+            <div class="cardastro">
+                <form>
+                    <label for="produto">Nome do produto</label>
+                    <input type="text" id="produto" name="produto">
 
-          <label for="tempo">Tempo de preparo</label>
-          <input type="text" id="tempo" name="tempo">
-
-          <label>Ingredientes</label>
-          <div class="ingredientes">
-            <button type="button" class="botao-adicionar">+</button>
-          </div>
-
-          <div class="botoes">
-            <button type="submit" class="botao-cancelar">Cancelar</button>
-            <button type="submit" class="botao-cadastrar">Cadastrar</button>
-          </div>
-        </form>
-      </div>
-    </section>
-  </main>
+                    <label for="tempo">Tempo de preparo</label>
+                    <input type="text" id="tempo" name="tempo">
 
 
-  <footer>
-    <div>
-      <img src="../../static/img/logo.png" alt="Logo da Lavoro">
-      <p>© 2025 Lavoro – Todos os direitos reservados</p>
-    </div>
-    <div class="contato">
-      <div>
-        <img src="../../static/img/Icone_localização.png" alt="Ícone de localização">
-        <p>Rua Barão do Rio Branco - Birigui/SP</p>
-      </div>
-      <div>
-        <img src="../../static/img/Icone_telefone.png" alt="Ícone de telefone">
-        <p>(11) 99999-9999</p>
-      </div>
-      <div>
-        <img src="../../static/img/Caixa_de_email.png" alt="Ícone de email">
-        <p>Lavoro@gmail.com</p>
-      </div>
-    </div>
-  </footer>
+                    <div class="ingredientes d-flex">
+                        <p>Ingredientes:</p>
+                        <button type="button" class="BotaoMarrom  ">+</button>
+                    </div>
+
+                    <div class="botoes">
+                        <button type="submit" class="BotaoVermelho">Cancelar</button>
+                        <button type="submit" class="BotaoVerde">Cadastrar</button>
+                    </div>
+                </form>
+            </div>
+        </section>
+    </main>
+
+
+    <footer>
+        <div>
+            <img src="../../static/img/logo.png" alt="Logo da Lavoro">
+            <p>© 2025 Lavoro – Todos os direitos reservados</p>
+        </div>
+        <div class="contato">
+            <div>
+                <img src="../../static/img/Icone_localização.png" alt="Ícone de localização">
+                <p>Rua Barão do Rio Branco - Birigui/SP</p>
+            </div>
+            <div>
+                <img src="../../static/img/Icone_telefone.png" alt="Ícone de telefone">
+                <p>(11) 99999-9999</p>
+            </div>
+            <div>
+                <img src="../../static/img/Caixa_de_email.png" alt="Ícone de email">
+                <p>Lavoro@gmail.com</p>
+            </div>
+        </div>
+    </footer>
 </body>
 </body>
 
