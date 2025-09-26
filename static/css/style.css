@@ -161,6 +161,7 @@ a {
     height: 75vh;
     width: 35vh;
     color: var(--Branco--);
+    padding: 1em 0em 0em 1;
 }
 
 
@@ -402,6 +403,10 @@ footer {
 
 /* página lucro -ana */
 
+.lucratividade {
+    margin: auto;
+}
+
 .lucro h1 {
     font-family: "Merriweather", serif;
     justify-content: center;
@@ -560,59 +565,66 @@ footer {
 
 /*css edicao_perfil:*/
 
-.titulo-edicao-perfil h1 {
-    margin-top: 20vh;
-    color: #878F55;
-    margin-left: 85vh;
-    font-family: Merriweather;
+.editPTamanho {
+    width: 72em;
+    margin-left: 24em;
+    margin-top: 6em;
+    margin-bottom: 8em;
+    gap: 6em;
 }
 
-.img-pessoa-editar {
-    margin-left: 15vh;
-    margin-top: 15vh;
+.foto-pessoa2 {
+    width: 17em;
+    height: 17em;
+    border-radius: 50%;
+    display: block;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+    background: var(--Branco--);
 }
 
-.nome-edicao-perfil {
-    display: flex;
-    flex-direction: column;
-    margin-left: 85vh;
-    font-size: 3vh;
+.botaoEditP {
+    gap: 18em;
 }
 
-.email-edicao-perfil {
-    display: flex;
-    flex-direction: column;
-    margin-left: 85vh;
-    font-size: 3vh;
-}
-
-.tel-edicao-perfil {
-    display: flex;
-    flex-direction: column;
-    margin-left: 85vh;
-    font-size: 3vh;
-}
-
-.nome-perfil-edicao {
-    margin-left: 84vh;
-    height: 4vh;
-    width: 55vh;
-}
-
-.email-perfil-edicao {
-    margin-left: 78vh;
-    height: 4vh;
-    width: 55vh;
-}
-
-.telefone-perfil-edicao {
-    margin-left: 74vh;
-    height: 4vh;
-    width: 55vh;
+.foto {
+    margin-top: 5em;
 }
 
 
 /*css perfil*/
+
+.foto-pessoa {
+    width: 10em;
+    height: 10em;
+    border-radius: 50%;
+    display: block;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+    background: var(--Branco--);
+}
+
+.infPessoa {
+    margin-left: 15em;
+    margin-top: 6em;
+}
+
+.PessoaB {
+    margin-top: 2em;
+    width: 3em;
+}
+
+.boxPessoa {
+    justify-items: center;
+}
+
+.info-pessoal {
+    margin-left: 5em;
+    flex-direction: column;
+    gap: 2em;
+}
+
+.info-pessoal h1 {
+    color: var(--VerdeEscuro--);
+}
 
 
 /*css login:*/
@@ -625,12 +637,12 @@ footer {
 
 .form-login {
     background-color: rgba(245, 245, 245, 0.6);
-    padding: 8vh;
-    width: 80vh;
+    padding: 7vh;
+    width: 75vh;
     border-radius: var(--BordaMuitoRedonda--);
-    height: 40vh;
+    height: 38vh;
     box-shadow: 0 4px 6px rgb(0 0 0 / 20%);
-    margin-left: 50vh;
+    margin-left: 56vh;
     margin-bottom: 4em;
 }
 
@@ -855,6 +867,9 @@ form input {
 
 .centralização {
     margin: 2em;
+    display: flex;
+    gap: 2em;
+    flex-direction: column;
 }
 
 .campo-demonstrar-produto h3 {
@@ -890,22 +905,19 @@ form input {
     padding: 0.6em;
 }
 
-
-/*Campo de produto individual*/
-
 .campo-produto-indiv {
     background-color: var(--CinzaEscuro--);
     margin: 0 auto;
     margin-top: 2em;
     margin-bottom: 2em;
-    width: 30em;
+    width: 38em;
     padding: 1em;
     border-radius: var(--BordaMuitoRedonda--);
 }
 
 .ad-insumos {
     align-items: center;
-    gap: 16em;
+    gap: 25em;
 }
 
 .TempoDoP {
@@ -915,28 +927,33 @@ form input {
 .campo-lucro {
     margin-top: 1em;
     align-items: center;
-    gap: 6em;
-    margin-left: 2em;
+    gap: 14em;
 }
 
 .insumosP {
     align-items: center;
-    text-align: center;
-    gap: 3.8em;
+    justify-content: center;
+    gap: 4.99em;
     margin: 0.8em 0em 0.6em 0em;
     background-color: var(--Branco--);
     padding: 0em 1em 0em 1em;
     border-radius: var(--BordaMuitoRedonda--);
-    color: var(--Preto--);
 }
 
 .voltarP {
-    gap: 13em;
+    gap: 18em;
     margin-top: 2em;
     align-items: center;
     text-align: center;
 }
 
-.ajustP {
-    margin-left: 2em;
+.campo-demonstrar h3 {
+    margin-left: 1em;
+}
+
+.campoDeBusca {
+    gap: 2em;
+    display: flex;
+    height: 2em;
+    align-items: center;
 }

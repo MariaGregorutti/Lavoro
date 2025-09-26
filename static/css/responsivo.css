@@ -1,0 +1,7 @@
+/* Versão 768px */
+
+@media (max-width: 769px) {
+    .fundobarra {
+        display: none;
+    }
+}

@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Edição Perfil</title>
     <link rel="stylesheet" href="../../static/css/style.css">
+    <link rel="stylesheet" href="../../static/css/responsivo.css">
 </head>
 
 <body>
@@ -13,33 +14,32 @@
         <img src="../../static/img/logo.png" alt="Logo da Lavoro">
         <button type="submit" class="botao-sair">Sair</button>
     </header>
-    <main>
+    <main class="editPTamanho d-flex">
+
+        <section class="foto">
+            <img class="foto-pessoa2" src="/static/img/icone-pessoa.png" alt="icone com a foto de uma pessoa">
+        </section>
+
         <section>
             <h1 class="titulo-edicao-perfil">Editar Perfil</h1>
-        </section>
 
-        <section>
-            <img class="img-pessoa-editar" src="/static/img/icone-pessoa.png" alt="icone com a foto de uma pessoa">
-        </section>
-
-        <section>
             <form>
                 <div>
                     <label class="nome-edicao-perfil">Nome</label>
-                    <input class="nome-perfil-edicao" type="text" id="nome-edicao-perfil" name="nome-edicao-perfil" required>
+                    <input class="edicaoP" type="text" id="nome-edicao-perfil" name="nome-edicao-perfil" required>
                 </div>
 
                 <div>
                     <label class="email-edicao-perfil">Email</label>
-                    <input class="email-perfil-edicao" type="text" id="email-edicao-perfil" name="email-edicao-perfil" required>
+                    <input class="edicaoP" type="text" id="email-edicao-perfil" name="email-edicao-perfil" required>
                 </div>
 
                 <div>
                     <label class="tel-edicao-perfil">Telefone</label>
-                    <input class="telefone-perfil-edicao" type="number" id="tel-edicao-perfil" name="tel-edicao-perfil" required>
+                    <input class="edicaoP" type="number" id="tel-edicao-perfil" name="tel-edicao-perfil" required>
                 </div>
 
-                <div>
+                <div class="botaoEditP d-flex">
                     <button class="BotaoVerde" type="submit">Salvar</button>
                     <a class="BotaoVermelho" href="perfil.html" role="button">Cancelar</a>
                 </div>
@@ -70,6 +70,5 @@
         </div>
     </footer>
 </body>
-q
 
 </html>
