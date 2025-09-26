@@ -19,6 +19,7 @@
         display: none;
     }
 
+
     .cardastro {
         margin-bottom: 2em;
     }
@@ -67,5 +68,8 @@
     }
 
 
+    .botaohomeLogado{
+        display: flex;
+    }
 
 }
