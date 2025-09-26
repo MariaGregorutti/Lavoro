@@ -225,6 +225,7 @@ a {
     position: absolute;/* Posiciona o elemento de forma absoluta */  
     top: 0em;/* Define que o elemento começa no topo da tela */  
     right: 0em; /* Define que o elemento ficará à direita da tela */  
+    transition: all 0.5s ease-in-out;
 }
 
 .casa {
