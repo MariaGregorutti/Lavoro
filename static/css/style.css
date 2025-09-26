@@ -198,8 +198,9 @@ a {
 }
 
 .fundobarra {
+
     background-color: var(--BegeEscuro--); /* Define a cor de fundo da barra lateral */  
-    height: 102vh;  /* Define a altura da barra */ 
+    min-height: calc(100vh - 372px);  /* Define a altura da barra */ 
     width: 35vh;  /* Define a largura da barra */ 
     color: var(--Branco--); /* Define a cor do texto como branco */ 
     padding: 1em 0em 0em 1em;  /* Adiciona o padding (espaço interno) */  
@@ -211,8 +212,9 @@ a {
     padding: 0.4em; /* Adiciona o padding (espaço interno) */ 
     flex-direction: column; /* Organiza os itens no eixo vertical (coluna) */ 
     position: absolute;/* Posiciona o elemento de forma absoluta */  
-    top: -14em; /* Move o elemento PRA CIMA  */ 
+    top: -16em; /* Move o elemento PRA CIMA  */ 
     right: 0em;/* Define que o elemento ficará à DIREITA da tela */  
+
 }
 
 .fundobarra3 {
@@ -461,7 +463,10 @@ footer {
 
 /* PAGINA DE LUCRO */
 .lucratividade {
+
     margin: auto; /* Centraliza o elemento horizontalmente */
+    margin-bottom: 3em;
+
 }
 
 .lucro h1 {
@@ -526,7 +531,10 @@ footer {
 }
 
 .lucro {
-    margin-left: 16em; /* Espaço à esquerda do bloco 'lucro' */
+
+    margin-left: 13em; /* Espaço à esquerda do bloco 'lucro' */
+    margin-bottom: 4em; /* Espaço abaixo do bloco 'lucro' */
+
 }
 
 
@@ -586,7 +594,10 @@ footer {
     max-width: 600px; /* Largura máxima do card */
     flex-direction: column; 
     margin: 0 auto; /* Centraliza o card horizontalmente */
-    align-items: center;
+    margin-top: 4em; /* Espaço acima do card */
+    margin-bottom: 4em; /* Espaço abaixo do card */
+    align-items: center; /* Centraliza os itens no eixo transversal (vertical) */
+
 }
 
 .card h2 {
@@ -654,6 +665,7 @@ footer {
 .infPessoa {
     margin-left: 15em; /* Espaço à esquerda do bloco de informações */
     margin-top: 6em; /* Espaço acima do bloco */
+    margin-bottom: 4em; /* Espaço abaixo do bloco */
 }
 
 .PessoaB {
@@ -788,11 +800,11 @@ input {
 /* MARCELA CADASTRAR Produto e Insumo*/
 .cadastro-geral {
     color: var(--VerdeEscuro--); /* Cor do texto */
-    margin-bottom: 2em; /* Margem inferior */
+    margin-bottom: 3em; /* Margem inferior */
     text-align: center; /* Texto centralizado */
     align-items: center; /* Alinha itens ao centro (necessita display:flex para funcionar) */
     flex-direction: column; /* Direção dos itens em coluna (necessita display:flex) */
-    margin: auto; /* Margem automática para centralizar horizontalmente */
+    margin-left: 14em; /* Margem esquerda */
     margin-top: 6em; /* Margem superior */
 }
 
@@ -866,11 +878,12 @@ form input {
 
 /*Matheus Produtos*/
 .campo-demonstrar {
+
     margin: 0 auto; /* Centraliza horizontalmente */
     flex-direction: column; /* Define direção da flexbox (necessita display:flex) */
     margin-top: 2em; /* Margem superior */
     margin-bottom: 2em; /* Margem inferior */
-    width: 36em; /* Largura fixa */
+    width: 38em; /* Largura fixa */
     background-color: var(--CinzaClaro--); /* Fundo cinza claro */
     padding: 1em; /* Espaçamento interno */
     border-radius: var(--BordaMuitoRedonda--); /* Bordas arredondadas */
@@ -990,11 +1003,14 @@ form input {
 /* Cadastrar produtos  */
 .selecionar-insumos {
     background-color: var(--BegeEscuro--); /* Fundo bege escuro */
-    padding: 30px; /* Espaçamento interno */
-    border-radius: 20px; /* Bordas arredondadas */
+    padding: 3em; /* Espaçamento interno */
+    border-radius: var(--BordaMuitoRedonda--); /* Bordas arredondadas */
     width: 45em; /* Largura fixa */
-    margin: 50px auto; /* Margem superior/inferior e centralizado horizontalmente */
+    margin: 0 auto; /* Margem superior/inferior e centralizado horizontalmente */
     text-align: center; /* Texto centralizado */
+    margin-left: 14em; /* Margem esquerda */
+    margin-top: 2em; /* Margem superior */
+    margin-bottom: 2em; /* Margem inferior */
 }
 
 .selecionar-insumos h2 {
@@ -1025,14 +1041,6 @@ form input {
     transition: 0.3s; /* Transição suave */
 }
 
-.botao-verde {
-    background-color: #9fa55f; /* Fundo verde amarelado */
-    color: white; /* Cor do texto */
-    border: none; /* Sem borda */
-    border-radius: 20px; /* Bordas arredondadas */
-    padding: 10px 35px; /* Espaçamento interno */
-    font-size: 15px; /* Tamanho da fonte */
-}
 
 /* Margem de lucro */
 
@@ -1054,13 +1062,3 @@ form input {
     margin-bottom: 20px; /* Espaço abaixo do input */
 }
 
-.botao-verde {
-    background-color: #7d8d4c; /* Fundo verde escuro */
-    color: white; /* Cor do texto */
-    padding: 10px 25px; /* Espaçamento interno */
-    border: none; /* Sem borda */
-    border-radius: 10px; /* Bordas arredondadas */
-    cursor: pointer; /* Cursor pointer */
-    font-weight: bold; /* Texto em negrito */
-    transition: 0.3s; /* Transição suave */
-}
