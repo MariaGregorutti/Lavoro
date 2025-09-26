@@ -456,7 +456,7 @@ footer {
     background-color: var(--Branco--);
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
     padding: 2rem 2rem;
-    width: 12em;
+
 }
 
 .funcoeslucro-card h3 {
@@ -956,4 +956,57 @@ form input {
     display: flex;
     height: 2em;
     align-items: center;
+}
+
+
+
+/* Cadastrar produtos  */
+
+.selecionar-insumos {
+    background-color: var(--BegeEscuro--);
+    padding: 30px;
+    border-radius: 20px;
+    width: 45em;
+    margin: 50px auto;
+    text-align: center;
+
+    
+}
+
+.selecionar-insumos h2 {
+    color: var(--BegeClaro--);
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #f6f6f6;
+    padding: 5px;
+    margin: 12px 0;
+    font-weight: bold;
+    color: #2d2d2d;
+}
+
+.select {
+    background-color: #b3956d;
+    color: white;
+    border: none;
+    border-radius: 15px;
+    padding: 6px 14px;
+    font-size: 13px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.botao-verde {
+    background-color: #9fa55f;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    padding: 10px 35px;
+    font-size: 15px;
+
 }
