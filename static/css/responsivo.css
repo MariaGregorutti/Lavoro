@@ -1,75 +1,5 @@
+/* 768 tablet */
 @media (max-width: 769px) {
-    body {
-        font-size: 14px;
-    }
-
-    .fundobarra {
-        display : none;
-    }
-
-    .cardastro {
-     margin-bottom: 2em;
-    }
-
-    .cadastro-produto h2{
-        margin-bottom: 1em;
-    }
-
-    header {
-        width: 122%;
-    }
-    header img {
-        width: 20%;
-    }
-}
-
-/* 1440px  laptop */
-@media (max-width: 1440px) {
-    body {
-        font-size: 16px;
-    }
-
-    header {
-        width: 100%;
-    }
-    header img {
-        width: 15%;
-    }
-
-    .cardastro {
-     height: 25em;
-     margin-top: 2em;
-    margin-block: 2em;
-    }
-   
-}
-
-/* 1024px  laptop */
-
-@media (max-width: 1024px) {
-    body {
-        font-size: 15px;
-    }
-
-    header {
-        width: 100%;
-    }
-    header img {
-        width: 18%;
-    }
-
-    .cardastro {
-     height: 25em;
-     margin-top: 2em;
-    margin-block: 2em;
-    }
-   
-    .botao-sair {
-        margin-right: 3em;
-    }
-
- /* 768 tablet */
-
     d-flex {
         margin-bottom: 2em;
     }
@@ -80,39 +10,62 @@
         gap: 1em;
     }
 
-    .cadastro-geral{
+    .cadastro-geral {
+        margin-bottom: 2em;
+        font-size: 14px;
+    }
+
+    .fundobarra {
+        display: none;
+    }
+
+    .cardastro {
         margin-bottom: 2em;
     }
 
-    /* 425px mobile */
-
-    @media (max-width: 426px) {
-       
-        .cardastro {
-            width: 20em;
-            margin-right: -10em;
-        }
-
-        .botaoMarrom {
-           margin-left: -10em;
-        }
-
-        header {
-            width: 35em;
-        }
-
-        .cadastro-geral h2 {
-            margin-right: -7.5em;
-        } 
-
-        .footer {
-            margin-right: -13em;
-            font-size: 12px;
-        }
-        
-       
-    
+    .cadastro-produto h2 {
+        margin-bottom: 1em;
     }
-    
+
+    header {
+        width: 122%;
+    }
+
+    header img {
+        width: 20%;
+    }
+
+    .botaohomeLogado {
+        display: flex;
+    }
+}
+
+/* 425px mobile */
+
+@media (max-width: 426px) {
+
+    .cardastro {
+        width: 20em;
+        margin-right: -10em;
+    }
+
+    .botaoMarrom {
+        margin-left: -10em;
+    }
+
+    header {
+        width: 35em;
+    }
+
+    .cadastro-geral h2 {
+        margin-right: -7.5em;
+    }
+
+    .footer {
+        margin-right: -13em;
+        font-size: 12px;
+    }
 
 
+
+}
