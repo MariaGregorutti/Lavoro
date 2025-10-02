@@ -43,8 +43,9 @@
 /* 768 tablet */
 @media (max-width: 769px) {
     header {
-        width: auto;
+        width: auto; 
     }
+    
     .botaohomeLogado{
         display: flex;
     }
@@ -87,8 +88,10 @@
         gap: 4em;
     }
     footer{
+        gap: 4em;
         flex-direction: column;
         align-items: center;
+        width: auto;
     }
     .logo-footer{
         align-items: center;
@@ -106,7 +109,21 @@
     }
     /*Lucro*/
     .lucro{
-        margin-left: 0em;
+        margin-left: 2em;
+    }
+    .funcoes{
+        flex-direction: column;
+    }
+    .funcoeslucro{
+        flex-direction: column;
+    }
+
+    /*Insumos e Produto*/
+    .produto{
+        flex-direction: column;
+    }
+    .insumos{
+        flex-direction: column;
     }
 }
 
@@ -121,10 +138,6 @@
 
     .botaoMarrom {
         margin-left: -10em;
-    }
-
-    header {
-        width: 35em;
     }
 
     .cadastro-geral h2 {
