@@ -290,3 +290,33 @@
     
 
 }
+
+@media (max-width: 376px) {
+    /* Home */
+    .paginainicial {
+        height: 35em;
+        width: 37em;
+    }
+    .textoinicial h1{
+        margin-left: -3em;
+        font-size: 1.5em;
+        padding: 7.6em;
+        margin-top: -6.5em;
+    }
+    .textoinicial p{
+        margin-top: -22em;
+        margin-left: -1em;
+        font-size: 1em;
+        padding: 8em;
+    }
+    .botaocadastro{
+        margin-top: -4em;
+        margin-left: -12em;
+    }
+    .BotaoVerde{
+        margin-left: 0.5em;
+    }
+    .benificio .img-caixa {
+        height: 3em;
+    }
+}
