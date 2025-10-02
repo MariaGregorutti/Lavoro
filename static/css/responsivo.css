@@ -1,43 +1,112 @@
+ :root {
+    --BegeEscuro--: #A68C69;
+    /*Cor principal*/
+    --BegeClaro--: #F0E5C9;
+    /*Cor principal*/
+    --VerdeEscuro--: #878F55;
+    /*Cor Secundaria*/
+    --Preto--: #000000;
+    /*Cor Secundaria*/
+    --VermelhoPastel--: #D74747;
+    /*Cor Botão*/
+    --Branco--: #FFFFFF;
+    /*Cor Fundo*/
+    --CinzaClaro--: #F5F5F5;
+    /*Cor Detalhes*/
+    --CinzaEscuro--: #E9E9E9;
+    /*Cor Detalhes*/
+    --titulohome--: #785337;
+    /*Cor Título Home*/
+    --subtitulohome--: #876434;
+    /*Cor Subtítulo Home*/
+    --verderodape--: #606831;
+    /*Cor NavegarSanduiche*/
+    --BegeNavegar--: #a68c697e;
+    /*Cor Rodapé*/
+    --depoimentos--: #8B9550;
+    --fundobeneficios--: #ADB86C;
+    --textobeneficiosh4--: #343724;
+    --titulobeneficios--: #A68C69;
+    --fundoformulario--: #BBC09D;
+    --funcionalidades--: #D7DFAA;
+    --funcoeslucro--: #9BA657;
+    --tabela--: #ADB86C;
+    --fundo--tabela: #B9A07D;
+    /*Numeração*/
+    --BordaMuitoRedonda--: 2em;
+    --BordaPoucoRedonda--: 0.6em;
+    --TamanhoBotaoSair--: 0.9em 1.6em;
+    --TamanhoBotao--: 0.5rem 2rem;
+    --TamanhoBotaoAd--: 0.4rem 1rem;
+}
+
 /* 768 tablet */
 @media (max-width: 769px) {
-    d-flex {
-        margin-bottom: 2em;
+    header {
+        width: auto;
     }
-
-    .botoes {
-        flex-direction: column-reverse;
-        margin-top: 2em;
-        gap: 1em;
+    .botaohomeLogado{
+        display: flex;
     }
-
-    .cadastro-geral {
-        margin-bottom: 2em;
-        font-size: 14px;
-    }
-
-    .fundobarra {
+    .fundobarra{
         display: none;
     }
-
-
-    .cardastro {
+    /*Home*/
+    .textoinicial h1{
+        font-size: 3rem;
         margin-bottom: 2em;
+        text-align: left;
     }
-
-    .cadastro-produto h2 {
-        margin-bottom: 1em;
+    .textoinicial p{
+        font-size: 1.6rem;
+        text-align: left;
+        color: var(--Preto--);
     }
-
-    header {
-        width: 100%;
+    .botaocadastro{
+        margin-left: 16rem;
+        margin-top: -2rem;
     }
-
-    header img {
-        width: 20%;
-    }
-
-    .botaohomeLogado {
+    .beneficios-pai{
         display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .beneficio{
+        align-items: center;
+        display: flex;
+        max-width: 468px;
+    }
+    .dinheiro{
+        flex-direction: row-reverse;
+    }
+    .container-funcionalidades{
+        flex-direction: column;
+        align-items: center;
+    }
+    .espaçar-funcionalidade{
+        gap: 4em;
+    }
+    footer{
+        flex-direction: column;
+        align-items: center;
+    }
+    .logo-footer{
+        align-items: center;
+        flex-direction: column;
+        display: flex;
+    }
+    .contato{
+        display: flex;
+        flex-direction: column;
+        gap: 1em;
+    }
+    .meios-contatos{
+        align-items: center;
+        gap: 0.3em;
+    }
+    /*Lucro*/
+    .lucro{
+        margin-left: 0em;
     }
 }
 
@@ -68,8 +137,6 @@
     }
 
 
-    .botaohomeLogado{
-        display: flex;
-    }
+    
 
 }

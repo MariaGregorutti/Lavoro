@@ -328,15 +328,16 @@ header {
 .funcionalidades {
     background-color: var(--funcionalidades--); /* Cor de fundo da seção */
     width: 100%; /* Ocupa toda a largura da tela */
-    padding: 10px 10px; /* Espaçamento interno */
+    padding: 10px 0px; /* Espaçamento interno */
 }
 
 .container-funcionalidades {
     display: flex; /* Exibe os cards em linha com flexbox */
-    gap: 10em; /* Espaçamento entre os cards */
+    gap: 9em; /* Espaçamento entre os cards */
     margin-top: 4rem; /* Espaço acima do container */
     margin-left: 50px; /* Espaço à esquerda */
     margin-bottom: 2rem; /* Espaço abaixo do container */
+    margin-right: 50px;
 }
 
 .card-funcionalidade {
@@ -362,6 +363,11 @@ header {
     margin: 0; /* Remove margem padrão */
     text-align: center; /* Centraliza o texto */
 }
+
+.espaçar-funcionalidade{
+    gap: 12em;
+}
+
 
 .depoimentos {
     background-color: var(--Branco--); /* Define o fundo branco para a seção de depoimentos */
