@@ -36,6 +36,24 @@ window.document.addEventListener("DOMContentLoaded", function () {
         console.warn("Botão com ID 'Fechar' não encontrado no DOM!");
     }
 
+    const stars = document.querySelectorAll("#stars span");
+    const result = document.querySelector(".result");
+    let selected = 0;
+
+    stars.forEach(star => {
+    star.addEventListener("click", () => {
+        selected = star.dataset.value; // pega o valor da estrela clicada
+
+        // pinta até a estrela selecionada
+        stars.forEach(s => {
+            s.classList.toggle("active", s.dataset.value <= selected);
+        });
+
+            // atualiza o texto
+            result.textContent = `${selected} estrela${selected > 1 ? "s" : ""}`;
+        });
+    });
+
 });
 
 

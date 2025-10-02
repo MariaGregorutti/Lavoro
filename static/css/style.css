@@ -53,6 +53,25 @@ html {
     --TamanhoBotaoAd--: 0.4rem 1rem;
 }
 
+
+
+.stars {
+    display: flex;
+    gap: 8px;
+    font-size: 40px;
+    cursor: pointer;
+}
+
+.stars span {
+    color: #ccc;
+    transition: color .2s;
+}
+
+.stars span.active {
+    color: gold;
+}
+
+
 .d-flex {
     display: flex;
 }
