@@ -132,18 +132,21 @@ a {
     padding: var(--TamanhoBotao--);
     color: var(--Branco--);
     border: none;
-    border-radius: var(--BordaMuitoRedonda--);
+    border-radius: var(--BordaPoucoRedonda--);
+    font-size: large;
 }
 
 .botaocadastro {
     background-color: var(--BegeEscuro--);
     color: var(--Branco--);
-    padding: 0.7rem 3rem;
-    text-align: center;
+    padding: 0.9rem 5rem;
     border-radius: var(--BordaMuitoRedonda--);
     position: absolute;
-    margin-left: 33rem;
-    margin-top: 13rem;
+    margin-left: -11rem;
+    margin-top: 4rem;
+    font-size: 1.5em;
+    box-shadow: 0 3px 10px #523925; 
+   
 }
 
 .BotaoMarrom {
@@ -152,6 +155,8 @@ a {
     color: var(--Branco--);
     border: none;
     border-radius: var(--BordaPoucoRedonda--);
+    margin-left: 3em;
+    font-size: large;
 }
 
 .botaohome {
@@ -165,6 +170,7 @@ a {
     cursor: pointer;
     padding: 0;
     margin-right: 4em;
+    
 }
 
 .botaohome span {
@@ -258,7 +264,7 @@ header {
 .textoinicial {
     display: flex; /* Usa flexbox paraORGANIZAR OS ELEMENTOS HNA HORIZONTAL */
     flex-direction: column; /* Define que os itens ficarão EMPILHADOS em coluna */
-    align-items: flex-end; /* Alinha os itens ao final do eixo horizontal (à direita) */
+
     padding-right: 80px; /* Adiciona um espaçamento à direita */
     max-width: 600px; /* Define uma largura máxima de 600px para o texto */
     margin-left: auto; /* Empurra o bloco para a direita automaticamente */
@@ -266,18 +272,18 @@ header {
 
 .textoinicial h1 {
     color: var(--titulohome--); /* Define a cor do título */
-    font-size: 2rem; /* Define o tamanho da fonte do título */
+    font-size: 3rem; /* Define o tamanho da fonte do título */
     font-family: "Merriweather", serif; /* Aplica a fonte serifada Merriweather */
     margin-top: 20px; /* Adiciona margem superior ao título */
-    text-align: right; /* Alinha o texto à direita */
+    text-align: justify; /* Alinha o texto à direita */
 }
 
 .textoinicial p {
     color: var(--subtitulohome--); /* Define a cor do parágrafo */
     margin-top: 1rem; /* Adiciona uma margem superior */
-    font-size: 1.2rem; /* Define o tamanho da fonte */
+    font-size: 1.5rem; /* Define o tamanho da fonte */
     margin-bottom: 240px; /* Adiciona uma grande margem inferior para espaçamento */
-    text-align: right; /* Alinha o texto à direita */
+    text-align: -webkit-left; /* Alinha o texto à direita */
 }
 .beneficios {
     text-align: center; /* Centraliza o conteúdo do texto */
@@ -333,11 +339,13 @@ header {
 
 .container-funcionalidades {
     display: flex; /* Exibe os cards em linha com flexbox */
-    gap: 9em; /* Espaçamento entre os cards */
+    gap: 4em; /* Espaçamento entre os cards */
     margin-top: 4rem; /* Espaço acima do container */
     margin-left: 50px; /* Espaço à esquerda */
     margin-bottom: 2rem; /* Espaço abaixo do container */
     margin-right: 50px;
+    justify-content: center;
+    
 }
 
 .card-funcionalidade {
@@ -431,8 +439,9 @@ header {
 
 .formulario label {
     font-weight: 600; /* Peso médio da fonte */
-    color: var(--Branco--); /* Cor do texto do rótulo */
+    color: var(--verderodape--); /* Cor do texto do rótulo */
     margin-bottom: 0.3rem; /* Espaço abaixo do rótulo */
+
 }
 input.avaliacao,
 textarea.avaliacao {
@@ -451,6 +460,7 @@ textarea.avaliacao {
     display: flex; /* Exibe as estrelas lado a lado com flexbox */
     gap: 0.5rem; /* Espaçamento entre as estrelas */
     margin: 0.5rem 0 1rem; /* Margem acima, lateral zero, e abaixo maior */
+    
 }
 
 
@@ -697,13 +707,14 @@ footer {
 
 /*LOGIN:*/
 .titulo-login {
-    margin-top: 8vh; /* Espaço acima em altura da viewport */
+    margin-top: 9vh; /* Espaço acima em altura da viewport */
+    margin-bottom: 1em;
     margin-left: 88vh; /* Espaço à esquerda em altura da viewport (pode ser estranho usar vh para margem horizontal) */
     color: #878F55; /* Cor do texto */
 }
 
 .form-login {
-    background-color: rgba(245, 245, 245, 0.6); /* Fundo branco semi-transparente */
+    background-color: rgba(245, 245, 245, 0.7); /* Fundo branco semi-transparente */
     padding: 7vh; /* Espaçamento interno proporcional à altura da viewport */
     width: 75vh; /* Largura em altura da viewport (unidade incomum para largura) */
     border-radius: var(--BordaMuitoRedonda--); /* Bordas arredondadas */
@@ -711,6 +722,10 @@ footer {
     box-shadow: 0 4px 6px rgb(0 0 0 / 20%); /* Sombra leve */
     margin-left: 56vh; /* Margem esquerda */
     margin-bottom: 4em; /* Margem inferior */
+}
+
+input .email-login{
+    background-color: #FFFFFF;
 }
 
 .email-login {
@@ -760,9 +775,9 @@ footer {
     background-color: rgba(245, 245, 245, 0.6); /* Fundo semi-transparente */
     padding: 8vh; /* Espaçamento interno proporcional à altura da viewport */
     width: 50vh; /* Largura do formulário */
-    margin-left: 71vh; /* Margem esquerda */
+    margin-left: 72vh; /* Margem esquerda */
     border-radius: var(--BordaMuitoRedonda--); /* Bordas arredondadas */
-    height: 95vh; /* Altura do formulário */
+    height: 80vh; /* Altura do formulário */
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Sombra leve */
 }
 
@@ -779,6 +794,7 @@ footer {
     display: flex; /* Flexbox para campos do formulário */
     flex-direction: column; /* Itens em coluna */
     text-align: left; /* Texto alinhado à esquerda */
+    
 }
 
 .fundo-cadastro {

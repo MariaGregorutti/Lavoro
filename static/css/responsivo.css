@@ -41,7 +41,7 @@
 }
 
 /* 768 tablet */
-@media (max-width: 769px) {
+@media (max-width: 768px) {
     header {
         width: auto; 
     }
@@ -52,20 +52,27 @@
     .fundobarra{
         display: none;
     }
+    
     /*Home*/
     .textoinicial h1{
-        font-size: 3rem;
+        font-size: 2rem;
         margin-bottom: 2em;
-        text-align: left;
+        margin-left: 2.8em;
+        text-align: justify;
     }
     .textoinicial p{
-        font-size: 1.6rem;
-        text-align: left;
-        color: var(--Preto--);
+        font-size: 1.4rem;
+        text-align: -webkit-left;
+        color: 876434;
+        margin-left: 3.8em;
+        margin-top: -2em;
     }
     .botaocadastro{
-        margin-left: 16rem;
-        margin-top: -2rem;
+        margin-left: -11rem;
+        margin-top: 7rem;
+    }
+    .beneficios h3{
+        font-size: 2.2em;
     }
     .beneficios-pai{
         display: flex;
@@ -76,6 +83,18 @@
         align-items: center;
         display: flex;
         max-width: 468px;
+    }
+    .beneficio img{
+        height: 12em;
+    }
+    .gestao-produtos{
+        margin-left: 2em;
+    }
+    .preci-inteligente{
+        margin-right: 2em;
+    }
+    .relatorio-claro{
+        margin-left: 2em;
     }
     .dinheiro{
         flex-direction: row-reverse;
@@ -107,16 +126,68 @@
         align-items: center;
         gap: 0.3em;
     }
+    /* Cadastro */
+    .fundo-cadastro{
+        height: 540px;
+    }
+    .form-cadastro{
+        margin-left: 12em;
+        height: 31em;
+        margin-top: -5em;
+    }
+    .titulo-cadastro {
+        margin-top: -1.1em;
+    }
+    .logo-footer{
+        margin-left: 6em;
+    }
+
+    /* Login */
+    .titulo-login{
+       margin-left: 9em;
+    }
+    .form-login{
+        margin-left: 6em;
+    }
+    .BotaoMarrom{
+        margin-left: 0em;
+    }
+
+
     /*Lucro*/
-    .lucro{
-        margin-left: 2em;
+    .lucro h1{
+        margin-left: -2em;
+    }
+    .funcoes-card{
+        height: 7em;
+        width: 7em;
     }
     .funcoes{
-        flex-direction: column;
+        margin-left: -7em;
+    }
+    p{
+        margin-top: 2em;
     }
     .funcoeslucro{
-        flex-direction: column;
+        margin-left: -7em;
     }
+
+    /* Perfil */
+    .foto-pessoa{
+        margin-left: -13em;
+    }
+    .BotaoVerde{
+        margin-left: -12em;
+    }
+
+    /* Edição Perfil */
+    .foto-pessoa2{
+        margin-top: -5em;
+    }
+    .BotaoVerde{
+        margin-left: -16em;
+    }
+
 
     /*Insumos e Produto*/
     .produto{
