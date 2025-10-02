@@ -177,7 +177,7 @@
         margin-left: -13em;
     }
     .BotaoVerde{
-        margin-left: -12em;
+        margin-left: -11.9em;
     }
 
     /* Edição Perfil */
@@ -185,18 +185,84 @@
         margin-top: -5em;
     }
     .BotaoVerde{
-        margin-left: -16em;
+        margin-left: -15.9em;
     }
-
-
-    /*Insumos e Produto*/
-    .produto{
-        flex-direction: column;
+  
+    /* Insumos */
+    .BotaoVerde{
+        margin-left: 1em;
+    }
+    .insumos p{
+        margin-left: 0.6em;
+        margin-top: 0em;
     }
     .insumos{
-        flex-direction: column;
+        padding: 1.5em;
     }
-}
+    .insumos .BotaoVermelho{
+        border-radius: 0.6em;
+    }
+
+    /* Cadastro Insumo  */
+    .titulo-cadastro-insumo {
+        margin-left: -4.5em;
+    }
+    .cardastro{
+        margin-left: -5em;
+    }
+    .BotaoVermelho{
+        border-radius: var(--BordaPoucoRedonda--);
+        font-size: 1em;
+    }
+
+    /* Editar Insumo */
+    .edicao{
+        margin-left: 7em;
+        height: 28em;
+
+    }
+   
+    .BotaoVerde{
+        margin-left: -13em;
+        margin-top: 2em;
+    }
+
+    /* Produtos */
+    .BotaoVerde{
+        margin-left: 1em;
+        margin-top: -0.1em;
+    }
+    p{
+        margin-top: 0em;
+    }
+    .produto .BotaoVermelho{
+        margin-left:-1em;
+        margin-top: 0.3em;
+    }
+    .produto{
+        padding: 1em;
+    }
+
+    /* Editar Produto */
+    .insumosP{
+        margin-left: 1em;
+        gap: 4rem;
+        padding: 1rem;
+    
+    }
+    .botoes-edicao{
+        margin-top: 2em;
+        
+    }
+    .BotaoVerde{
+        margin-left: -2em;
+    }
+
+    /* Tabela */
+    .BotaoVerde {
+        margin-top: 2em;
+    }
+    }
 
 /* 425px mobile */
 
