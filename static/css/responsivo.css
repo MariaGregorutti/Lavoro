@@ -271,9 +271,34 @@
         align-items: center;
         gap: 0.3em;
     }
-
-
-    
+    /* editar produto */
+        .edicao{
+            margin-left: 1.5em;
+            width: 20em;
+            height: 26em;
+        }
+        .insumosP{
+            display: none;
+            gap: 2rem;
+            width: 20em;
+            margin-left: 0;
+        }
+        /* graficos */
+        .graficos{
+            flex-direction: column;
+            margin-left: 0;
+        }
+        .graficos-card{
+            padding: 2em 2em;
+        }
+        /* tabela */
+        .card{
+            max-width: 350px;
+        }
+        .card h2 {
+            margin-bottom: 40px;
+        }
+        
 
 }
 

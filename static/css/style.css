@@ -573,7 +573,7 @@ footer {
 }
 
 .graficos {
-    gap: 4em; /* Espaçamento entre os elementos filhos (efetivo com flex) */
+    gap: em; /* Espaçamento entre os elementos filhos (efetivo com flex) */
     justify-content: center; /* Centraliza os itens horizontalmente (com flex) */
     align-items: center; /* Alinha os itens verticalmente (com flex) */
     margin-left: 3em; /* Espaço à esquerda do container */
@@ -582,12 +582,12 @@ footer {
 .graficos-card {
     background-color: var(--Branco--); /* Cor de fundo branca */
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* Sombra suave ao redor do card */
-    padding: 3rem 3rem; /* Espaçamento interno do card */
+    padding: 4rem 4rem; /* Espaçamento interno do card */
     margin: 1rem; /* Espaço externo ao redor do card */
 }
 
 .graficos-card img {
-    width: 4em; 
+    width: 20em; 
 }
 
 .graficos-card p {
