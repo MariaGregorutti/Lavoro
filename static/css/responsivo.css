@@ -102,30 +102,12 @@
     .container-funcionalidades{
         flex-direction: column;
         align-items: center;
+        gap: 2em;
     }
-    .espaçar-funcionalidade{
-        gap: 4em;
+    .formulario .BotaoVerde{
+        margin-left: 1em;
     }
-    footer{
-        gap: 4em;
-        flex-direction: column;
-        align-items: center;
-        width: auto;
-    }
-    .logo-footer{
-        align-items: center;
-        flex-direction: column;
-        display: flex;
-    }
-    .contato{
-        display: flex;
-        flex-direction: column;
-        gap: 1em;
-    }
-    .meios-contatos{
-        align-items: center;
-        gap: 0.3em;
-    }
+    
     /* Cadastro */
     .fundo-cadastro{
         height: 540px;
@@ -143,9 +125,13 @@
        margin-left: 9em;
     }
     .form-login{
-        margin-left: 6em;
+        margin-left: 10em;
     }
     .BotaoMarrom{
+        margin-left: 0em;
+    }
+    .conjunto-login{
+        gap: 8em;
         margin-left: 0em;
     }
 
@@ -172,22 +158,25 @@
     .foto-pessoa{
         margin-left: -13em;
     }
-    .BotaoVerde{
-        margin-left: -11.9em;
-    }
+   
 
     /* Edição Perfil */
     .foto-pessoa2{
-        margin-top: -5em;
+        margin-top: 0em;
+        width: 11em;
+        height: 10em;
     }
-    .BotaoVerde{
-        margin-left: -15.9em;
+
+    .editPTamanho{
+        flex-direction: column;
+    }
+
+    .edicaoP{
+        width: 46%;
     }
   
     /* Insumos */
-    .BotaoVerde{
-        margin-left: 1em;
-    }
+   
     .insumos p{
         margin-left: 0.6em;
         margin-top: 0em;
@@ -217,17 +206,10 @@
         height: 28em;
 
     }
-   
-    .BotaoVerde{
-        margin-left: -13em;
-        margin-top: 2em;
-    }
+
 
     /* Produtos */
-    .BotaoVerde{
-        margin-left: 1em;
-        margin-top: -0.1em;
-    }
+    
     p{
         margin-top: 0em;
     }
@@ -248,17 +230,12 @@
     }
     .botoes-edicao{
         margin-top: 2em;
-        
+        gap: 15em;
     }
-    .BotaoVerde{
-        margin-left: -2em;
-    }
+    
 
-    /* Tabela */
-    .BotaoVerde {
-        margin-top: 2em;
-    }
-    }
+    
+}
 
 /* 425px mobile */
 
@@ -277,9 +254,25 @@
         margin-right: -7.5em;
     }
 
-    .footer {
-        margin-right: -13em;
-        font-size: 12px;
+    footer{
+        gap: 4em;
+        flex-direction: column;
+        align-items: center;
+        width: auto;
+    }
+    .logo-footer{
+        align-items: center;
+        flex-direction: column;
+        display: flex;
+    }
+    .contato{
+        display: flex;
+        flex-direction: column;
+        gap: 1em;
+    }
+    .meios-contatos{
+        align-items: center;
+        gap: 0.3em;
     }
 
 

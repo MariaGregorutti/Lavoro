@@ -5,6 +5,8 @@ window.document.addEventListener("DOMContentLoaded", function () {
     const botaoTresbarras = document.getElementById('tresRiscos'); 
     if (botaoTresbarras) {
         botaoTresbarras.addEventListener('click', function() {
+
+            console.log('vsjvbxjh')
             const fundoBarra3 = document.querySelector('.fundobarra2');
             if (fundoBarra3) {
                 fundoBarra3.classList.remove('fundobarra2');
@@ -35,6 +37,8 @@ window.document.addEventListener("DOMContentLoaded", function () {
     } else {
         console.warn("Botão com ID 'Fechar' não encontrado no DOM!");
     }
+
+    /*Estrela Js*/ 
 
     const stars = document.querySelectorAll("#stars span");
     const result = document.querySelector(".result");

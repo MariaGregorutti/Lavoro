@@ -53,25 +53,6 @@ html {
     --TamanhoBotaoAd--: 0.4rem 1rem;
 }
 
-
-
-.stars {
-    display: flex;
-    gap: 8px;
-    font-size: 40px;
-    cursor: pointer;
-}
-
-.stars span {
-    color: #ccc;
-    transition: color .2s;
-}
-
-.stars span.active {
-    color: gold;
-}
-
-
 .d-flex {
     display: flex;
 }
@@ -358,7 +339,6 @@ header {
 
 .container-funcionalidades {
     display: flex; /* Exibe os cards em linha com flexbox */
-    gap: 4em; /* Espaçamento entre os cards */
     margin-top: 4rem; /* Espaço acima do container */
     margin-left: 50px; /* Espaço à esquerda */
     margin-bottom: 2rem; /* Espaço abaixo do container */
@@ -368,13 +348,12 @@ header {
 }
 
 .card-funcionalidade {
-    position: relative; /* Permite posicionar elementos filhos de forma absoluta */
-    width: 300px; /* Largura do card */
+    position: relative; /* Permite posicionar elementos filhos de forma absoluta */ 
     border-radius: var(--BordaMuitoRedonda--); /* Bordas arredondadas */
 }
 
 .card-funcionalidade img {
-    width: 100%; /* Imagem ocupa toda a largura do card */
+    width: 80%; /* Imagem ocupa toda a largura do card */
     display: block; /* Remove espaço embaixo da imagem */
     border-radius: var(--BordaMuitoRedonda--); /* Bordas arredondadas da imagem */
 }
@@ -382,17 +361,13 @@ header {
 .card-funcionalidade p {
     position: absolute; /* Posicionamento absoluto dentro do card */
     bottom: 10px; /* Posicionado 10px do fundo */
-    left: 50%; /* Posicionado no meio horizontal */
+    left: 41%; /* Posicionado no meio horizontal */
     transform: translateX(-50%); /* Centraliza perfeitamente no eixo X */
     color: var(--Branco--); /* Cor do texto */
     font-weight: 600; /* Peso da fonte */
     font-size: 1.4rem; /* Tamanho do texto */
     margin: 0; /* Remove margem padrão */
     text-align: center; /* Centraliza o texto */
-}
-
-.espaçar-funcionalidade{
-    gap: 12em;
 }
 
 
@@ -475,12 +450,23 @@ textarea.avaliacao {
     margin-bottom: 10px; /* Espaço abaixo do campo */
 }
 
-.estrelas {
-    display: flex; /* Exibe as estrelas lado a lado com flexbox */
-    gap: 0.5rem; /* Espaçamento entre as estrelas */
-    margin: 0.5rem 0 1rem; /* Margem acima, lateral zero, e abaixo maior */
-    
+.stars {
+    display: flex;
+    gap: 8px;
+    font-size: 40px;
+    cursor: pointer;
 }
+
+.stars span {
+    color: #ccc;
+    transition: color .2s;
+}
+
+.stars span.active {
+    color: gold;
+}
+
+
 
 
 /* RODAPÉ */
@@ -659,7 +645,9 @@ footer {
     border-bottom: 1px solid var(--Branco--); /* Linha divisória entre as linhas */
 }
 
-
+.card .BotaoVerde{
+    margin-top: 0.7em;
+}
 
 /*css edicao_perfil:*/
 .editPTamanho {
@@ -778,9 +766,8 @@ input .email-login{
 
 .conjunto-login {
     align-items: center; /* Alinha os itens no centro no eixo cruzado (necessita display flex) */
-    gap: 3em; /* Espaço entre itens (necessita display flex ou grid) */
-    margin-left: 6em; /* Margem esquerda */
-    margin-top: 2em; /* Margem superior */
+    gap: 12em; /* Espaço entre itens (necessita display flex ou grid) */
+    margin-left: -3em; /* Margem esquerda */
 }
 
 /* css cadastro: */
@@ -796,7 +783,7 @@ input .email-login{
     width: 50vh; /* Largura do formulário */
     margin-left: 72vh; /* Margem esquerda */
     border-radius: var(--BordaMuitoRedonda--); /* Bordas arredondadas */
-    height: 80vh; /* Altura do formulário */
+    height: 0vh; /* Altura do formulário */
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Sombra leve */
 }
 
@@ -991,7 +978,7 @@ form input {
     margin-top: 2em; /* Margem superior */
     margin-bottom: 2em; /* Margem inferior */
     width: 38em; /* Largura fixa */
-    height: 23em; /* Altura fixa */
+    height: 24em; /* Altura fixa */
     padding: 1em; /* Espaçamento interno */
     border-radius: var(--BordaMuitoRedonda--); /* Bordas arredondadas */
 }
