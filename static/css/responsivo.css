@@ -371,6 +371,9 @@
             margin-left: -12rem;
             margin-top: 1em;
         }
+        .depoimentos-container {
+            flex-wrap: wrap;
+        }
         /* cadastro de insumos e produtos */
         .cardastro{
             margin-left: -16em;
