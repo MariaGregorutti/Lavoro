@@ -515,6 +515,7 @@ footer {
 }
 
 .funcoes {
+    display: flex;
     gap: 2em; /* Espaço entre os elementos filhos */
     justify-content: center; /* Centraliza horizontalmente (efetivo com flex) */
     align-items: center; /* Alinha verticalmente (efetivo com flex) */
