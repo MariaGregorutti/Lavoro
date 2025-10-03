@@ -367,11 +367,11 @@
         width: 100%; /* Define a LARGURA como 100% do elemento pai */
      }
     .form-login{
-        margin-left: 1em;
+        margin-left: 1.5em;
         height: 23em;
-        margin-top: 5em;
         width: 11.5em;
-   
+        height: 16em;
+        margin-top: -1em;
     }
     form input{
         width: 95%;
@@ -386,6 +386,38 @@
         font-family: 'Lato';
         color: #606831;
         margin-left: 0em;
-        margin-top: 0em;
+        margin-top: 6em; 
     }
+
+    /* Lucro */
+    .lucro h1{
+        margin-left: -5em;
+        font-size: 1.6em;
+        height: -2em;
+        width: 6.5em;
+    }
+    .funcoes{
+        flex-direction: column;
+        margin-left: -10em;
+    }
+    .funcoeslucro{
+        flex-direction: column;
+        margin-left: -10em;
+    }
+
+    /* Perfil */
+    .foto-pessoa{
+        margin-left: 6.5em;
+    }
+    .infPessoa{
+        flex-direction: column;
+        margin-left: -2em;
+    }
+    .info-pessoal h1{
+        font-size: 1.5em;
+        margin-top: 1em;
+    }
+
+    /* Edição Perfil */
+    
 }
