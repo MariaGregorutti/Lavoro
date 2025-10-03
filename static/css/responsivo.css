@@ -272,9 +272,21 @@
         gap: 0.3em;
     }
 
+    /* Edição Perfil */
+    .foto-pessoa2{
+        margin-left: 2em;
+    }
+    .editPTamanho {
+        width: auto;
+    }
+    .titulo-edicao-perfil {
+        margin-left: 2em;
+        color: #878F55;
+        margin-top: -3em;
+    }
+    .form-edicao-perfil{
 
-    
-
+    }
 }
 
 @media (max-width: 320px){
