@@ -116,9 +116,6 @@
     .titulo-cadastro {
         margin-top: -1.1em;
     }
-    .logo-footer{
-        margin-left: 6em;
-    }
     
     /* Login */
     .titulo-login{
@@ -291,13 +288,11 @@
         padding-right: 10px;
     }
     .paginainicial{
-        height: 25em;
-        width: 29em;
-
+        height: 24em;
+        width: 20em;
     }
     .textoinicial h1{
         font-size: 1.6em;
-        padding-left: 2em;
         text-align: left;
         margin-left: 58px;
         width: 8em;
@@ -306,14 +301,12 @@
     .textoinicial p{
         text-align: inherit;
         font-size: 0.9em;
-        margin-left: 5em;
-        width: 17em;
         margin-top: -3em;
     }
     .botaocadastro{
-
-        margin-top: -15em;
-        padding: 0.7em;
+        margin-top: -2em;
+        margin-left: -5em;
+        padding: 0.5em;
     }
 
     .beneficio{
@@ -333,6 +326,17 @@
         display: none;
     }
 
+    .espaçar-funcionalidade{
+        flex-direction: column;
+        gap: 1em;
+    }
+
+    .estrelas-responcivo{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
     /* Cadastro */
     .fundo-cadastro{
         background-image: url(../img/Fundo_Login_Responcivo.png);
@@ -341,23 +345,19 @@
         background-size: cover; /* Faz a imagem de fundo cobrir toda a área do elemento */
         text-align: center; /* Centraliza o conteúdo do texto horizontalmente */
         padding-top: 100px; /* Adiciona espaço acima do conteúdo (afasta do topo) */
-        height: 600px; /* Define a ALTURA da seção como 600px */
+        height: 42em; /* Define a ALTURA da seção como 600px */
         width: 100%; /* Define a LARGURA como 100% do elemento pai */
      }
     .form-cadastro{
         margin-left: 1em;
-        height: 23em;
-        margin-top: 5em;
+        height: 32em;
+        margin-top: 3em;
         width: 11.5em;
-   
     }
     form input{
         width: 95%;
         justify-content: center;
         align-items: center;
-    }
-    form label{
-        display: none;
     }
     .titulo-cadastro{
         font-size: 1.8em;
@@ -378,7 +378,7 @@
      }
     .form-login{
         margin-left: 1em;
-        height: 23em;
+        height: 20em;
         margin-top: 5em;
         width: 11.5em;
    
@@ -387,9 +387,6 @@
         width: 95%;
         justify-content: center;
         align-items: center;
-    }
-    form label{
-        display: none;
     }
     .titulo-login {
         font-size: 1.8em;
@@ -505,4 +502,9 @@
         color: var(--Preto--); /* Cor do texto */
     }
     
+
+    .conjunto-login {
+        flex-direction: column;
+        gap: 2em;
+    }
 }
