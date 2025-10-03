@@ -833,5 +833,10 @@
     .campo-produto-indiv {
     width: 70%;
     }
+
+    /* pagina graficos */
+        .graficos-card img {
+            width: 12em;
+        }
 }
 
