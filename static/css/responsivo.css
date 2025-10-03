@@ -118,7 +118,9 @@
     }
 
     .form-cadastro{
-        margin-left: 43vh;
+        margin-left:-1em;
+        width: 70%;
+        margin: 20px;
     }
     
     /* Login */
@@ -231,7 +233,7 @@
     }
     .botoes-edicao{
         margin-top: 2em;
-        gap: 15em;
+        gap: 20em;
     }
     
 
@@ -244,7 +246,8 @@
 
     .cardastro {
         width: 20em;
-        margin-right: -10em;
+        margin-right: -15em;
+        margin-left: -24em;
     }
 
     .botaoMarrom {
@@ -252,7 +255,7 @@
     }
 
     .cadastro-geral h2 {
-        margin-right: -7.5em;
+        margin-right: -5em;
     }
 
     footer{
@@ -615,3 +618,10 @@
     }
 }
 
+    .campo-produto-indiv {
+    width: 70%;
+}
+
+    .BotaoVerde {
+        margin-left: -15em;
+    }
