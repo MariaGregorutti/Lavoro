@@ -397,7 +397,10 @@
         flex-direction: column;
         margin-left: 0;
     }
-
+    .botaoEditP {
+            gap: 2em;
+            flex-wrap: wrap;
+    }
     /* Lucro */
     .lucro h1{
         margin-left: -2.5em;
@@ -702,7 +705,13 @@
     }
 
     /* Edição Perfil */
-    
+    .form-edicao-perfil{
+        margin-left: 2em;
+    }
+    .botaoEditP{
+        gap: 1em;
+        flex-direction: column;
+    }
 
     .beneficio{
         flex-wrap: wrap;
