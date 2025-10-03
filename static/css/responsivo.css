@@ -110,11 +110,15 @@
     
     /* Cadastro */
     .fundo-cadastro{
-        height: 540px;
+        height: 42em;
     }
     
     .titulo-cadastro {
         margin-top: -1.1em;
+    }
+
+    .form-cadastro{
+        margin-left: 43vh;
     }
     
     /* Login */
@@ -454,7 +458,7 @@
     background-size: cover; /* Faz a imagem de fundo cobrir toda a área do elemento */
     text-align: center; /* Centraliza o conteúdo do texto horizontalmente */
     padding-top: 100px; /* Adiciona espaço acima do conteúdo (afasta do topo) */
-    height: 600px; /* Define a ALTURA da seção como 600px */
+    height: 42em; /* Define a ALTURA da seção como 600px */
     width: 100%; /* Define a LARGURA como 100% do elemento pai */
   }
   .form-cadastro{

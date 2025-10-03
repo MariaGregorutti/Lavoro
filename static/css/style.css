@@ -784,7 +784,6 @@ input .email-login{
     width: 50vh; /* Largura do formulário */
     margin-left: 72vh; /* Margem esquerda */
     border-radius: var(--BordaMuitoRedonda--); /* Bordas arredondadas */
-    height: 0vh; /* Altura do formulário */
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Sombra leve */
 }
 
