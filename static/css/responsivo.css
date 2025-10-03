@@ -330,7 +330,11 @@
             width: 100%;
             /* Define a LARGURA como 100% do elemento pai */
         }
-    
+        .form-login {
+            margin-left: 2em;
+            width: 60%;
+            height: 250px;
+        }
     
     
         .titulo-login {
@@ -563,7 +567,7 @@
     }
     
 
-@media (max-width: 320px){
+@media (max-width: 321px){
     /* Home */
 
     .paginainicial {
@@ -638,7 +642,7 @@
         margin-left: 1em;
         height: 32em;
         margin-top: 3em;
-        width: 11.5em;
+        width: 12em;
     }
     form input{
         width: 95%;
@@ -663,7 +667,7 @@
         width: 100%; /* Define a LARGURA como 100% do elemento pai */
      }
     .form-login{
-        margin-left: 1.5em;
+        margin-left: 4em;
         height: 23em;
         height: 16em;
         margin-top: -1em;
@@ -747,7 +751,7 @@
     margin-left: 1em;
     height: 23em;
     margin-top: 7em;
-    width: 15em;
+    width: 12em;
     
   }
   form input{
@@ -771,7 +775,7 @@
     width: 100%; /* Define a LARGURA como 100% do elemento pai */
   }
   .form-login{
-    margin-left: 2em;
+    margin-left: 4em;
     height: 15em;
     width: 15em;
   }
