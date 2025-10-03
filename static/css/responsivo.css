@@ -288,8 +288,38 @@
         margin-top: -3em;
     }
     .form-edicao-perfil{
-
+        margin-left: 2em;
     }
+    .edicaoP{
+        width: 55%;
+    }
+
+    /* Perfil */
+    .info-pessoal{
+        margin-left: -20em;
+        margin-top: 18em;
+    }
+    .foto-pessoa{
+        margin-left: -9em;
+    }
+
+    /* Lucro */
+    .lucro h1{
+        margin-left: -2.5em;
+        font-size: 1.6em;
+        height: -2em;
+        width: 6.5em;
+    }
+    .funcoes{
+        flex-direction: column;
+        margin-left: -8em;
+    }
+    .funcoeslucro{
+        flex-direction: column;
+        margin-left: -8em;
+    }
+
+
 
     /* editar produto */
         .edicao{
