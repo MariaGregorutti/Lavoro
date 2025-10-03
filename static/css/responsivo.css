@@ -40,6 +40,7 @@
     --TamanhoBotaoAd--: 0.4rem 1rem;
 }
 
+
 /* 768 tablet */
 @media (max-width: 768px) {
     header {
@@ -317,10 +318,7 @@
         margin-left: -9em;
     }
 
-    .PessoaB{
-
-    }
-
+ 
     /* Lucro */
     .lucro h1{
         margin-left: -2.5em;
@@ -372,7 +370,53 @@
             margin-left: -12rem;
             margin-top: 1em;
         }
+        /* cadastro de insumos e produtos */
+        .cardastro{
+            margin-left: -16em;
+        }
+        .cardastro .botoes{
+            flex-direction: column;
+            gap: 1em;
+        }
+        .cadastro-geral .cardastro{
+            margin-left: -16em;
+        }
+        .BotaoMarrom{
+            margin-left: -8em;
+        }
+        .ingredientes{
+            margin-bottom: 4em;
+        }
+        .cadastro-geral h2{
+            margin-left: -5em;
+        }
+        /* produto individual */
+        .campo-produto-indiv {
+            width: 20em;
+            height: 35em;
+        
+        }
+        .centralização{
+            gap: 2em;
+        }
+     
+        .campo-lucro{
+            gap: 5em;
+            display: block;
+        }
+        .campo-lucro p{
+            margin-bottom: 2em;
+        }
+        .voltarP{
+            gap: 1em;
 
+        }
+        /* selecão de insumos */
+        .selecionar-insumos{
+            margin-left: 0;
+            width: 20em;
+        }
+       
 }
 
 @media (max-width: 320px){
@@ -638,11 +682,3 @@
         gap: 2em;
     }
 }
-
-    .campo-produto-indiv {
-    width: 70%;
-}
-
-    .BotaoVerde {
-        margin-left: -15em;
-    }

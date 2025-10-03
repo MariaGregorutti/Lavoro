@@ -1058,6 +1058,7 @@ form input {
     margin: 12px 0; /* Margem vertical */
     font-weight: bold; /* Texto em negrito */
     color: #2d2d2d; /* Cor do texto */
+    border-radius: 20px; /* Bordas arredondadas */
 }
 
 .select {
