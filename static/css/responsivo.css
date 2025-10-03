@@ -270,7 +270,77 @@
     .cadastro-geral h2 {
         margin-right: -5em;
     }
+    /* cadastro */
+        .fundo-cadastro {
+            background-image: url(../img/Fundo_Login_Responcivo.png);
+            background-repeat: no-repeat;
+            /* Impede que a imagem de fundo se repita */
+            background-position: center;
+            /* Centraliza a imagem de fundo */
+            background-size: cover;
+            /* Faz a imagem de fundo cobrir toda a área do elemento */
+            text-align: center;
+            /* Centraliza o conteúdo do texto horizontalmente */
+            padding-top: 100px;
+            /* Adiciona espaço acima do conteúdo (afasta do topo) */
+            height: 42em;
+            /* Define a ALTURA da seção como 600px */
+            width: 100%;
+            /* Define a LARGURA como 100% do elemento pai */
+        }
+                .form-cadastro {
+                    margin-left: 1em;
+                    height: 25em;
+                    margin-top: 10em;
+                    width: 18em;
+                }
+        
+                form input {
+                    width: 95%;
+                    justify-content: center;
+                    align-items: center;
+                }
+                
+                .form-cadastro label {
+                        display: none;
+                }
 
+                .titulo-cadastro {
+                    font-size: 1.8em;
+                    font-family: 'Lato';
+                    color: #606831;
+                }
+    /* login */
+        .fundo-login {
+            background-image: url(../img/Fundo_Login_Responcivo.png);
+            background-repeat: no-repeat;
+            /* Impede que a imagem de fundo se repita */
+            background-position: center;
+            /* Centraliza a imagem de fundo */
+            background-size: cover;
+            /* Faz a imagem de fundo cobrir toda a área do elemento */
+            text-align: center;
+            /* Centraliza o conteúdo do texto horizontalmente */
+            padding-top: 100px;
+            /* Adiciona espaço acima do conteúdo (afasta do topo) */
+            height: 600px;
+            /* Define a ALTURA da seção como 600px */
+            width: 100%;
+            /* Define a LARGURA como 100% do elemento pai */
+        }
+    
+    
+    
+        .titulo-login {
+            font-size: 1.8em;
+            font-family: 'Lato';
+            color: #606831;
+            margin-left: -2em;
+            margin-top: 6em;
+        }
+        .conjunto-login .BotaoMarrom{
+            margin-left: 0;
+        }
     footer{
         gap: 4em;
         flex-direction: column;
