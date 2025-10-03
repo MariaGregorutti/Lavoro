@@ -855,7 +855,7 @@ input {
 }
 
 .ingredientes {
-    gap: 22em; /* Espaço entre itens (funciona com flex ou grid) */
+    gap: 18em; /* Espaço entre itens (funciona com flex ou grid) */
     margin-bottom: 1EM; /* Margem inferior (use 'em' minúsculo para consistência) */
     color: var(--Preto--); /* Cor do texto */
 }
@@ -918,6 +918,14 @@ form input {
     padding: 1em; /* Espaçamento interno */
     border-radius: var(--BordaMuitoRedonda--); /* Bordas arredondadas */
     color: var(--VerdeEscuro--); /* Cor do texto */
+}
+
+.info{
+    gap: 1em;
+}
+
+.botoes-IP {
+    gap: 2em; /* Espaço entre os botões (funciona se container for flex ou grid) */
 }
 
 .produto {

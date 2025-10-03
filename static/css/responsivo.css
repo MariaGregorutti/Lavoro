@@ -252,21 +252,23 @@
     }
 
     .form-cadastro {
-        margin-left: 8vh;
+        margin-left: 4vh;
     }
 
     .cardastro {
         width: 20em;
-        margin-right: -15em;
-        margin-left: -24em;
+        margin-right: 1em;
     }
 
-    .botaoMarrom {
-        margin-left: -10em;
+
+    .cadastro-geral{
+        margin-left: auto;
+        text-align: start;
+        align-items: start;
     }
 
-    .cadastro-geral h2 {
-        margin-right: -5em;
+    .ingredientes {
+    gap: 12em; 
     }
 
     footer{
@@ -310,7 +312,7 @@
 
     /* Perfil */
     .info-pessoal{
-        margin-left: -20em;
+        margin-left: -13em;
         margin-top: 18em;
     }
     .foto-pessoa{
@@ -318,7 +320,7 @@
     }
 
     .PessoaB{
-
+        margin-left: -8em;
     }
 
     /* Lucro */
@@ -340,38 +342,69 @@
 
 
     /* editar produto */
-        .edicao{
-            margin-left: 1.5em;
-            width: 20em;
-            height: 29em;
-        }
-        .insumosP{
-            display: none;
-            gap: 2rem;
-            width: 20em;
-            margin-left: 0;
-        }
-        /* graficos */
-        .graficos{
-            flex-direction: column;
-            margin-left: 0;
-        }
-        .graficos-card{
-            padding: 2em 2em;
-        }
-        /* tabela */
-        .card{
-            max-width: 350px;
-        }
-        .card h2 {
-            margin-bottom: 40px;
-        }
+    .edicao{
+        margin-left: 1.5em;
+        width: 20em;
+        height: 29em;
+    }
+    .insumosP{
+        display: none;
+        gap: 2rem;
+        width: 20em;
+        margin-left: 0;
+    }
+    /* graficos */
+    .graficos{
+        flex-direction: column;
+        margin-left: 0;
+    }
+    .graficos-card{
+        padding: 2em 2em;
+    }
+    /* tabela */
+    .card{
+        max-width: 350px;
+    }
+    .card h2 {
+        margin-bottom: 40px;
+    }
 
-        /*Home*/
-        .botaocadastro {
-            margin-left: -12rem;
-            margin-top: 1em;
-        }
+    /*Home*/
+    .botaocadastro {
+        margin-left: -12rem;
+        margin-top: 1em;
+    }
+    
+    /* Insumos  e produtos*/
+    .campoDeBusca  {
+        width: 20em;
+        flex-direction: column;
+    }
+    .campo-demonstrar{
+        width: 20em;
+    }
+    .campo-demonstrar h3 {
+        margin-top: 5em;
+    }
+    .botoes2{
+        flex-direction: row;
+        gap: 7em;
+    }
+    .campoDeBusca {
+        width: auto;
+        flex-direction: column;
+    }
+
+    .info{
+        flex-direction: column;
+    }
+    .botoes-IP{
+        flex-direction: column;
+        gap: 0.5em;
+        margin-top: 1em;
+    }
+
+
 
 }
 
@@ -570,9 +603,7 @@
   .form-cadastro label{
     display: none;
   }
-  .botaoVerde{
-    margin-left: 0;
-  }
+
   /* login */
   .fundo-login{
     background-image: url(../img/Fundo_Login_Responcivo.png);
@@ -637,12 +668,9 @@
         flex-direction: column;
         gap: 2em;
     }
-}
 
     .campo-produto-indiv {
     width: 70%;
+    }
 }
 
-    .BotaoVerde {
-        margin-left: -15em;
-    }
