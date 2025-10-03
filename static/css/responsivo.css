@@ -102,54 +102,36 @@
     .container-funcionalidades{
         flex-direction: column;
         align-items: center;
+        gap: 2em;
     }
-    .espaçar-funcionalidade{
-        gap: 4em;
+    .formulario .BotaoVerde{
+        margin-left: 1em;
     }
-    footer{
-        gap: 4em;
-        flex-direction: column;
-        align-items: center;
-        width: auto;
-    }
-    .logo-footer{
-        align-items: center;
-        flex-direction: column;
-        display: flex;
-    }
-    .contato{
-        display: flex;
-        flex-direction: column;
-        gap: 1em;
-    }
-    .meios-contatos{
-        align-items: center;
-        gap: 0.3em;
-    }
+    
     /* Cadastro */
     .fundo-cadastro{
         height: 540px;
     }
-    .form-cadastro{
-        margin-left: 12em;
-        height: 31em;
-        margin-top: -5em;
-    }
+    
     .titulo-cadastro {
         margin-top: -1.1em;
     }
     .logo-footer{
         margin-left: 6em;
     }
-
+    
     /* Login */
     .titulo-login{
        margin-left: 9em;
     }
     .form-login{
-        margin-left: 6em;
+        margin-left: 10em;
     }
     .BotaoMarrom{
+        margin-left: 0em;
+    }
+    .conjunto-login{
+        gap: 8em;
         margin-left: 0em;
     }
 
@@ -176,22 +158,25 @@
     .foto-pessoa{
         margin-left: -13em;
     }
-    .BotaoVerde{
-        margin-left: -11.9em;
-    }
+   
 
     /* Edição Perfil */
     .foto-pessoa2{
-        margin-top: -5em;
+        margin-top: 0em;
+        width: 11em;
+        height: 10em;
     }
-    .BotaoVerde{
-        margin-left: -15.9em;
+
+    .editPTamanho{
+        flex-direction: column;
+    }
+
+    .edicaoP{
+        width: 46%;
     }
   
     /* Insumos */
-    .BotaoVerde{
-        margin-left: 1em;
-    }
+   
     .insumos p{
         margin-left: 0.6em;
         margin-top: 0em;
@@ -221,17 +206,10 @@
         height: 28em;
 
     }
-   
-    .BotaoVerde{
-        margin-left: -13em;
-        margin-top: 2em;
-    }
+
 
     /* Produtos */
-    .BotaoVerde{
-        margin-left: 1em;
-        margin-top: -0.1em;
-    }
+    
     p{
         margin-top: 0em;
     }
@@ -252,17 +230,12 @@
     }
     .botoes-edicao{
         margin-top: 2em;
-        
+        gap: 15em;
     }
-    .BotaoVerde{
-        margin-left: -2em;
-    }
+    
 
-    /* Tabela */
-    .BotaoVerde {
-        margin-top: 2em;
-    }
-    }
+    
+}
 
 /* 425px mobile */
 
@@ -281,9 +254,25 @@
         margin-right: -7.5em;
     }
 
-    .footer {
-        margin-right: -13em;
-        font-size: 12px;
+    footer{
+        gap: 4em;
+        flex-direction: column;
+        align-items: center;
+        width: auto;
+    }
+    .logo-footer{
+        align-items: center;
+        flex-direction: column;
+        display: flex;
+    }
+    .contato{
+        display: flex;
+        flex-direction: column;
+        gap: 1em;
+    }
+    .meios-contatos{
+        align-items: center;
+        gap: 0.3em;
     }
 
 
@@ -291,8 +280,9 @@
 
 }
 
-@media (max-width: 376px) {
+@media (max-width: 320px){
     /* Home */
+
     .paginainicial {
         height: 20em;
         width: 30em;
@@ -300,27 +290,113 @@
     .textoinicial{
         padding-right: 10px;
     }
+    .paginainicial{
+        height: 25em;
+        width: 29em;
+
+    }
     .textoinicial h1{
-        margin-left: -3em;
-        font-size: 1.5em;
-        padding: 7.6em;
-        margin-top: -6.5em;
+        font-size: 1.6em;
+        padding-left: 2em;
+        text-align: left;
+        margin-left: 58px;
+        width: 8em;
+        margin-top: -2em;
     }
     .textoinicial p{
-        margin-top: -22em;
-        margin-left: -1em;
-        font-size: 1em;
-        padding: 8em;
+        text-align: inherit;
+        font-size: 0.9em;
+        margin-left: 5em;
+        width: 17em;
+        margin-top: -3em;
     }
     .botaocadastro{
+
         margin-top: -15em;
         padding: 0.7em;
     }
-    .BotaoVerde{
-        margin-left: 5.8em;
+
+    .beneficio{
+        flex-wrap: wrap;
+        align-items: center;
     }
-    .benificio .img-caixa {
-        height: 3em;
+    .img-grafico{
+        margin-left: 2.6em;
+    }
+    .img-caixa{
+        margin-left: 2.5em;
+    }
+    .preci-inteligente{
+        margin-left: 2.5em;
+    }
+    .card-depoimento:not(:first-child){
+        display: none;
+    }
+
+    /* Cadastro */
+    .fundo-cadastro{
+        background-image: url(../img/Fundo_Login_Responcivo.png);
+        background-repeat: no-repeat; /* Impede que a imagem de fundo se repita */
+        background-position: center; /* Centraliza a imagem de fundo */
+        background-size: cover; /* Faz a imagem de fundo cobrir toda a área do elemento */
+        text-align: center; /* Centraliza o conteúdo do texto horizontalmente */
+        padding-top: 100px; /* Adiciona espaço acima do conteúdo (afasta do topo) */
+        height: 600px; /* Define a ALTURA da seção como 600px */
+        width: 100%; /* Define a LARGURA como 100% do elemento pai */
+     }
+    .form-cadastro{
+        margin-left: 1em;
+        height: 23em;
+        margin-top: 5em;
+        width: 11.5em;
+   
+    }
+    form input{
+        width: 95%;
+        justify-content: center;
+        align-items: center;
+    }
+    form label{
+        display: none;
+    }
+    .titulo-cadastro{
+        font-size: 1.8em;
+        font-family: 'Lato';
+        color: #606831;
+    }
+
+    /* Login */
+    .fundo-login{
+        background-image: url(../img/Fundo_Login_Responcivo.png);
+        background-repeat: no-repeat; /* Impede que a imagem de fundo se repita */
+        background-position: center; /* Centraliza a imagem de fundo */
+        background-size: cover; /* Faz a imagem de fundo cobrir toda a área do elemento */
+        text-align: center; /* Centraliza o conteúdo do texto horizontalmente */
+        padding-top: 100px; /* Adiciona espaço acima do conteúdo (afasta do topo) */
+        height: 600px; /* Define a ALTURA da seção como 600px */
+        width: 100%; /* Define a LARGURA como 100% do elemento pai */
+     }
+    .form-login{
+        margin-left: 1em;
+        height: 23em;
+        margin-top: 5em;
+        width: 11.5em;
+   
+    }
+    form input{
+        width: 95%;
+        justify-content: center;
+        align-items: center;
+    }
+    form label{
+        display: none;
+    }
+    .titulo-login {
+        font-size: 1.8em;
+        font-family: 'Lato';
+        color: #606831;
+        margin-left: 0em;
+        margin-top: 0em;
     }
     .beneficio{
         flex-wrap: wrap;
