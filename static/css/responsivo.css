@@ -244,6 +244,17 @@
 
 @media (max-width: 426px) {
 
+    .botoes-edicao{
+        margin-left: 7em;
+        width: 8em;
+        flex-direction: column;
+        gap: 1em;
+    }
+
+    .form-cadastro {
+        margin-left: 8vh;
+    }
+
     .cardastro {
         width: 20em;
         margin-right: -15em;
@@ -306,6 +317,10 @@
         margin-left: -9em;
     }
 
+    .PessoaB{
+
+    }
+
     /* Lucro */
     .lucro h1{
         margin-left: -2.5em;
@@ -328,7 +343,7 @@
         .edicao{
             margin-left: 1.5em;
             width: 20em;
-            height: 26em;
+            height: 29em;
         }
         .insumosP{
             display: none;
@@ -350,6 +365,12 @@
         }
         .card h2 {
             margin-bottom: 40px;
+        }
+
+        /*Home*/
+        .botaocadastro {
+            margin-left: -12rem;
+            margin-top: 1em;
         }
 
 }

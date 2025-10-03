@@ -875,7 +875,8 @@ input {
     width: 32em; /* Largura fixa */
     margin-left: 12em; /* Margem esquerda */
     height: 22em; /* Altura fixa */
-    margin-top: 6em; /* Margem superior */
+    margin-top: 4em; /* Margem superior */
+    margin-bottom: 4em;
 }
 
 .edicao h2 {
@@ -900,7 +901,7 @@ form input {
 }
 
 .botoes-edicao {
-    gap: 18em; /* Espaço entre botões (funciona se container for flex ou grid) */
+    gap: 16em; /* Espaço entre botões (funciona se container for flex ou grid) */
 }
 
 
