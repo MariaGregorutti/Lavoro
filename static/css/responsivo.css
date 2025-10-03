@@ -116,9 +116,6 @@
     .titulo-cadastro {
         margin-top: -1.1em;
     }
-    .logo-footer{
-        margin-left: 6em;
-    }
     
     /* Login */
     .titulo-login{
@@ -282,13 +279,20 @@
 
 @media (max-width: 320px){
     /* Home */
+
+    .paginainicial {
+        height: 20em;
+        width: 30em;
+    }
+    .textoinicial{
+        padding-right: 10px;
+    }
     .paginainicial{
-        height: 25em;
-        width: 29em;
+        height: 24em;
+        width: 20em;
     }
     .textoinicial h1{
         font-size: 1.6em;
-        padding-left: 2em;
         text-align: left;
         margin-left: 58px;
         width: 8em;
@@ -297,15 +301,14 @@
     .textoinicial p{
         text-align: inherit;
         font-size: 0.9em;
-        margin-left: 5em;
-        width: 17em;
         margin-top: -3em;
     }
     .botaocadastro{
         margin-top: -2em;
-        margin-left: -8em;
-        padding: 1em;
+        margin-left: -5em;
+        padding: 0.5em;
     }
+
     .beneficio{
         flex-wrap: wrap;
         align-items: center;
@@ -323,6 +326,17 @@
         display: none;
     }
 
+    .espaçar-funcionalidade{
+        flex-direction: column;
+        gap: 1em;
+    }
+
+    .estrelas-responcivo{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
     /* Cadastro */
     .fundo-cadastro{
         background-image: url(../img/Fundo_Login_Responcivo.png);
@@ -331,23 +345,19 @@
         background-size: cover; /* Faz a imagem de fundo cobrir toda a área do elemento */
         text-align: center; /* Centraliza o conteúdo do texto horizontalmente */
         padding-top: 100px; /* Adiciona espaço acima do conteúdo (afasta do topo) */
-        height: 600px; /* Define a ALTURA da seção como 600px */
+        height: 42em; /* Define a ALTURA da seção como 600px */
         width: 100%; /* Define a LARGURA como 100% do elemento pai */
      }
     .form-cadastro{
         margin-left: 1em;
-        height: 23em;
-        margin-top: 5em;
+        height: 32em;
+        margin-top: 3em;
         width: 11.5em;
-   
     }
     form input{
         width: 95%;
         justify-content: center;
         align-items: center;
-    }
-    form label{
-        display: none;
     }
     .titulo-cadastro{
         font-size: 1.8em;
@@ -369,7 +379,6 @@
     .form-login{
         margin-left: 1.5em;
         height: 23em;
-        width: 11.5em;
         height: 16em;
         margin-top: -1em;
     }
@@ -377,9 +386,6 @@
         width: 95%;
         justify-content: center;
         align-items: center;
-    }
-    form label{
-        display: none;
     }
     .titulo-login {
         font-size: 1.8em;
@@ -420,4 +426,118 @@
 
     /* Edição Perfil */
     
+
+    .beneficio{
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
+    .beneficio img{
+        height: 10em;
+    }
+
+    .depoimentos-container{
+        flex-wrap: wrap;
+    }
+    .logo-footer{
+        margin-left: 0;
+    }
+    .card-depoimento:not(:first-child) {
+    display: none;
+  }
+  /* cadastro */
+  .fundo-cadastro{
+    background-image: url(../img/Fundo_Login_Responcivo.png);
+    background-repeat: no-repeat; /* Impede que a imagem de fundo se repita */
+    background-position: center; /* Centraliza a imagem de fundo */
+    background-size: cover; /* Faz a imagem de fundo cobrir toda a área do elemento */
+    text-align: center; /* Centraliza o conteúdo do texto horizontalmente */
+    padding-top: 100px; /* Adiciona espaço acima do conteúdo (afasta do topo) */
+    height: 600px; /* Define a ALTURA da seção como 600px */
+    width: 100%; /* Define a LARGURA como 100% do elemento pai */
+  }
+  .form-cadastro{
+    margin-left: 1em;
+    height: 23em;
+    margin-top: 7em;
+    width: 15em;
+    
+  }
+  form input{
+    width: 95%;
+    justify-content: center;
+    align-items: center;
+  }
+  .form-cadastro label{
+    display: none;
+  }
+  .botaoVerde{
+    margin-left: 0;
+  }
+  /* login */
+  .fundo-login{
+    background-image: url(../img/Fundo_Login_Responcivo.png);
+    background-repeat: no-repeat; /* Impede que a imagem de fundo se repita */
+    background-position: center; /* Centraliza a imagem de fundo */
+    background-size: cover; /* Faz a imagem de fundo cobrir toda a área do elemento */
+    text-align: center; /* Centraliza o conteúdo do texto horizontalmente */
+    padding-top: 100px; /* Adiciona espaço acima do conteúdo (afasta do topo) */
+    height: 600px; /* Define a ALTURA da seção como 600px */
+    width: 100%; /* Define a LARGURA como 100% do elemento pai */
+  }
+  .form-login{
+    margin-left: 2em;
+    height: 15em;
+    width: 15em;
+  }
+    .titulo-login {
+        margin-left: 1em;
+        margin-top: 5em;
+    }
+    /* lucro */
+    .lucro h1{
+        margin-left: -5em;
+    }
+    .funcoes{
+        flex-direction: column;
+        margin-left: -13em;
+    }
+    .funcoes-card{
+        width: 10em;
+    }
+    .funcoeslucro{
+        flex-direction: column;
+        margin-left: -13em;
+        justify-content: center;
+    }
+    /* perfil */
+    .infPessoa {
+        flex-direction: column;
+        margin-left: 0;
+    }
+    .foto-pessoa{
+       margin-left: 0;
+    }
+    /* insumos */
+    .campo-demonstrar{
+        width: 20em;
+        background-color: var(--Branco--);
+    }
+    .campoDeBusca input {
+            width: 80em;
+    }
+    .insumos{
+        background-color: var(--Branco--); /* Fundo branco */
+        padding: 0.3em 1em 0.3em 1em; /* Espaçamento vertical e horizontal */
+        border-radius: var(--BordaMuitoRedonda--); /* Bordas arredondadas */
+        color: var(--Preto--); /* Cor do texto */
+    }
+    
+
+    .conjunto-login {
+        flex-direction: column;
+        gap: 2em;
+    }
 }
+
