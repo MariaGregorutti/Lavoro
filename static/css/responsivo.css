@@ -548,10 +548,9 @@
         margin-left: 4.3em;
     }
  
-    .conjunto-login .BotaoVerde{
-        margin-left: -5em; 
+    .conjunto-login {
+        gap: 2em;
     }
-
 }
 
 
@@ -763,9 +762,9 @@
     width: 100%; /* Define a LARGURA como 100% do elemento pai */
   }
   .form-login{
-    margin-left: 4em;
-    height: 15em;
-    width: 15em;
+    margin-left: 2em;
+    height: 18em;
+    width: 11em;
   }
     .titulo-login {
         margin-left: 1em;
@@ -797,11 +796,10 @@
     }
     /* insumos */
     .campo-demonstrar{
-        width: 20em;
-        background-color: var(--Branco--);
+        width: 14em;
     }
     .campoDeBusca input {
-            width: 80em;
+            width: 15em;
     }
     .insumos{
         background-color: var(--Branco--); /* Fundo branco */
@@ -816,7 +814,10 @@
         gap: 2em;
     }
 
-
+    .botoes2 {
+        
+        gap: 3em;
+    }
 
     .campo-produto-indiv {
     width: 70%;
