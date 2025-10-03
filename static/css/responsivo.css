@@ -85,7 +85,7 @@
         max-width: 468px;
     }
     .beneficio img{
-        height: 12em;
+        height: 10em;
     }
     .gestao-produtos{
         margin-left: 2em;
@@ -136,6 +136,7 @@
     .conjunto-login{
         gap: 8em;
         margin-left: 0em;
+        margin-top: 1em;
     }
 
 
@@ -374,6 +375,36 @@
         }
 
 }
+
+     .container-funcionalidades {
+            width: 83%;
+    }
+
+
+    .formulario .BotaoVerde {
+        margin-top: 2em;
+        margin-left: 6.6em;
+    }
+
+    .dinheiro {
+        margin-left: 2em;
+    } 
+
+
+    .form-login {
+        margin-left: 4em;
+        width: 60%;
+        height: 250px;
+    }
+
+    .titulo-login {
+        margin-left: 4.3em;
+    }
+ 
+    .conjunto-login .BotaoVerde{
+        margin-left: -5em; 
+    }
+    
 
 @media (max-width: 320px){
     /* Home */
@@ -643,6 +674,7 @@
     width: 70%;
 }
 
-    .BotaoVerde {
-        margin-left: -15em;
-    }
+   
+
+
+    

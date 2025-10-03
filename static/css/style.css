@@ -157,6 +157,9 @@ a {
     border-radius: var(--BordaPoucoRedonda--);
     margin-left: 3em;
     font-size: large;
+    font-size: 15.6px; 
+    padding: 10px 10px; 
+    border-radius: 5px;
 }
 
 .botaohome {
