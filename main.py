@@ -7,9 +7,9 @@ app = Flask(__name__)
 app.secret_key = 'OI'
 
 host = 'localhost'
-database = r'C:\Users\mathe\OneDrive\Documentos\GitHub\Lavoro\BANCO.FDB'
+database = r'C:\Users\Aluno\Desktop\Maria\Lavoro\BANCO.FDB'
 user = 'SYSDBA'
-password = 'masterkey'
+password = 'sysdba'
 
 con = fdb.connect(host=host, database=database,user=user, password=password)
 
@@ -33,7 +33,7 @@ def cadastro():
 
         try:
             cursor.execute('Select 1 from USUARIOS u where u.EMAIL = ?', (email,))
-            if cursor.fetchone(): #se existir algum usuario com o email passado
+            if cursor.fetchone(): #se existir algum usuario com o email cadastrado
                 flash("Erro: Email já cadastrado", 'error')
                 return redirect(url_for('cadastro'))
             elif request.method=='POST':
@@ -100,7 +100,7 @@ def logar():
         usuario = cursor.fetchone()
         if usuario :
             if usuario[3] >= 3:
-                flash("Conta bloqueada após 3 tentativas inválidas. Conta bloqueada.")
+                flash("Conta bloqueada após 3 tentativas inválidas")
                 return redirect(url_for('login'))
             if check_password_hash(usuario[1], senha):
                 session['id_pessoa'] = usuario[2]
@@ -112,11 +112,11 @@ def logar():
                 # Senha incorreta
                 cursor.execute("UPDATE USUARIOS SET TENTATIVAS = TENTATIVAS + 1 WHERE EMAIL = ?", (email,))
                 con.commit()
-                flash("Senha ou email incorreto")
+                flash("Senha ou Email incorreto")
                 return redirect(url_for('login'))
         else:
             # Usuário não existe
-            flash("Usuario Inezistente")
+            flash("Usuario inexistente", 'warning')
             return redirect(url_for('cadastrar'))
     finally:
         cursor.close()
@@ -126,13 +126,13 @@ app.route('/logout')
 def logout():
     session.pop('id_pessoa', None)
     flash("Logout realizado com sucesso")
-    return redirect(url_for('html/login.html'))
+    return redirect(url_for('/'))
 
 @app.route('/perfil')
 def perfil():
     user_id = session.get('id_pessoa')
     if not user_id:
-        flash('Você precisa estar logado para acessar seu perfil.')
+        flash('Você precisa estar logado para acessar seu perfil')
         return redirect(url_for('login'))
 
     cursor = con.cursor()
@@ -187,7 +187,7 @@ def editarperfil():
             WHERE ID_PESSOA = ?
         """, (nome, email, telefone, user_id))
         con.commit()
-        flash('Perfil atualizado com sucesso.')
+        flash('Perfil atualizado com sucesso')
         return redirect(url_for('perfil'))
     finally:
         cursor.close()

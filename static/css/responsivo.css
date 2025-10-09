@@ -575,7 +575,7 @@
     .textoinicial h1{
         font-size: 1.6em;
         text-align: left;
-        margin-left: 58px;
+        margin-left: 93px;
         width: 8em;
         margin-top: -2em;
     }
@@ -598,10 +598,16 @@
         margin-left: 2.6em;
     }
     .img-caixa{
-        margin-left: 2.5em;
+        margin-left: 0.5em;
+    }
+    .gestao-produtos{
+        margin-left: 0em;
+    }
+    .img-dinheiro{
+        margin-left: -1em;
     }
     .preci-inteligente{
-        margin-left: 2.5em;
+        margin-left: 1em;
     }
     .card-depoimento:not(:first-child){
         display: none;
@@ -658,10 +664,10 @@
         width: 100%; /* Define a LARGURA como 100% do elemento pai */
      }
     .form-login{
-        margin-left: 4em;
+        margin-left: 2.5em;
         height: 23em;
         height: 16em;
-        margin-top: -1em;
+        margin-top: -0.5em;
     }
     form input{
         width: 95%;
@@ -685,16 +691,16 @@
     }
     .funcoes{
         flex-direction: column;
-        margin-left: -10em;
+        margin-left: -11em;
     }
     .funcoeslucro{
         flex-direction: column;
-        margin-left: -10em;
+        margin-left: -11em;
     }
 
     /* Perfil */
     .foto-pessoa{
-        margin-left: 6.5em;
+        margin-left: 1.5em;
     }
     .infPessoa{
         flex-direction: column;
@@ -703,16 +709,48 @@
         font-size: 1.5em;
         margin-top: 1em;
     }
+    .PessoaB{
+        margin-left: 1em;
+    }
+    .nome-usuario {
+    color: #8B9550;
+    font-family: 'Lato';
+    font-weight: lighter;
+    font-size: 1em;
+    }
+    .email-usuario {
+    color: #8B9550;
+    font-family: 'Lato';
+    font-weight: lighter;
+    font-size: 1em;
+    }
+    .telefone-usuario {
+    color: #8B9550;
+    font-family: 'Lato';
+    font-weight: lighter;
+    font-size: 1em;
+    }
 
     /* Edição Perfil */
     .form-edicao-perfil{
-        margin-left: 2em;
+        margin-left: -2em;
+        margin-top: 2em;
     }
     .botaoEditP{
-        gap: 1em;
-        flex-direction: column;
+       gap: 1em;
+        margin-left: 0em;
+        display: flex;
+    }
+    .titulo-edicao-perfil h1{
+        margin-left: -2em;
+        margin-top: -3em;
+    }
+    .foto-pessoa2{
+        margin-left: -2em;
+        margin-top: -5em;
     }
 
+    /* Não sei perdido */
     .beneficio{
         flex-wrap: wrap;
         align-items: center;
@@ -732,77 +770,8 @@
     .card-depoimento:not(:first-child) {
     display: none;
   }
-  /* cadastro */
-  .fundo-cadastro{
-    background-image: url(../img/Fundo_Login_Responcivo.png);
-    background-repeat: no-repeat; /* Impede que a imagem de fundo se repita */
-    background-position: center; /* Centraliza a imagem de fundo */
-    background-size: cover; /* Faz a imagem de fundo cobrir toda a área do elemento */
-    text-align: center; /* Centraliza o conteúdo do texto horizontalmente */
-    padding-top: 100px; /* Adiciona espaço acima do conteúdo (afasta do topo) */
-    height: 42em; /* Define a ALTURA da seção como 600px */
-    width: 100%; /* Define a LARGURA como 100% do elemento pai */
-  }
-  .form-cadastro{
-    margin-left: 1em;
-    height: 23em;
-    margin-top: 7em;
-    width: 12em;
-    
-  }
-  form input{
-    width: 95%;
-    justify-content: center;
-    align-items: center;
-  }
-  .form-cadastro label{
-    display: none;
-  }
 
-  /* login */
-  .fundo-login{
-    background-image: url(../img/Fundo_Login_Responcivo.png);
-    background-repeat: no-repeat; /* Impede que a imagem de fundo se repita */
-    background-position: center; /* Centraliza a imagem de fundo */
-    background-size: cover; /* Faz a imagem de fundo cobrir toda a área do elemento */
-    text-align: center; /* Centraliza o conteúdo do texto horizontalmente */
-    padding-top: 100px; /* Adiciona espaço acima do conteúdo (afasta do topo) */
-    height: 600px; /* Define a ALTURA da seção como 600px */
-    width: 100%; /* Define a LARGURA como 100% do elemento pai */
-  }
-  .form-login{
-    margin-left: 2em;
-    height: 18em;
-    width: 11em;
-  }
-    .titulo-login {
-        margin-left: 1em;
-        margin-top: 5em;
-    }
-    /* lucro */
-    .lucro h1{
-        margin-left: -5em;
-    }
-    .funcoes{
-        flex-direction: column;
-        margin-left: -13em;
-    }
-    .funcoes-card{
-        width: 10em;
-    }
-    .funcoeslucro{
-        flex-direction: column;
-        margin-left: -13em;
-        justify-content: center;
-    }
-    /* perfil */
-    .infPessoa {
-        flex-direction: column;
-        margin-left: 0;
-    }
-    .foto-pessoa{
-       margin-left: 0;
-    }
+    
     /* insumos */
     .campo-demonstrar{
         width: 14em;
@@ -817,17 +786,14 @@
         color: var(--Preto--); /* Cor do texto */
     }
     
-
     .conjunto-login {
         flex-direction: column;
         gap: 2em;
     }
-
     .botoes2 {
         
         gap: 3em;
     }
-
     .campo-produto-indiv {
     width: 70%;
     }
