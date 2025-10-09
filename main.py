@@ -106,17 +106,17 @@ def logar():
                 session['id_pessoa'] = usuario[2]
                 cursor.execute("UPDATE USUARIOS SET TENTATIVAS = 0 WHERE EMAIL = ?", (email,))
                 con.commit()
-                flash("Login realizado com sucesso")
+                flash("Login realizado com sucesso!")
                 return redirect(url_for('lucro'))
             else:
                 # Senha incorreta
                 cursor.execute("UPDATE USUARIOS SET TENTATIVAS = TENTATIVAS + 1 WHERE EMAIL = ?", (email,))
                 con.commit()
-                flash("Senha ou Email incorreto")
+                flash("Senha ou Email incorreto!")
                 return redirect(url_for('login'))
         else:
             # Usuário não existe
-            flash("Usuario inexistente", 'warning')
+            flash("Usuario inexistente!", 'warning')
             return redirect(url_for('cadastrar'))
     finally:
         cursor.close()

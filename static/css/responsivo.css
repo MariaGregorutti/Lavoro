@@ -558,6 +558,26 @@
 
 
 @media (max-width: 321px){
+    /* Mensagens Flash */
+        .flash{
+        margin-left: -7em;
+        transform: scale(0.8); /* reduz o tamanho */
+        margin-top: 5em;
+
+    }
+    .flash.success{
+        background-color: #9cdb50ea;
+    }
+    .flash.error {
+        background-color: #e86161; 
+        margin-top: 6em;
+    }
+
+    .flash.warning {
+        background-color: rgba(232, 183, 59, 0.959);
+    }
+
+
 
     /* Home */
 
@@ -586,7 +606,7 @@
     }
     .botaocadastro{
         margin-top: -2em;
-        margin-left: -5em;
+        margin-left: -4em;
         padding: 0.5em;
     }
 
@@ -623,6 +643,9 @@
         flex-direction: column;
         align-items: center;
     }
+    .formulario .BotaoVerde{
+        margin-left: 0em;
+    }
 
     /* Cadastro */
     .fundo-cadastro{
@@ -636,9 +659,9 @@
         width: 100%; /* Define a LARGURA como 100% do elemento pai */
      }
     .form-cadastro{
-        margin-left: 1em;
-        height: 32em;
-        margin-top: 3em;
+        margin-left: 1.5em;
+        height: 26em;
+        margin-top: 8em;
         width: 12em;
     }
     form input{
@@ -681,7 +704,20 @@
         margin-left: 0em;
         margin-top: 6em; 
     }
-
+    .conjunto-login .BotaoVerde{
+        margin-top: -1em;
+        transform: scale(0.9);
+        display: block;
+    }
+    .conjunto-login .BotaoMarrom{
+        margin-top: -1em;
+        transform: scale(0.9);
+        border-radius: var(--BordaPoucoRedonda--);
+    }
+    .conjunto-login{
+        display: ruby-text;
+        margin-left: -0.5em;
+    }
     /* Lucro */
     .lucro h1{
         margin-left: -5em;
