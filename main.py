@@ -7,7 +7,7 @@ app = Flask(__name__)
 app.secret_key = 'OI'
 
 host = 'localhost'
-database = r'C:\Users\Aluno\Desktop\Maria\Lavoro\BANCO.FDB'
+database = r'C:\Users\Aluno\Desktop\Maria 2\Lavoro\BANCO.FDB'
 user = 'SYSDBA'
 password = 'sysdba'
 
@@ -28,6 +28,32 @@ def cadastro():
         nome = request.form['nome']
         telefone = request.form['telefone']
         email = request.form['email']
+        senha_V = request.form['senha']
+        confirmarSenha = request.form['senha_c']
+
+        t_maiscula = False
+        t_minuscula = False
+        t_numero = False
+        t_especial = False
+        e_igual = False
+
+        for c in senha_V:
+            if c.isupper():
+                t_maiscula = True
+            if c.islower():
+                t_minuscula = True
+            if c.isdigit():
+                t_numero = True
+            if not c.isalnum():
+                t_especial = True
+            if senha_V == confirmarSenha:
+                e_igual = True
+                                    
+        # verificação de segurança de senha
+        if not (t_especial == True and t_maiscula == True and t_minuscula == True and t_numero == True and e_igual == True):
+            flash('Senha precisa ter 8+, letra maiúscula, minúscula, número e caractere especial.', 'error')
+            return render_template('html/cadastro.html')
+
 
         cursor = con.cursor()
 
@@ -35,51 +61,16 @@ def cadastro():
             cursor.execute('Select 1 from USUARIOS u where u.EMAIL = ?', (email,))
             if cursor.fetchone(): #se existir algum usuario com o email cadastrado
                 flash("Erro: Email já cadastrado", 'error')
-                return redirect(url_for('cadastro'))
-            elif request.method=='POST':
-                t_maiscula = False
-                t_minuscula = False
-                t_numero = False
-                t_especial = False
-                e_igual = False
-                senha_V = request.form['senha']
-                confirmarSenha = request.form['senha_c']
-
-            for c in senha_V:
-                if c.isupper():
-                    t_maiscula = True
-                if c.islower():
-                    t_minuscula = True
-                if c.isdigit():
-                    t_numero = True
-                if not c.isalnum():
-                    t_especial = True
-            if senha_V == confirmarSenha:
-                e_igual = True
-            if not t_maiscula:
-                flash('A senha deve Ter pelo menos uma letra maiuscula', 'warning')
-            if not t_minuscula:
-                flash('A senha deve ter pelo menos uma letra minuscula', 'warning')
-            if not t_numero:
-                flash('A senha deve ter pelo menos um numero', 'warning')
-            if not t_especial:
-                flash('A senha deve ter pelo menos um caractere especial', 'warning')
-            if not e_igual:
-                flash('As senhas são diferentes', 'warning')
-        
-
-                
-            # verificação de segurança de senha
-            if not (t_especial == True and t_maiscula == True and t_minuscula == True and t_numero == True and e_igual == True):
-                return(redirect(url_for('cadastro')))
-
+                return render_template('html/cadastro.html')
+              
             senha_cryptografada = generate_password_hash(senha_V).decode('utf-8')
             cursor.execute('INSERT INTO USUARIOS  ( NOME, EMAIL,TELEFONE, SENHA) VALUES (?,?,?,?)', (nome, email,telefone, senha_cryptografada))
             con.commit()
+            flash('Usuario cadastrado com sucesso!', 'success')
+            return render_template('html/login.html')
         finally:
             cursor.close()
-        flash('Usuario cadastrado com sucesso', 'success')
-    return redirect(url_for('login'))
+    return render_template('html/cadastro.html')
 
 @app.route('/lucro')
 def lucro():
@@ -125,8 +116,8 @@ def logar():
 @app.route('/logout')
 def logout():
     session.pop('id_pessoa', None)
-    flash("Logout realizado com sucesso")
-    return redirect(url_for('/'))
+    flash("Logout realizado com sucesso!")
+    return redirect(url_for('index'))
 
 @app.route('/perfil')
 def perfil():
