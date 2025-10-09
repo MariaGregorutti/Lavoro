@@ -14,7 +14,7 @@
     <header>
         <img src="../../static/img/logo.png" alt="Logo da Lavoro">
         <div class="celularCabe">
-            <button type="submit" class="botao-sair"><a class="linkUnico" href="home.html">Sair</a></button>
+            <a type="submit" class="botao-sair linkUnico" href="logout">Sair</a>
             <button id="tresRiscos" class="botaohomeLogado" aria-label="Abrir menu">
                 <span></span>
                 <span></span>
@@ -23,9 +23,8 @@
         </div>
         <div class="fundobarra2 d-flex">
             <nav class="navegar d-flex">
-                <button id="Fechar" class="fechar">Fechar</button>
-                <a href="perfil.html" class=" d-flex"><img src="../../static/img/Pessoa.png"
-                        alt="Icone de pessoa">Perfil</a>
+                <a href="logout" id="Fechar" class="logout">Fechar</a>
+                <a href="perfil" class=" d-flex"><img src="../../static/img/Pessoa.png" alt="Icone de pessoa">Perfil</a>
                 <a href="insumos.html" class="linksn d-flex"><img src="../../static/img/carrinho_insumos.png"
                         alt="Icone de Insumos">Insumos</a>
                 <a href="produto.html" class="linksn d-flex"><img src="../../static/img/caixa_de_produto.png"
@@ -43,36 +42,30 @@
 
         <section>
             <div class="titulo-edicao-perfil">
-                <h1>Editar Perfil</h1> 
+                <h1>Editar Perfil</h1>
             </div>
-            <form class="form-edicao-perfil">
+            <form class="form-edicao-perfil" method="POST" action="{{ url_for('editarperfil') }}">
                 <div>
                     <label class="nome-edicao-perfil">Nome</label>
-                    <input class="edicaoP" type="text" id="nome-edicao-perfil" name="nome-edicao-perfil"
-                        labels="Coloque o novo nome" required>
+                    <input class="edicaoP" type="text" name="nome-edicao-perfil" value="{{ usuario[1] }}" required>
                 </div>
 
                 <div>
                     <label class="email-edicao-perfil">Email</label>
-                    <input class="edicaoP" type="text" id="email-edicao-perfil" name="email-edicao-perfil"
-                        labels="Coloque o novo E-Mail" required>
+                    <input class="edicaoP" type="text" name="email-edicao-perfil" value="{{ usuario[2] }}" required>
                 </div>
 
                 <div>
                     <label class="tel-edicao-perfil">Telefone</label>
-                    <input class="edicaoP" type="number" id="tel-edicao-perfil" name="tel-edicao-perfil"
-                        labels="Coloque o novo numero" required>
+                    <input class="edicaoP" type="number" name="tel-edicao-perfil" value="{{ usuario[3] }}" required>
                 </div>
 
                 <div class="botaoEditP d-flex">
-                    <button class="BotaoVerde" type="submit"><a href="perfil.html">Salvar</a></button>
-
-                    <a class="linkUnico BotaoVermelho" href="perfil.html">Cancelar</a>
-
-
+                    <button class="BotaoVerde" type="submit">Salvar</button>
+                    <a class="linkUnico BotaoVermelho" href="{{ url_for('perfil') }}">Cancelar</a>
                 </div>
-
             </form>
+
         </section>
 
     </main>

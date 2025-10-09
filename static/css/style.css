@@ -52,6 +52,38 @@ html {
     --TamanhoBotao--: 0.5rem 2rem;
     --TamanhoBotaoAd--: 0.4rem 1rem;
 }
+/*Flash*/
+/* Estilo das mensagens de flash */
+.flash-messages {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.flash {
+    padding: 12px;
+    margin: 10px auto;
+    border-radius: 10px;
+    font-weight: bold;
+    max-width: 600px;
+}
+
+/* Tipos de flash */
+.flash.success {
+    background-color: #2e7d32;
+    color: #d0ffd0;
+}
+
+.flash.error {
+    background-color: #c62828;
+    color: #ffdada;
+}
+
+.flash.info {
+    background-color: #1565c0;
+    color: #d0e7ff;
+}
+
+
 
 .d-flex {
     display: flex;
