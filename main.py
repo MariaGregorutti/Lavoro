@@ -122,7 +122,7 @@ def logar():
         cursor.close()
         
 
-app.route('/logout')
+@app.route('/logout')
 def logout():
     session.pop('id_pessoa', None)
     flash("Logout realizado com sucesso")
