@@ -808,7 +808,7 @@
   }
 
     
-    /* insumos */
+    /* insumos/Produto */
     .campo-demonstrar{
         width: 14em;
     }
@@ -900,6 +900,62 @@
             margin-top: 0.8em;
             width: 8em;
         }
-    }
 
-    
+        /* Editar Produto */
+        .edicao{
+            height: 24em;
+            width: 14em;
+            margin-left: 1.3em;
+        }
+        .nome-produto{
+            margin-top: 3em;
+        }
+        .botoes-edicao{
+            flex-direction: unset;
+            margin-left: -1.3em;
+            transform: scale(0.9);
+        }
+
+        /* cadastroDeinsumos */
+        .selecionar-insumos{
+            width: 13em;
+            margin-left: 0.5em;
+        }
+        .selecionar-insumos h2{
+            font-size: 1.5em;
+        }
+        .selecionar-insumos .BotaoVerde{
+            margin-top: 2em;
+            width: 7em;
+            height: 3em;
+        }
+        .item{
+            width: 16em;
+            margin-left: -2em;
+            height: 4em;
+
+        }
+
+        /* Cadastro do insumo */
+        .cardastro{
+            width: 14.5em;
+            height: 27em;
+        }
+        .cardastro .botoes{
+            margin-top
+        }
+
+        /* Tabela */
+        .card {
+            width: 15em;
+        }
+        .card table{
+            transform: scale(0.7);
+        margin-top: -2em;
+        }
+        .card .BotaoVerde{
+            height: 1.5em;
+            width: 2em;
+        }
+        
+    }
