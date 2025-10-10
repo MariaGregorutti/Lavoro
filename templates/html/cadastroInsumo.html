@@ -27,14 +27,13 @@
         </div>
         <div class="fundobarra2 d-flex">
             <nav class="navegar d-flex">
-                <a href="logout" id="Fechar" class="logout">Fechar</a>
-                <a href="perfil" class=" d-flex"><img src="../../static/img/Pessoa.png"
+                <a href="{{url_for('perfil')}}" class="linksn d-flex"><img src="../../static/img/Pessoa.png"
                         alt="Icone de pessoa">Perfil</a>
-                <a href="insumos.html" class="linksn d-flex"><img src="../../static/img/carrinho_insumos.png"
+                <a href="{{url_for('insumos')}}" class="linksn d-flex"><img src="../../static/img/carrinho_insumos.png"
                         alt="Icone de Insumos">Insumos</a>
-                <a href="produto.html" class="linksn d-flex"><img src="../../static/img/caixa_de_produto.png"
+                <a href="{{url_for('produtos')}}" class="linksn d-flex"><img src="../../static/img/caixa_de_produto.png"
                         alt="Icone da caixa de produtos">Produtos</a>
-                <a href="lucro.html" class="linksn d-flex"><img src="../../static/img/icone_lucratividade.png"
+                <a href="{{url_for('lucro')}}" class="linksn d-flex"><img src="../../static/img/icone_lucratividade.png"
                         alt="Icone de um saco de dinheiro">Lucratividade</a>
             </nav>
         </div>
@@ -45,13 +44,13 @@
         <div class="fundobarra">
             <h4> Funcionalidades </h4>
             <nav class="navegar d-flex">
-                <a href="perfil" class="linksn d-flex"><img src="../../static/img/Pessoa.png"
+                <a href="{{url_for('perfil')}}" class="linksn d-flex"><img src="../../static/img/Pessoa.png"
                         alt="Icone de pessoa">Perfil</a>
-                <a href="insumos.html" class="linksn d-flex"><img src="../../static/img/carrinho_insumos.png"
+                <a href="{{url_for('insumos')}}" class="linksn d-flex"><img src="../../static/img/carrinho_insumos.png"
                         alt="Icone de Insumos">Insumos</a>
-                <a href="produto.html" class="linksn d-flex"><img src="../../static/img/caixa_de_produto.png"
+                <a href="{{url_for('produtos')}}" class="linksn d-flex"><img src="../../static/img/caixa_de_produto.png"
                         alt="Icone da caixa de produtos">Produtos</a>
-                <a href="lucro.html" class="linksn d-flex"><img src="../../static/img/icone_lucratividade.png"
+                <a href="{{url_for('lucro')}}" class="linksn d-flex"><img src="../../static/img/icone_lucratividade.png"
                         alt="Icone de um saco de dinheiro">Lucratividade</a>
             </nav>
         </div>
@@ -73,8 +72,8 @@
 
 
                     <div class="botoes">
-                        <button type="submit" class="BotaoVermelho"><a href="insumos.html">Cancelar</a></button>
-                        <button type="submit" class="BotaoVerde"><a href="insumos.html">Cadastrar</a></button>
+                        <button type="submit" class="BotaoVermelho"><a href="{{url_for('insumos')}}">Cancelar</a></button>
+                        <button type="submit" class="BotaoVerde"><a href="{{url_for('insumos')}}">Cadastrar</a></button>
                     </div>
                 </form>
             </div>

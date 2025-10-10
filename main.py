@@ -1,5 +1,4 @@
 from flask import Flask , render_template, request, flash, redirect, url_for, session, send_file, send_from_directory
-from fpdf import FPDF
 import fdb
 from flask_bcrypt import generate_password_hash, check_password_hash
 
@@ -18,7 +17,7 @@ def index():
 
     return render_template('html/home.html')
 
-@app.route('/cadatrar')
+@app.route('/cadastrar')
 def cadastrar():
     return render_template('html/cadastro.html', titulo="Cadastro")
 
@@ -72,9 +71,7 @@ def cadastro():
             cursor.close()
     return render_template('html/cadastro.html')
 
-@app.route('/lucro')
-def lucro():
-    return render_template('html/lucro.html')
+
 
 @app.route('/login')
 def login():
@@ -183,6 +180,37 @@ def editarperfil():
     finally:
         cursor.close()
 
+@app.route('/insumos')
+def insumos():
+    return render_template('html/insumos.html')
+
+@app.route('/produto')
+def produtos():
+    return render_template('html/produto.html')
+
+@app.route('/lucro')
+def lucro():
+    return render_template('html/lucro.html')
+
+@app.route('/cadastroInsumo')
+def cadastroInsumo():
+    return render_template('html/cadastroInsumo.html')
+
+@app.route('/editarInsumo')
+def editarInsumo():
+    return render_template('html/editarInsumo.html')
+
+@app.route('/cadastrarProduto')
+def cadastrarProduto():
+    return render_template('html/cadastrarProduto.html')
+
+@app.route('/editarProduto')
+def editarProduto():
+    return render_template('html/editarProduto.html')
+
+@app.route('/produtoDesfoque')
+def produtoDesfoque():
+    return render_template('html/produto.desfoque.html')
 
 if __name__ == '__main__':
     app.run(debug=True)
