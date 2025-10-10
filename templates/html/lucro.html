@@ -16,7 +16,7 @@ initial-scale=1.0">
      <header>
         <img src="../../static/img/logo.png" alt="Logo da Lavoro">
         <div class="celularCabe">
-            <a type="submit" class="botao-sair linkUnico" href="url_for{{logout}}">Sair</a>
+            <a type="submit" class="botao-sair linkUnico" href="logout">Sair</a>
             <button id="tresRiscos" class="botaohomeLogado" aria-label="Abrir menu">
                 <span></span>
                 <span></span>
@@ -26,7 +26,9 @@ initial-scale=1.0">
         <div class="fundobarra2 d-flex">
             <nav class="navegar d-flex">
                 <a href="logout" id="Fechar" class="logout">Fechar</a>
-                <a href="perfil" class=" d-flex"><img src="../../static/img/Pessoa.png" alt="Icone de pessoa">Perfil</a>
+                <a href="{{ url_for('perfil') }}" class="d-flex">
+                    <img src="{{ url_for('static', filename='img/Pessoa.png') }}" alt="Icone de pessoa">Perfil
+                </a>
                 <a href="{{url_for('insumos')}}" class="linksn d-flex"><img src="../../static/img/carrinho_insumos.png" alt="Icone de Insumos">Insumos</a>
                 <a href="{{url_for('produtos')}}" class="linksn d-flex"><img src="../../static/img/caixa_de_produto.png" alt="Icone da caixa de produtos">Produtos</a>
                 <a href="{{url_for('lucro')}}" class="linksn d-flex"><img src="../../static/img/icone_lucratividade.png" alt="Icone de um saco de dinheiro">Lucratividade</a>
@@ -69,11 +71,11 @@ initial-scale=1.0">
             <div class="funcoeslucro">
                 <div class="funcoeslucro-card">
 
-                    <a href="grafico.html"><img src="../../static/img/graficos.png" alt="Ícone grafico"></a>
+                    <a href="{{url_for('grafico')}}"><img src="../../static/img/graficos.png" alt="Ícone grafico"></a>
                     <h3>Graficos</h3>
                 </div>
                 <div class="funcoeslucro-card">
-                    <a href="tabela.html"><img src="../../static/img/tabelas.png" alt="Ícone tabela"></a>
+                    <a href="{{url_for('tabela')}}"><img src="../../static/img/tabelas.png" alt="Ícone tabela"></a>
                     <h3>Tabela</h3>
                 </div>
             </div>

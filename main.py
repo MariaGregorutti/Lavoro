@@ -14,7 +14,6 @@ con = fdb.connect(host=host, database=database,user=user, password=password)
 
 @app.route('/')
 def index():
-
     return render_template('html/home.html')
 
 @app.route('/cadastrar')
@@ -135,9 +134,87 @@ def perfil():
         return render_template('html/perfil.html', usuario=usuario, titulo='Perfil')
     finally:
         cursor.close()
+#
+# @app.route('/editarperfil', methods=['GET'])
+# def abrir_editarperfil():
+#     user_id = session.get('id_pessoa')
+#     if not user_id:
+#         flash('Você precisa estar logado para editar seu perfil.')
+#         return redirect(url_for('login'))
+#
+#     cursor = con.cursor()
+#     try:
+#         cursor.execute("SELECT ID_PESSOA, NOME, EMAIL, TELEFONE FROM USUARIOS WHERE ID_PESSOA = ?", (user_id,))
+#         usuario = cursor.fetchone()
+#
+#         if not usuario:
+#             flash('Usuário não encontrado.')
+#             return redirect(url_for('perfil'))
+#
+#         return render_template('html/edicao_perfil.html', usuario=usuario, titulo='Editar Perfil')
+#     finally:
+#         cursor.close()
 
-@app.route('/editarperfil', methods=['GET'])
-def abrir_editarperfil():
+
+
+# @app.route('/editarperfil/<int:id>', methods=['GET', 'POST'])
+# def editarperfil(id):
+#     user_id = session.get('id_pessoa')
+#     if not user_id:
+#         flash('Você precisa estar logado para editar seu perfil.')
+#         return redirect(url_for('login'))
+#
+#     cursor = con.cursor()
+#     try:
+#         cursor.execute("SELECT ID_PESSOA, NOME, EMAIL, TELEFONE, SENHA FROM USUARIOS WHERE ID_PESSOA = ?", (id,))
+#         usuario = cursor.fetchone()
+#
+#         if not usuario:
+#             flash('Usuário não encontrado.')
+#             return redirect(url_for('perfil'))
+#         if request.method == 'POST':
+#             nome = request.form.get('nome-edicao-perfil')
+#             email = request.form.get('email-edicao-perfil')
+#             telefone = request.form.get('tel-edicao-perfil')
+#             senha = request.form.get('senha')
+#
+#             if senha:
+#                 for c in senha:
+#                     if c.isupper():
+#                         t_maiscula = True
+#                     if c.islower():
+#                         t_minuscula = True
+#                     if c.isdigit():
+#                         t_numero = True
+#                     if not c.isalnum():
+#                         t_especial = True
+#
+#                     # verificação de segurança de senha
+#                 if not (
+#                         t_especial == True and t_maiscula == True and t_minuscula == True and t_numero == True and e_igual == True):
+#                     flash('Senha precisa ter 8+, letra maiúscula, minúscula, número e caractere especial.', 'error')
+#                     return redirect(url_for('perfil'))
+#
+#                 senha_hash = generate_password_hash(senha).decode('utf-8')
+#             else:
+#                 senha_hash = usuario[4]
+#
+#             cursor = con.cursor()
+#
+#             cursor.execute("""
+#                 UPDATE USUARIOS
+#                 SET NOME = ?, EMAIL = ?, TELEFONE = ?, SENHA = ?
+#                 WHERE ID_PESSOA = ?
+#             """, (nome, email, telefone,senha_hash, id))
+#             con.commit()
+#             flash('Perfil atualizado com sucesso')
+#             return redirect(url_for('perfil'))
+#     finally:
+#         cursor.close()
+
+
+@app.route('/editarperfil/<int:id>', methods=['GET', 'POST'])
+def editarperfil(id):
     user_id = session.get('id_pessoa')
     if not user_id:
         flash('Você precisa estar logado para editar seu perfil.')
@@ -145,72 +222,156 @@ def abrir_editarperfil():
 
     cursor = con.cursor()
     try:
-        cursor.execute("SELECT ID_PESSOA, NOME, EMAIL, TELEFONE FROM USUARIOS WHERE ID_PESSOA = ?", (user_id,))
+        cursor.execute("SELECT ID_PESSOA, NOME, EMAIL, TELEFONE, SENHA FROM USUARIOS WHERE ID_PESSOA = ?", (id,))
         usuario = cursor.fetchone()
 
         if not usuario:
             flash('Usuário não encontrado.')
             return redirect(url_for('perfil'))
 
+        if request.method == 'POST':
+            nome = request.form.get('nome-edicao-perfil')
+            email = request.form.get('email-edicao-perfil')
+            telefone = request.form.get('tel-edicao-perfil')
+            senha = request.form.get('senha')
+            # senha_confirm = request.form.get('senha-confirmar')  # se usar confirmação
+
+            if senha:
+                t_maiscula = False
+                t_minuscula = False
+                t_numero = False
+                t_especial = False
+
+                for c in senha:
+                    if c.isupper():
+                        t_maiscula = True
+                    if c.islower():
+                        t_minuscula = True
+                    if c.isdigit():
+                        t_numero = True
+                    if not c.isalnum():
+                        t_especial = True
+
+                if not (t_especial and t_maiscula and t_minuscula and t_numero):
+                    flash('Senha precisa ter 8+, letra maiúscula, minúscula, número e caractere especial.', 'error')
+                    return redirect(url_for('editarperfil', id=id))
+
+                if len(senha) < 8:
+                    flash('Senha deve ter no mínimo 8 caracteres.', 'error')
+                    return redirect(url_for('editarperfil', id=id))
+
+                senha_hash = generate_password_hash(senha)
+            else:
+                senha_hash = usuario[4]
+
+            cursor.execute("""
+                UPDATE USUARIOS 
+                SET NOME = ?, EMAIL = ?, TELEFONE = ?, SENHA = ?
+                WHERE ID_PESSOA = ?
+            """, (nome, email, telefone, senha_hash, id))
+            con.commit()
+            flash('Perfil atualizado com sucesso.')
+            return redirect(url_for('perfil'))
         return render_template('html/edicao_perfil.html', usuario=usuario, titulo='Editar Perfil')
     finally:
         cursor.close()
 
-@app.route('/editarperfil', methods=['POST'])
-def editarperfil():
-    user_id = session.get('id_pessoa')
-    if not user_id:
-        flash('Você precisa estar logado para editar seu perfil.')
-        return redirect(url_for('login'))
-
-    nome = request.form.get('nome-edicao-perfil')
-    email = request.form.get('email-edicao-perfil')
-    telefone = request.form.get('tel-edicao-perfil')
-
-    cursor = con.cursor()
-    try:
-        cursor.execute("""
-            UPDATE USUARIOS 
-            SET NOME = ?, EMAIL = ?, TELEFONE = ?
-            WHERE ID_PESSOA = ?
-        """, (nome, email, telefone, user_id))
-        con.commit()
-        flash('Perfil atualizado com sucesso')
-        return redirect(url_for('perfil'))
-    finally:
-        cursor.close()
 
 @app.route('/insumos')
 def insumos():
-    return render_template('html/insumos.html')
+    if 'id_pessoa' not in session:
+        flash('Você precisa estar logado para acessar seu perfil')
+        return redirect(url_for('login'))
+    else:
+        return render_template('html/insumos.html')
 
 @app.route('/produto')
 def produtos():
-    return render_template('html/produto.html')
+    if 'id_pessoa' not in session:
+        flash('Você precisa estar logado para acessar seu perfil')
+        return redirect(url_for('login'))
+    else:
+        return render_template('html/produto.html')
 
 @app.route('/lucro')
 def lucro():
-    return render_template('html/lucro.html')
+    if 'id_pessoa' not in session:
+        flash('Você precisa estar logado para acessar seu perfil')
+        return redirect(url_for('login'))
+    else:
+        return render_template('html/lucro.html')
 
 @app.route('/cadastroInsumo')
 def cadastroInsumo():
-    return render_template('html/cadastroInsumo.html')
+    if 'id_pessoa' not in session:
+        flash('Você precisa estar logado para acessar seu perfil')
+        return redirect(url_for('login'))
+    else:
+        return render_template('html/cadastroInsumo.html')
 
 @app.route('/editarInsumo')
 def editarInsumo():
-    return render_template('html/editarInsumo.html')
+    if 'id_pessoa' not in session:
+        flash('Você precisa estar logado para acessar seu perfil')
+        return redirect(url_for('login'))
+    else:
+        return render_template('html/editarInsumo.html')
 
 @app.route('/cadastrarProduto')
-def cadastrarProduto():
-    return render_template('html/cadastrarProduto.html')
+def cadastroProduto():
+    if 'id_pessoa' not in session:
+        flash('Você precisa estar logado para acessar seu perfil')
+        return redirect(url_for('login'))
+    else:
+        return render_template('html/cadastrarProduto.html')
 
 @app.route('/editarProduto')
 def editarProduto():
-    return render_template('html/editarProduto.html')
+    if 'id_pessoa' not in session:
+        flash('Você precisa estar logado para acessar seu perfil')
+        return redirect(url_for('login'))
+    else:
+        return render_template('html/editarProduto.html')
 
 @app.route('/produtoDesfoque')
 def produtoDesfoque():
-    return render_template('html/produto.desfoque.html')
+    if 'id_pessoa' not in session:
+        flash('Você precisa estar logado para acessar seu perfil')
+        return redirect(url_for('login'))
+    else:
+        return render_template('html/produto.desfoque.html')
+
+@app.route('/produtoIndividual')
+def produtoIndividual():
+    if 'id_pessoa' not in session:
+        flash('Você precisa estar logado para acessar seu perfil')
+        return redirect(url_for('login'))
+    else:
+        return render_template('html/produto_individual.html')
+
+@app.route('/cadastroDeInsumo')
+def cadastroDeInsumo():
+    if 'id_pessoa' not in session:
+        flash('Você precisa estar logado para acessar seu perfil')
+        return redirect(url_for('login'))
+    else:
+        return render_template('html/cadastroDeInsumo.html')
+
+@app.route('/grafico')
+def grafico():
+    if 'id_pessoa' not in session:
+        flash('Você precisa estar logado para acessar seu perfil')
+        return redirect(url_for('login'))
+    else:
+        return render_template('html/grafico.html')
+
+@app.route('/tabela')
+def tabela():
+    if 'id_pessoa' not in session:
+        flash('Você precisa estar logado para acessar seu perfil')
+        return redirect(url_for('login'))
+    else:
+        return render_template('html/tabela.html')
 
 if __name__ == '__main__':
     app.run(debug=True)

@@ -45,7 +45,8 @@
             <div class="titulo-edicao-perfil">
                 <h1>Editar Perfil</h1>
             </div>
-            <form class="form-edicao-perfil" method="POST" action="{{ url_for('editarperfil') }}">
+            <form class="form-edicao-perfil" method="POST" action="{{ url_for('editarperfil', id=usuario[0]) }}">
+
                 <div>
                     <label class="nome-edicao-perfil">Nome</label>
                     <input class="edicaoP" type="text" name="nome-edicao-perfil" value="{{ usuario[1] }}" required>
@@ -60,6 +61,12 @@
                     <label class="tel-edicao-perfil">Telefone</label>
                     <input class="edicaoP" type="number" name="tel-edicao-perfil" value="{{ usuario[3] }}" required>
                 </div>
+
+                <div>
+                    <label class="senha">Senha</label>
+                    <input class="edicaoP" type="password" name="senha"  >
+                </div>
+
 
                 <div class="botaoEditP d-flex">
                     <button class="BotaoVerde" type="submit">Salvar</button>

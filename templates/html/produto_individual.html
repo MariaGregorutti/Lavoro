@@ -49,7 +49,7 @@
                 <p class="IdP ajustP">Código: 01
                     <div class="d-flex ad-insumos ajustP">
                         <h4>Insumos: </h4>
-                        <a class="BotaoMarrom" href="cadastroDeInsumos.html">+</a>
+                        <a class="BotaoMarrom" href="{{url_for('cadastroDeInsumo')}}">+</a>
                     </div>
                     <div class="insumosP d-flex">
                         <p>farinha de trigo</p>
@@ -59,11 +59,11 @@
                     </div>
                     <div class="d-flex campo-lucro">
                         <p>Preço de Venda: R$ 20,40</p>
-                        <Button class="BotaoVerde"><a href="produto.desfoque.html">Lucro</a></Button>
+                        <Button class="BotaoVerde"><a href="{{url_for('produtoDesfoque')}}">Lucro</a></Button>
                     </div>
                     <div class="voltarP d-flex">
-                        <a href="" class="BotaoVermelho">Cancelar</a>
-                        <Button class="BotaoVerde"><a href="produto.html" >Ok</a></Button>
+                        <a href="{{url_for('produtos')}}" class="BotaoVermelho">Cancelar</a>
+                        <Button class="BotaoVerde"><a href="{{url_for('produtos')}}" >Ok</a></Button>
                     </div>
             </section>
         </div>
