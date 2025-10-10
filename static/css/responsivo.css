@@ -558,6 +558,7 @@
 
 
 @media (max-width: 320px){
+
     /* Mensagens Flash */
         .flash{
         margin-left: -7em;
@@ -808,32 +809,6 @@
   }
 
     
-    /* insumos/Produto */
-    .campo-demonstrar{
-        width: 14em;
-    }
-    .campoDeBusca input {
-            width: 15em;
-    }
-    .insumos{
-        background-color: var(--Branco--); /* Fundo branco */
-        padding: 0.3em 1em 0.3em 1em; /* Espaçamento vertical e horizontal */
-        border-radius: var(--BordaMuitoRedonda--); /* Bordas arredondadas */
-        color: var(--Preto--); /* Cor do texto */
-    }
-    
-    .conjunto-login {
-        flex-direction: column;
-        gap: 2em;
-    }
-    .botoes2 {
-        
-        gap: 3em;
-    }
-    .campo-produto-indiv {
-    width: 70%;
-    }
-
     /* pagina graficos */
         .graficos-card img {
             width: 12em;
@@ -916,33 +891,14 @@
             transform: scale(0.9);
         }
 
-        /* cadastroDeinsumos */
-        .selecionar-insumos{
-            width: 13em;
-            margin-left: 0.5em;
-        }
-        .selecionar-insumos h2{
-            font-size: 1.5em;
-        }
-        .selecionar-insumos .BotaoVerde{
-            margin-top: 2em;
-            width: 7em;
-            height: 3em;
-        }
-        .item{
-            width: 16em;
-            margin-left: -2em;
-            height: 4em;
-
-        }
-
+        
         /* Cadastro do insumo */
         .cardastro{
             width: 14.5em;
             height: 27em;
         }
         .cardastro .botoes{
-            margin-top
+            margin-top: ;
         }
 
         /* Tabela */
@@ -958,4 +914,23 @@
             width: 2em;
         }
         
+        /* Insumo */
+        .campo-demonstrar{
+            width: 16.5em;
+            height: 35em;
+        }
+        .insumos{
+            width: 13em;
+            margin-left: 0.3em;
+            height: 14em;
+        }
+
+        .insumos .info{
+            margin-left: -1em;
+            font-size: 1.1em;
+            line-height: 1.5em;
+        }
+        .insumos .BotaoVermelho{
+            margin-left: -1.2em;
+        }
     }
