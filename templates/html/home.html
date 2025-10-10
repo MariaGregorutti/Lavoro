@@ -31,6 +31,13 @@ initial-scale=1.0">
         </div>
     </header>
     <main>
+         {% with messages = get_flashed_messages(with_categories=true) %} {% if messages %}
+            <div class="flash-messages">
+                {% for category, message in messages %}
+                <div class="flash {{ category }}">{{ message }}</div>
+                {% endfor %}
+            </div>
+            {% endif %} {% endwith %}
         <section class="paginainicial">
             <div class="textoinicial">
                 <h1>Organize seus produtos e defina preços de forma simples e inteligente</h1>

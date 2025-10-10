@@ -557,7 +557,7 @@
 }
 
 
-@media (max-width: 321px){
+@media (max-width: 320px){
     /* Mensagens Flash */
         .flash{
         margin-left: -7em;
@@ -838,5 +838,66 @@
         .graficos-card img {
             width: 12em;
         }
-}
 
+    /* Produtos Individuais */
+        .NomeP {
+            margin-left: -1em;
+            margin-top: 0.5em;
+        }
+        .TempoDoP {
+            margin-left: -1.2em;
+        }
+        .IdP {
+            margin-left: -1.2em;
+        }
+        .ad-insumos{
+            margin-left: -1em;
+            margin-top: 0em;
+        }
+        .campo-lucro{
+            margin-left: -1em;
+        }
+        .voltarP {
+            display: flex;
+            margin-left: -2em;
+        }
+
+        /* Produto */
+        .campoDeBusca input{
+            width: 17em;
+            padding: 0.5em;
+        }
+        .produto{
+            padding: 5em;
+            margin-top: 1em;
+            height: 7em;
+            width: 5em;
+            margin-left: -0.5em;
+        }
+        .info{
+            margin-left: -3em;
+            font-size: 1.1em;
+            line-height: 1.5em;
+        }
+        .botoes-IP{
+            margin-left: 1.5em;
+        }
+        .botoes-IP .BotaoMarrom{
+            padding: 0.7em;
+            border-radius: var(--BordaPoucoRedonda--);
+            margin-left: -0.8em;
+        }
+
+        /* Produto desfoque */
+        .margem-lucro{
+            width: 15em;
+            height: 11em;
+        }
+        .margem-lucro input{
+            margin-top: 2em;
+        }
+        .margem-lucro button{
+            margin-top: 0.8em;
+            width: 8em;
+        }
+    }
