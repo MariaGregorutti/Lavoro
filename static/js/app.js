@@ -60,7 +60,7 @@ window.document.addEventListener("DOMContentLoaded", function () {
             }
         });
 
-    });
+    });                                                          
 
     //Limitar Caractere telefone
 
