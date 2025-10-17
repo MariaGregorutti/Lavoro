@@ -34,7 +34,7 @@
     </header>
     <main class="d-flex">
         <div class="fundobarra">
-            <h4> Funcionalidades </h4>
+            <h4> Funcionalidades </h4> 
             <nav class="navegar d-flex">
                 <a href="perfil" class="linksn d-flex"><img src="../../static/img/Pessoa.png" alt="Icone de pessoa">Perfil</a>
                 <a href="{{url_for('insumos')}}" class="linksn d-flex"><img src="../../static/img/carrinho_insumos.png" alt="Icone de Insumos">Insumos</a>
@@ -48,8 +48,8 @@
                 <div class="campoDeBusca">
                     <input type="text" labels="Buscar produto">
                     <div class="botoes2 d-flex">
-                        <button class="BotaoVerde">Buscar</button>
-                        <a href="{{url_for('cadastrarProduto')}}" class="BotaoMarrom">+</a>
+                        <img src="../../static/img/lupa.png" alt="lupa" class="lupa-insumo">
+                            <a href="{{url_for('cadastrarProduto')}}" class="BotaoMarrom">+</a>
                     </div>
                 </div>
             </div>
@@ -61,9 +61,9 @@
                     <p>1 h</p>
                 </div>
                 <div class="botoes-IP d-flex">
-                    <a class=" BotaoMarrom " href="{{url_for('editarProduto')}}">Editar</a>
-
-                    <button class="BotaoVermelho ">Excluir</button>
+                 <img src="../../static/img/lapis-edicao.png" alt="editar"></button>
+                
+                <img src="../../static/img/lixo.png" alt="excluir"></button>
                 </div>
             </div>
         </div>
@@ -88,6 +88,7 @@
                 <p>Lavoro@gmail.com</p>
             </div>
         </div>
+
     </footer>
 </body>
 
