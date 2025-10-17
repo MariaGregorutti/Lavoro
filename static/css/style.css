@@ -1024,9 +1024,17 @@ form input {
     gap: 2.8em; /* Espaço entre itens */
     margin: 0 1.2em 0 1.2em; /* Margem horizontal */
     background-color: var(--Branco--); /* Fundo branco */
-    padding: 0.3em 1em 0.3em 1em; /* Espaçamento vertical e horizontal */
+    padding: 0.7em 3em 0.9em 2.5em; /* Espaçamento vertical e horizontal */
     border-radius: var(--BordaMuitoRedonda--); /* Bordas arredondadas */
     color: var(--Preto--); /* Cor do texto */
+    margin-top: 1.5em;
+    border-style: groove;
+}
+.icone-editar{
+    height: 2.8em;
+}
+.icone-excluir{
+    height: 2.8em;
 }
 
 .insumos a {
@@ -1040,8 +1048,21 @@ form input {
 
 .campoDeBusca input {
     width: 55vh; /* Largura do input */
+    height: 2.5em;
+    margin-top: 3em;
+    background-color: var(--Branco--);
 }
 
+.botoes2 .BotaoMarrom{
+    height: 1.5em;
+    width: 0.7em;
+    margin-top: 1.8em;
+    
+}
+
+.lupa-insumo{
+    margin-top: 1.5em;
+}
 .campo-produto-indiv {
     background-color: var(--CinzaEscuro--); /* Fundo cinza escuro */
     margin: 0 auto; /* Centraliza horizontalmente */
@@ -1078,6 +1099,8 @@ form input {
     border-radius: var(--BordaMuitoRedonda--); /* Bordas arredondadas */
 }
 
+
+
 .voltarP {
     gap: 18em; /* Espaço entre itens */
     margin-top: 2em; /* Margem superior */
@@ -1087,6 +1110,7 @@ form input {
 
 .campo-demonstrar h3 {
     margin-left: 1em; /* Margem esquerda */
+    margin-top: 1.2em;
 }
 
 .campoDeBusca {
