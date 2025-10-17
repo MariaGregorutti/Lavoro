@@ -57,8 +57,9 @@
                     <h2>Buscar Insumos</h2>
                     <div class="campoDeBusca">
                         <input type="text" >
-                        <div class="botoes2 d-flex">
-                            <button class="BotaoVerde"><img src="../../static/img/lupa.png" alt="Buscar"></button>
+                        
+                        <div class="botoes2 ">
+                            
                             <a href="{{url_for('cadastroInsumo')}}" class="BotaoMarrom">+</a>
                         </div>
                     </div>
@@ -73,10 +74,16 @@
                         <p>{{ insumo[4] }}</p>
                     </div>
                     <div class="botoes-IP d-flex">
-                        <a class="BotaoMarrom" href="{{ url_for('editarInsumo', id=insumo[0]) }}"><img src="../../static/img/lapis-edicao.png" alt="Editar" class="icone-editar"></a>
-                        <form action="{{ url_for('excluirInsumo', id=insumo[0]) }}" method="POST" >
-                            <button type="submit" class="BotaoVermelho"><img src="../../static/img/lixo.png" alt="Excluir" class="icone-excluir"></button>
+                        <a class="editar" href="{{ url_for('editarInsumo', id=insumo[0]) }}">
+                            <img src="../../static/img/lapis-edicao.png" alt="Editar" class="icone-editar">
+                        </a>
+                        
+                        <form action="{{ url_for('excluirInsumo', id=insumo[0]) }}" method="POST">
+                            <button type="submit" class="exclusao">
+                                <img src="../../static/img/lixo.png" alt="Excluir" class="icone-excluir">
+                            </button>
                         </form>
+
 
                     </div>
                 </div>
