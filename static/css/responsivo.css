@@ -897,9 +897,7 @@
             width: 14.5em;
             height: 27em;
         }
-        .cardastro .botoes{
-            margin-top: ;
-        }
+        
 
         /* Tabela */
         .card {
@@ -933,4 +931,6 @@
         .insumos .BotaoVermelho{
             margin-left: -1.2em;
         }
+
+        /* cadastro De insumo */
     }

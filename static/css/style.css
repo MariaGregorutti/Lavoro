@@ -1163,10 +1163,13 @@ form input {
 }
 
 .selecionar-insumos h2 {
-    color: var(--BegeClaro--); /* Cor do texto */
+    color: var(--titulohome--); /* Cor do texto */
     font-size: 1.6em; /* Tamanho da fonte */
     margin-bottom: 20px; /* Espaço abaixo do título */
-    margin-left: ;
+    margin-left: 5em;
+}
+.selecionar-insumos .BotaoVerde{
+    margin-left: 7em;
 }
 
 .item {
@@ -1251,9 +1254,48 @@ form input {
 
 /* Parágrafo de unidade de medida */
 .item p {
-    font-size: 18px;
+    font-size: 17px;
     color: #000000;
     margin-top: 0;
+    font-weight: 400;
+}
+
+/* Insumo selecionado */
+.fundo-registro-insumo{
+    display: flex; /* Container flexível */
+    justify-content: space-between; /* Espaça itens igualmente */
+    align-items: center; /* Alinha itens verticalmente ao centro */
+    background: var(--BegeClaro--); /* Fundo cinza claro */
+    padding: 12px; /* Espaçamento interno */
+    margin: 50px 0; /* Margem vertical */
+    border-radius: 20px; /* Bordas arredondadas */
+    margin-left: 16em;
+    height: 20em;
+    width: 30em;
+}
+
+.fundo-registro-insumo h3{
+    text-align: center;   
+    font-size: 20px;      
+    font-weight: bold;    
+    margin-bottom: 13em;  
+    color: var(--titulohome--);   
+    margin-left: 2em;      
+
+
+}
+ 
+.botao-registro{
+    background: var(--BegeEscuro--);
+    padding: var(--TamanhoBotaoAd--);
+    color: var(--Branco--);
+    border: none;
+    border-radius: var(--BordaPoucoRedonda--);
+    margin-left: 3em;
+    font-size: large;
+    font-size: 15.6px; 
+    padding: 10px 10px; 
+    border-radius: 5px;
 }
 
 /* Margem de lucro */
