@@ -6,7 +6,7 @@ app = Flask(__name__)
 app.secret_key = 'OI'
 
 host = 'localhost'
-database = r'C:\Users\Aluno\Desktop\Maria 2\Lavoro\BANCO.FDB'
+database = r'C:\Users\Aluno\Desktop\Lavoro\BANCO.FDB'
 user = 'SYSDBA'
 password = 'sysdba'
 
@@ -46,12 +46,16 @@ def cadastro():
                 t_especial = True
             if senha_V == confirmarSenha:
                 e_igual = True
-                                    
+
+
         # verificação de segurança de senha
-        if not (t_especial == True and t_maiscula == True and t_minuscula == True and t_numero == True and e_igual == True):
+        if not (t_especial == True and t_maiscula == True and t_minuscula == True and t_numero == True):
             flash('Senha precisa ter 8+, letra maiúscula, minúscula, número e caractere especial.', 'error')
             return render_template('html/cadastro.html')
 
+        if not (e_igual == True):
+            flash('Senha não se coincidem')
+            return render_template('html/cadastro.html')
 
         cursor = con.cursor()
 
@@ -60,7 +64,7 @@ def cadastro():
             if cursor.fetchone(): #se existir algum usuario com o email cadastrado
                 flash("Erro: Email já cadastrado", 'error')
                 return render_template('html/cadastro.html')
-              
+
             senha_cryptografada = generate_password_hash(senha_V).decode('utf-8')
             cursor.execute('INSERT INTO USUARIOS  ( NOME, EMAIL,TELEFONE, SENHA) VALUES (?,?,?,?)', (nome, email,telefone, senha_cryptografada))
             con.commit()
@@ -107,7 +111,7 @@ def logar():
             return redirect(url_for('cadastrar'))
     finally:
         cursor.close()
-        
+
 
 @app.route('/logout')
 def logout():
@@ -286,7 +290,7 @@ def insumos():
         return render_template('html/insumos.html')
 
 @app.route('/produto')
-def produtos():
+def produto():
     if 'id_pessoa' not in session:
         flash('Você precisa estar logado para acessar seu perfil')
         return redirect(url_for('login'))
@@ -318,12 +322,12 @@ def editarInsumo():
         return render_template('html/editarInsumo.html')
 
 @app.route('/cadastrarProduto')
-def cadastroProduto():
+def cadastrarProduto():
     if 'id_pessoa' not in session:
         flash('Você precisa estar logado para acessar seu perfil')
         return redirect(url_for('login'))
     else:
-        return render_template('html/cadastrarProduto.html')
+        return render_template('cadastrarProduto.html')
 
 @app.route('/editarProduto')
 def editarProduto():
