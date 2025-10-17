@@ -42,40 +42,23 @@
                 <h2>Selecione os insumos desejados</h2>
 
                 <div class="item">
-                    <div class="item-1">Farinha de trigo</div>
-                    <div class="kilo">Kg</div>
+                    <select class="busca-insumo">
+                        <option value="op1">Farinha de Trigo</option>
+                    </select>
 
-                    <button class="check"><img src="../../static/img/check.png"></button>
+                    <label>Quantidade necessária</label>
+                    <input>
+                    <p>Unidade de medida: {{}}</p>
+                    
                 </div>
-
-                <div class="item">
-                    <div class="item-2">Farinha de trigo</div>
-                    <div class="kilo">Kg</div>
-
-                    <button class="check"><img src="../../static/img/check.png"></button>
-                </div>
-
-                <div class="item">
-                    <div class="item-3">Farinha de trigo</div>
-                    <div class="kilo">Kg</div>
-
-                    <button class="check"><img src="../../static/img/check.png"></button>
-                </div>
-
-                <div class="item">
-                    <div class="item-4">Farinha de trigo</div>
-                    <div class="kilo">Kg</div>
-
-                    <button class="check"><img src="../../static/img/check.png"></button>
-                </div>
-
-                <button class="BotaoVerde"><a href="{{url_for('cadastrarProduto')}}">Salvar</a></button>
-            </div>
+                <button class="BotaoVerde"><a href="{{url_for('cadastrarProduto')}}">Confirmar</a></button>
             </div>
         </section>
     </main>
 
 
+<!-- select com option para pesquisa -->
+<!-- um imput para colocar quantidade de uso do insumo para o produto-->
 
 
 

@@ -1148,11 +1148,10 @@ form input {
 
 
 /* Cadastrar produtos  */
+
+
 .selecionar-insumos {
-    background-color: var(--BegeEscuro--); /* Fundo bege escuro */
-    padding: 3em; /* Espaçamento interno */
-    border-radius: var(--BordaMuitoRedonda--); /* Bordas arredondadas */
-    width: 45em; /* Largura fixa */
+    
     margin: 0 auto; /* Margem superior/inferior e centralizado horizontalmente */
     text-align: center; /* Texto centralizado */
     margin-left: 7.5em; /* Margem esquerda */
@@ -1164,6 +1163,7 @@ form input {
     color: var(--BegeClaro--); /* Cor do texto */
     font-size: 1.6em; /* Tamanho da fonte */
     margin-bottom: 20px; /* Espaço abaixo do título */
+    margin-left: ;
 }
 
 .item {
@@ -1189,10 +1189,68 @@ form input {
     transition: 0.3s; /* Transição suave */
 }
 
-.check{
-    border: none;
-    background: transparent;
-    
+.item {
+    display: flex;
+    flex-direction: column;
+    gap: 10px; /* Espaçamento entre elementos */
+    width: 250px;
+    padding: 35px;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    background-color: var(--BegeClaro--);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+    font-family: 'lato', sans-serif;
+    margin-left: 8em;
+    width: 25em;
+    height: 13em;
+}
+
+/* select */
+.busca-insumo {
+    padding: 8px 12px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    background-color: var(--fundo--tabela);
+    font-size: 16px;
+    color: var(--Preto--);
+    cursor: pointer;
+    box-shadow: 0 4px 5px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+}
+
+.busca-insumo:focus {
+    border-color: var(--titulohome--);
+    box-shadow: 0 4px 10px rgba(85, 70, 29, 0.151);
+    outline: none;
+}
+
+/* Estilo do input */
+.item input {
+    padding: 10px 12px;
+    border-radius: 8px;
+    border: 1px solid var(--BegeEscuro--);
+    font-size: 16px;
+    transition: all 0.3s ease;
+}
+
+.item input:focus {
+    border-color: var(--titulobeneficios--);
+    box-shadow: 0 4px 10px rgba(92, 63, 29, 0.2);
+    outline: none;
+}
+
+/* Label estilizado */
+.item label {
+    font-weight: 500;
+    font-size: 18px;
+    color: #000000;
+}
+
+/* Parágrafo de unidade de medida */
+.item p {
+    font-size: 18px;
+    color: #000000;
+    margin-top: 0;
 }
 
 /* Margem de lucro */

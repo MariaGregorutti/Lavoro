@@ -87,4 +87,7 @@ window.document.addEventListener("DOMContentLoaded", function () {
    }
 });
 
+// Check caixa no selecionar
+
+
 
