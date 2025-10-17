@@ -286,8 +286,15 @@ def insumos():
     if 'id_pessoa' not in session:
         flash('Você precisa estar logado para acessar seu perfil')
         return redirect(url_for('login'))
-    else:
-        return render_template('html/insumos.html')
+
+    cursor = con.cursor()
+    try:
+        cursor.execute("SELECT ID_INSUMO, NOME, UNIDADE_MEDIDA, CUSTO_UNITARIO, ESTOQUE FROM INSUMOS")
+        insumos = cursor.fetchall()
+        return render_template('html/insumos.html', insumos=insumos)
+    finally:
+        cursor.close()
+
 
 @app.route('/produto')
 def produto():
@@ -305,21 +312,91 @@ def lucro():
     else:
         return render_template('html/lucro.html')
 
-@app.route('/cadastroInsumo')
+@app.route('/cadastroInsumo', methods=['POST','GET'])
 def cadastroInsumo():
     if 'id_pessoa' not in session:
         flash('Você precisa estar logado para acessar seu perfil')
         return redirect(url_for('login'))
-    else:
-        return render_template('html/cadastroInsumo.html')
+    if request.method == 'POST':
+        nomeinsumo = request.form['nomeinsumo']
+        unidademedida = request.form.get('unidademedida')
+        custounitario = request.form['custounitario']
+        estoque = request.form['estoque']
 
-@app.route('/editarInsumo')
-def editarInsumo():
+
+        cursor = con.cursor()
+        try:
+            # verificar se o nome de insumo ja existe, se ja existir mensagem
+            # senao vai dar insert
+            cursor.execute("SELECT ID_INSUMO FROM INSUMOS WHERE NOME = ?", (nomeinsumo,))
+
+            if cursor.fetchone():  # se existir ja o insumo
+                flash("Insumo já cadastrado", 'error')
+                return render_template('html/cadastroInsumo.html')
+            cursor.execute('INSERT INTO INSUMOS ( NOME, UNIDADE_MEDIDA, CUSTO_UNITARIO, ESTOQUE) VALUES (?,?,?,?)',
+                           (nomeinsumo, unidademedida, custounitario, estoque))
+            con.commit()
+
+            flash('Insumo cadastrado com sucesso!', 'success')
+            return redirect(url_for('insumos'))
+
+        finally:
+            cursor.close()
+    return render_template('html/cadastroInsumo.html', insumos=insumos)
+
+
+@app.route('/editarInsumo/<int:id>', methods=['POST', 'GET'])
+def editarInsumo(id):
     if 'id_pessoa' not in session:
         flash('Você precisa estar logado para acessar seu perfil')
         return redirect(url_for('login'))
-    else:
-        return render_template('html/editarInsumo.html')
+
+    cursor = con.cursor()
+    try:
+        cursor.execute("SELECT ID_INSUMO, NOME, UNIDADE_MEDIDA, CUSTO_UNITARIO FROM INSUMOS WHERE ID_INSUMO = ?", (id,))
+        insumo = cursor.fetchone()
+
+        if not insumo:
+            flash('Insumo não encontrado.')
+            return redirect(url_for('insumos'))
+
+        if request.method == 'POST':
+            nomeinsumo = request.form['nomeinsumo']
+            unidademedida = request.form['unidademedida']
+            custounitario = request.form['custounitario']
+            estoque = request.form['estoque']
+
+            cursor.execute("""
+            UPDATE INSUMOS
+            SET NOME = ?, UNIDADE_MEDIDA = ?, CUSTO_UNITARIO = ?, ESTOQUE = ?
+            WHERE ID_INSUMO = ?
+            """, (nomeinsumo, unidademedida, custounitario, estoque, id))
+            con.commit()
+            flash('Insumo editado com sucesso.')
+            return redirect(url_for('insumos'))
+        return render_template(
+            'html/editarInsumo.html',insumo=insumo)
+
+    finally:
+        cursor.close()
+
+@app.route('/excluirInsumo/<int:id>', methods=['POST'])
+def excluirInsumo(id):
+    if 'id_pessoa' not in session:
+        flash('Você precisa estar logado para excluir um insumo.')
+        return redirect(url_for('login'))
+
+    cursor = con.cursor()
+    try:
+        cursor.execute("DELETE FROM INSUMOS WHERE ID_INSUMO = ?", (id,))
+        con.commit()
+        flash('Insumo excluído com sucesso.', 'success')
+    except Exception as e:
+        flash(f'Erro ao excluir insumo:', 'error')
+    finally:
+        cursor.close()
+
+    return redirect(url_for('insumos'))
 
 @app.route('/cadastrarProduto')
 def cadastrarProduto():

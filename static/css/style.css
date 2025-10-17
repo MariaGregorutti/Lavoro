@@ -1369,9 +1369,53 @@ form input {
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25);
 }
 
+.buscarinsumos img {
+    height: 2em;
+}
+
+.buscarinsumos button {
+   display: flex;
+   
+}
+
+.editar {
+    background-color: transparent;
+    border: none;
+    display: inline-block;
+}
+
+.editar img {
+    width: 35px;
+    height: auto;
+
+}
 
 
+button.exclusao {
+    background-color: transparent;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+}
+
+button.exclusao img {
+    width: 35px;
+    height: auto;
+}
 
 
+button.exclusao:hover img {
+    opacity: 0.7;
+}
 
 
+.icone-editar,
+.icone-excluir {
+    transition: opacity 0.3s;
+}
+
+
+button.exclusao:hover,
+.editar:hover {
+    opacity: 0.7;
+}
