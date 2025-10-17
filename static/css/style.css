@@ -1120,6 +1120,30 @@ form input {
     align-items: center; /* Alinha itens verticalmente ao centro */
 }
 
+.cadastro-geral h2{
+    line-height: 5em;
+}
+
+.cadastro-geral{
+    margin-top: 2em;
+}
+
+.botoes .BotaoVermelho{
+    border-radius: var(--BordaPoucoRedonda--);
+    height: 3em;
+    width: 10em;
+    font-size: 0.998em;
+    
+}
+.botoes{
+    display: inline;
+    margin-left: 5em;
+}
+
+.botoes .BotaoVerde{
+    height: 2.6em;
+    width: 8em;
+}
 
 
 
@@ -1131,7 +1155,7 @@ form input {
     width: 45em; /* Largura fixa */
     margin: 0 auto; /* Margem superior/inferior e centralizado horizontalmente */
     text-align: center; /* Texto centralizado */
-    margin-left: 14em; /* Margem esquerda */
+    margin-left: 7.5em; /* Margem esquerda */
     margin-top: 2em; /* Margem superior */
     margin-bottom: 2em; /* Margem inferior */
 }
