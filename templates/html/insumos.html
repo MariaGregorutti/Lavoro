@@ -49,7 +49,7 @@
                     <div class="campoDeBusca">
                         <input type="text" >
                         <div class="botoes2 d-flex">
-                            <img>
+                            <img src="../../static/img/lupa.png" alt="lupa" class="lupa-insumo">
                             <a href="{{url_for('cadastroInsumo')}}" class="BotaoMarrom">+</a>
                         </div>
                     </div>
@@ -62,8 +62,11 @@
                         <p>R$ 03,90</p>
                     </div>
                     <div class="botoes-IP d-flex">
-                        <a class="BotaoMarrom" href="{{url_for('editarInsumo')}}">Editar</a>
-                        <button class="BotaoVermelho">Excluir</button>
+                        <a href="{{url_for('editarInsumo')}}">
+                        <img src="../../static/img/lapis-edicao.png" alt="Editar" class="icone-editar">
+                        </a>
+                        <img src="../../static/img/lixo.png" alt="Excluir" class="icone-excluir">
+                        </a>
                     </div>
                 </div>
             </div>
