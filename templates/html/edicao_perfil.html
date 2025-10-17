@@ -36,7 +36,15 @@
         </div>
     </header>
     <main class="editPTamanho d-flex">
-
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+            <div class="flash-messages">
+                {% for category, message in messages %}
+                <div class="flash {{ category }}">{{ message }}</div>
+                {% endfor %}
+            </div>
+            {% endif %}
+        {% endwith %}
         <section class="foto">
             <img class="foto-pessoa2" src="../../static/img/icone-pessoa.png" alt="icone com a foto de uma pessoa">
         </section>
