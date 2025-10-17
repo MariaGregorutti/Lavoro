@@ -1162,7 +1162,7 @@ form input {
 
 .selecionar-insumos h2 {
     color: var(--BegeClaro--); /* Cor do texto */
-    font-size: 18px; /* Tamanho da fonte */
+    font-size: 1.6em; /* Tamanho da fonte */
     margin-bottom: 20px; /* Espaço abaixo do título */
 }
 
@@ -1171,7 +1171,7 @@ form input {
     justify-content: space-between; /* Espaça itens igualmente */
     align-items: center; /* Alinha itens verticalmente ao centro */
     background: #f6f6f6; /* Fundo cinza claro */
-    padding: 5px; /* Espaçamento interno */
+    padding: 12px; /* Espaçamento interno */
     margin: 12px 0; /* Margem vertical */
     font-weight: bold; /* Texto em negrito */
     color: #2d2d2d; /* Cor do texto */
@@ -1189,6 +1189,11 @@ form input {
     transition: 0.3s; /* Transição suave */
 }
 
+.check{
+    border: none;
+    background: transparent;
+    
+}
 
 /* Margem de lucro */
 
