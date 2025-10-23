@@ -1262,41 +1262,70 @@ form input {
 
 /* Insumo selecionado */
 .fundo-registro-insumo{
-    display: flex; /* Container flexível */
-    justify-content: space-between; /* Espaça itens igualmente */
     align-items: center; /* Alinha itens verticalmente ao centro */
-    background: var(--BegeClaro--); /* Fundo cinza claro */
+    background: var(--fundo--tabela); /* Fundo cinza claro */
     padding: 12px; /* Espaçamento interno */
     margin: 50px 0; /* Margem vertical */
     border-radius: 20px; /* Bordas arredondadas */
     margin-left: 16em;
     height: 20em;
-    width: 30em;
+    width: 30.3em;
 }
 
 .fundo-registro-insumo h3{
-    text-align: center;   
-    font-size: 20px;      
+    margin-left: 1em;   
+    font-size: 1.4em;      
     font-weight: bold;    
-    margin-bottom: 13em;  
-    color: var(--titulohome--);   
-    margin-left: 2em;      
+    color: #523925;   
+          
+}
 
-
+.TeButton {
+    display: flex;
+    margin-top: 2em;
+    gap: 14em;
 }
  
-.botao-registro{
-    background: var(--BegeEscuro--);
-    padding: var(--TamanhoBotaoAd--);
+.botao-mais {
+    background: var(--depoimentos--);
     color: var(--Branco--);
     border: none;
-    border-radius: var(--BordaPoucoRedonda--);
-    margin-left: 3em;
-    font-size: large;
-    font-size: 15.6px; 
-    padding: 10px 10px; 
-    border-radius: 5px;
+    border-radius: var(--BordaPoucoRedonda--);  
+    font-size: 1.2em; 
+    height: 1em;
+    width: 1em;
+    text-align: center;
+    padding: 0.4em;
 }
+
+.insumo-select{
+    background-color: var(--Branco--);
+    padding: 0.5em;
+    height: 3em;
+    width: 28em;
+    margin-top: 3em;
+    border-radius: 1em;
+    border-style: ridge;
+    margin-left: 0.5em;
+}
+
+.botao-salvar-registro{
+    background-color: var(--depoimentos--);
+    padding: 0.5em;
+    height: 2em;
+    border-radius: 0.4em;
+    margin-left: 13em;
+    position: relative;
+    top: 3em;
+}
+
+.info-registro{
+    display: flex;
+    place-content: space-around;
+    margin-top: 1em;
+}
+
+
 
 /* Margem de lucro */
 
