@@ -1,4 +1,4 @@
-from flask import Flask , render_template, request, flash, redirect, url_for, session, send_file, send_from_directory
+from flask import Flask, render_template, request, flash, redirect, url_for, session, send_file, send_from_directory
 import fdb
 from flask_bcrypt import generate_password_hash, check_password_hash
 
@@ -6,11 +6,11 @@ app = Flask(__name__)
 app.secret_key = 'OI'
 
 host = 'localhost'
-database = r'C:\Users\Aluno\Desktop\Lavoro\BANCO.FDB'
+database = r'C:\Users\Aluno\Desktop\GREGA\Lavoro\BANCO.FDB'
 user = 'SYSDBA'
 password = 'sysdba'
 
-con = fdb.connect(host=host, database=database,user=user, password=password)
+con = fdb.connect(host=host, database=database, user=user, password=password)
 
 @app.route('/')
 def index():
