@@ -1,72 +1,100 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Produto</title>
+    <title>Produtos</title>
     <link rel="stylesheet" href="../../static/css/style.css">
     <link rel="stylesheet" href="../../static/css/responsivo.css">
-    <script src="../../static/js/app.js"></script>
+    <script src="../../static/js/app.js" defer></script>
     <link rel="shortcut icon" href="../../static/img/logo.png" type="image/x-icon">
 </head>
 
 <body>
     <header>
         <img src="../../static/img/logo.png" alt="Logo da Lavoro">
+
         <div class="celularCabe">
-            <a type="submit" class="botao-sair linkUnico" href="logout">Sair</a>
+            <a class="botao-sair linkUnico" href="{{ url_for('logout') }}">Sair</a>
             <button id="tresRiscos" class="botaohomeLogado" aria-label="Abrir menu">
                 <span></span>
                 <span></span>
                 <span></span>
             </button>
         </div>
+
         <div class="fundobarra2 d-flex">
             <nav class="navegar d-flex">
-                <a href="logout" id="Fechar" class="logout">Fechar</a>
-                <a href="perfil" class=" d-flex"><img src="../../static/img/Pessoa.png" alt="Icone de pessoa">Perfil</a>
-                <a href="{{url_for('insumos')}}" class="linksn d-flex"><img src="../../static/img/carrinho_insumos.png" alt="Icone de Insumos">Insumos</a>
-                <a href="{{url_for('produto')}}" class="linksn d-flex"><img src="../../static/img/caixa_de_produto.png" alt="Icone da caixa de produtos">Produtos</a>
-                <a href="{{url_for('lucro')}}" class="linksn d-flex"><img src="../../static/img/icone_lucratividade.png" alt="Icone de um saco de dinheiro">Lucratividade</a>
+                <a href="{{ url_for('logout') }}" id="Fechar" class="logout">Fechar</a>
+                <a href="{{ url_for('perfil') }}" class="d-flex">
+                    <img src="../../static/img/Pessoa.png" alt="Ícone de pessoa">Perfil
+                </a>
+                <a href="{{ url_for('insumos') }}" class="linksn d-flex">
+                    <img src="../../static/img/carrinho_insumos.png" alt="Ícone de Insumos">Insumos
+                </a>
+                <a href="{{ url_for('produto') }}" class="linksn d-flex">
+                    <img src="../../static/img/caixa_de_produto.png" alt="Ícone da caixa de produtos">Produtos
+                </a>
+                <a href="{{ url_for('lucro') }}" class="linksn d-flex">
+                    <img src="../../static/img/icone_lucratividade.png" alt="Ícone de um saco de dinheiro">Lucratividade
+                </a>
             </nav>
         </div>
     </header>
+
     <main class="d-flex">
-        <div class="fundobarra">
-            <h4> Funcionalidades </h4> 
+        <aside class="fundobarra">
+            <h4>Funcionalidades</h4>
             <nav class="navegar d-flex">
-                <a href="perfil" class="linksn d-flex"><img src="../../static/img/Pessoa.png" alt="Icone de pessoa">Perfil</a>
-                <a href="{{url_for('insumos')}}" class="linksn d-flex"><img src="../../static/img/carrinho_insumos.png" alt="Icone de Insumos">Insumos</a>
-                <a href="{{url_for('produto')}}" class="linksn d-flex"><img src="../../static/img/caixa_de_produto.png" alt="Icone da caixa de produtos">Produtos</a>
-                <a href="{{url_for('lucro')}}" class="linksn d-flex"><img src="../../static/img/icone_lucratividade.png" alt="Icone de um saco de dinheiro">Lucratividade</a>
+                <a href="{{ url_for('perfil') }}" class="linksn d-flex">
+                    <img src="../../static/img/Pessoa.png" alt="Ícone de pessoa">Perfil
+                </a>
+                <a href="{{ url_for('insumos') }}" class="linksn d-flex">
+                    <img src="../../static/img/carrinho_insumos.png" alt="Ícone de Insumos">Insumos
+                </a>
+                <a href="{{ url_for('produto') }}" class="linksn d-flex">
+                    <img src="../../static/img/caixa_de_produto.png" alt="Ícone da caixa de produtos">Produtos
+                </a>
+                <a href="{{ url_for('lucro') }}" class="linksn d-flex">
+                    <img src="../../static/img/icone_lucratividade.png" alt="Ícone de um saco de dinheiro">Lucratividade
+                </a>
             </nav>
-        </div>
-        <div class="campo-demonstrar d-flex">
+        </aside>
+
+        <section class="campo-demonstrar d-flex">
             <div class="centralização buscar">
                 <h2>Buscar Produto</h2>
                 <div class="campoDeBusca">
-                    <input type="text" labels="Buscar produto">
+                    <input type="text" aria-label="Buscar produto" placeholder="Digite o nome do produto">
                     <div class="botoes2 d-flex">
-                        <img src="../../static/img/lupa.png" alt="lupa" class="lupa-insumo">
-                            <a href="{{url_for('cadastrarProduto')}}" class="BotaoMarrom">+</a>
+                        <img src="../../static/img/lupa.png" alt="Ícone de lupa" class="lupa-insumo">
+                        <a href="{{ url_for('cadastrarProduto') }}" class="BotaoMarrom">+</a>
                     </div>
                 </div>
             </div>
+
             <h3>Produtos</h3>
-            <div class="produto d-flex">
+            {% for produto in produtos %}
+            <article class="produto d-flex">
                 <div class="info d-flex">
-                    <a class="linkUnico" href="{{url_for('produtoIndividual')}}">Bolo de chocolate</a>
-                    <p>R$ 20,40</p>
-                    <p>1 h</p>
+                    <a class="linkUnico" href="{{ url_for('editarProduto', id=produto[0]) }}">{{ produto[1] }}</a>
+                    <p>R$ {{ "%.2f"|format(produto[2]) }}</p>
+                    <p>Margem: {{ "%.2f"|format(produto[3]) }}%</p>
                 </div>
                 <div class="botoes-IP d-flex">
-                 <img src="../../static/img/lapis-edicao.png" alt="editar"></button>
-                
-                <img src="../../static/img/lixo.png" alt="excluir"></button>
+                    <a class="editar" href="{{ url_for('editarProduto', id=produto[0]) }}">
+                        <img src="../../static/img/lapis-edicao.png" alt="Editar" class="icone-editar">
+                    </a>
+                    <form action="{{ url_for('excluirProduto', id=produto[0]) }}" method="POST">
+                        <button type="submit" class="exclusao">
+                            <img src="../../static/img/lixo.png" alt="Excluir" class="icone-excluir">
+                        </button>
+                    </form>
                 </div>
-            </div>
-        </div>
+            </article>
+            {% endfor %}
+        </section>
     </main>
 
     <footer>
@@ -74,6 +102,7 @@
             <img src="../../static/img/logo.png" alt="Logo da Lavoro">
             <p>© 2025 Lavoro – Todos os direitos reservados</p>
         </div>
+
         <div class="contato">
             <div>
                 <img src="../../static/img/Icone_localização.png" alt="Ícone de localização">
@@ -84,12 +113,10 @@
                 <p>(11) 99999-9999</p>
             </div>
             <div>
-                <img src="../../static/img/Caixa_de_email.png" alt="Ícone de email">
+                <img src="../../static/img/Caixa_de_email.png" alt="Ícone de e-mail">
                 <p>Lavoro@gmail.com</p>
             </div>
         </div>
-
     </footer>
 </body>
-
 </html>

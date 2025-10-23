@@ -1,17 +1,16 @@
-from flask import Flask, render_template, request, flash, redirect, url_for, session, send_file, send_from_directory
+from flask import Flask , render_template, request, flash, redirect, url_for, session, send_file, send_from_directory
 import fdb
 from flask_bcrypt import generate_password_hash, check_password_hash
-import re
 
 app = Flask(__name__)
 app.secret_key = 'OI'
 
 host = 'localhost'
-database = r'C:\Users\Aluno\Desktop\GREGA\Lavoro\BANCO.FDB'
+database = r'C:\Users\Aluno\Desktop\isadora\Lavoro\BANCO.FDB'
 user = 'SYSDBA'
 password = 'sysdba'
 
-con = fdb.connect(host=host, database=database, user=user, password=password)
+con = fdb.connect(host=host, database=database,user=user, password=password)
 
 @app.route('/')
 def index():
@@ -25,7 +24,7 @@ def cadastrar():
 def cadastro():
     if request.method == 'POST':
         nome = request.form['nome']
-        telefone_mask = request.form['telefone']
+        telefone = request.form['telefone']
         email = request.form['email']
         senha_V = request.form['senha']
         confirmarSenha = request.form['senha_c']
@@ -57,8 +56,6 @@ def cadastro():
         if not (e_igual == True):
             flash('Senha não se coincidem')
             return render_template('html/cadastro.html')
-        # A expressão '[^0-9]' ou '\D' busca por qualquer caractere que NÃO seja um dígito (0-9)
-        telefone = re.sub(r'[^0-9]', '', telefone_mask)
 
         cursor = con.cursor()
 
@@ -239,7 +236,7 @@ def editarperfil(id):
         if request.method == 'POST':
             nome = request.form.get('nome-edicao-perfil')
             email = request.form.get('email-edicao-perfil')
-            telefone_mask = request.form.get('tel-edicao-perfil')
+            telefone = request.form.get('tel-edicao-perfil')
             senha = request.form.get('senha')
             # senha_confirm = request.form.get('senha-confirmar')  # se usar confirmação
 
@@ -270,9 +267,6 @@ def editarperfil(id):
                 senha_hash = generate_password_hash(senha)
             else:
                 senha_hash = usuario[4]
-                
-            # A expressão '[^0-9]' ou '\D' busca por qualquer caractere que NÃO seja um dígito (0-9)
-            telefone = re.sub(r'[^0-9]', '', telefone_mask)
 
             cursor.execute("""
                 UPDATE USUARIOS 
@@ -310,6 +304,7 @@ def produto():
     else:
         return render_template('html/produto.html')
 
+
 @app.route('/lucro')
 def lucro():
     if 'id_pessoa' not in session:
@@ -330,6 +325,7 @@ def cadastroInsumo():
         estoque = request.form['estoque']
 
 
+
         cursor = con.cursor()
         try:
             # verificar se o nome de insumo ja existe, se ja existir mensagem
@@ -340,7 +336,7 @@ def cadastroInsumo():
                 flash("Insumo já cadastrado", 'error')
                 return render_template('html/cadastroInsumo.html')
             cursor.execute('INSERT INTO INSUMOS ( NOME, UNIDADE_MEDIDA, CUSTO_UNITARIO, ESTOQUE) VALUES (?,?,?,?)',
-                           (nomeinsumo, unidademedida, custounitario, estoque))
+                           (nomeinsumo, unidademedida, custounitario, estoque, ))
             con.commit()
 
             flash('Insumo cadastrado com sucesso!', 'success')
@@ -359,8 +355,9 @@ def editarInsumo(id):
 
     cursor = con.cursor()
     try:
-        cursor.execute("SELECT ID_INSUMO, NOME, UNIDADE_MEDIDA, CUSTO_UNITARIO FROM INSUMOS WHERE ID_INSUMO = ?", (id,))
+        cursor.execute("SELECT ID_INSUMO, NOME, UNIDADE_MEDIDA, CUSTO_UNITARIO, ESTOQUE FROM INSUMOS WHERE ID_INSUMO = ?", (id,))
         insumo = cursor.fetchone()
+
 
         if not insumo:
             flash('Insumo não encontrado.')
@@ -371,6 +368,10 @@ def editarInsumo(id):
             unidademedida = request.form['unidademedida']
             custounitario = request.form['custounitario']
             estoque = request.form['estoque']
+
+            if cursor.fetchone():  # se existir ja o insumo
+                flash("Insumo já cadastrado", 'error')
+                return render_template('html/cadastroInsumo.html')
 
             cursor.execute("""
             UPDATE INSUMOS
@@ -410,7 +411,7 @@ def cadastrarProduto():
         flash('Você precisa estar logado para acessar seu perfil')
         return redirect(url_for('login'))
     else:
-        return render_template('cadastrarProduto.html')
+        return render_template('html/cadastrarProduto.html')
 
 @app.route('/editarProduto')
 def editarProduto():

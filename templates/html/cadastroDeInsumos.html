@@ -1,66 +1,92 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Cadastro dos Insumos</title>
     <link rel="stylesheet" href="../../static/css/style.css">
     <link rel="stylesheet" href="../../static/css/responsivo.css">
     <link rel="shortcut icon" href="../../static/img/logo.png" type="image/x-icon">
+    <!-- pequeno script para atualizar unidade ao trocar select -->
+    <script defer>
+    document.addEventListener('DOMContentLoaded', function () {
+        const select = document.getElementById('select-insumo');
+        const unidadeEl = document.getElementById('unidade-medida');
+
+        function atualizaUnidade() {
+            const opt = select.options[select.selectedIndex];
+            const unidade = opt ? opt.dataset.unidade : '';
+            unidadeEl.textContent = unidade ? 'Unidade de medida: ' + unidade : '';
+        }
+
+        if (select) {
+            select.addEventListener('change', atualizaUnidade);
+            atualizaUnidade(); // inicializa
+        }
+    });
+    </script>
 </head>
-
 <body>
-
     <header>
         <img src="../../static/img/logo.png" alt="Logo da Lavoro">
-        <a type="submit" class="botao-sair linkUnico" href="logout">Sair</a>
+        <a class="botao-sair linkUnico" href="{{ url_for('logout') }}">Sair</a>
     </header>
 
-
     <main class="d-flex">
-        <div class="fundobarra Tajuste">
+        <aside class="fundobarra Tajuste">
             <h4> Funcionalidades </h4>
             <nav class="navegar d-flex">
-                <a href="{{url_for('perfil')}}" class="linksn d-flex"><img src="../../static/img/Pessoa.png"
-                        alt="Icone de pessoa">Perfil</a>
-                <a href="{{url_for('insumos')}}" class="linksn d-flex"><img src="../../static/img/carrinho_insumos.png"
-                        alt="Icone de Insumos">Insumos</a>
-                <a href="{{url_for('produto')}}" class="linksn d-flex"><img src="../../static/img/caixa_de_produto.png"
-                        alt="Icone da caixa de produtos">Produtos</a>
-                <a href="{{url_for('lucro')}}" class="linksn d-flex"><img src="../../static/img/icone_lucratividade.png"
-                        alt="Icone de um saco de dinheiro">Lucratividade</a>
+                <a href="{{ url_for('perfil') }}" class="linksn d-flex">
+                    <img src="../../static/img/Pessoa.png" alt="Ícone de pessoa">Perfil
+                </a>
+                <a href="{{ url_for('insumos') }}" class="linksn d-flex">
+                    <img src="../../static/img/carrinho_insumos.png" alt="Ícone de Insumos">Insumos
+                </a>
+                <a href="{{ url_for('produto') }}" class="linksn d-flex">
+                    <img src="../../static/img/caixa_de_produto.png" alt="Ícone da caixa de produtos">Produtos
+                </a>
+                <a href="{{ url_for('lucro') }}" class="linksn d-flex">
+                    <img src="../../static/img/icone_lucratividade.png" alt="Ícone de um saco de dinheiro">Lucratividade
+                </a>
             </nav>
-        </div>
+        </aside>
 
-
-
-
+        <!-- Form para selecionar insumo(s) e quantidade -->
         <section>
-
+            <!--
+               IMPORTANTE: passe uma lista "insumos" do Flask ao renderizar este template.
+               Cada insumo pode ser uma tupla/lista: (id_insumo, nome, unidade_medida, custo_unitario, estoque)
+            -->
             <div class="selecionar-insumos">
                 <h2>Selecione os insumos desejados</h2>
 
-                <div class="item">
-                    <select class="busca-insumo">
-                        <option value="op1">Farinha de Trigo</option>
-                    </select>
+                <!-- Se você quiser adicionar múltiplos insumos, basta clonar esse bloco com JS -->
+                <form action="{{ url_for('cadastrarProduto') }}" method="POST">
+                    <div class="item">
+                        <label for="select-insumo">Insumo</label>
+                        <select id="select-insumo" name="id_insumo" class="busca-insumo" required>
+                            <option value="" disabled selected>-- escolha um insumo --</option>
+                            {% for insumo in insumos %}
+                                {# insumo[0]=id, insumo[1]=nome, insumo[2]=unidade_medida #}
+                                <option value="{{ insumo[0] }}" data-unidade="{{ insumo[2] }}">{{ insumo[1] }}</option>
+                            {% endfor %}
+                        </select>
 
-                    <label>Quantidade necessária</label>
-                    <input>
-                    <p>Unidade de medida: {{}}</p>
-                    
-                </div>
-                <button class="BotaoVerde"><a href="{{url_for('cadastrarProduto')}}">Confirmar</a></button>
+                        <label for="quantidade">Quantidade necessária</label>
+                        <input id="quantidade" name="quantidade" type="number" step="0.01" min="0" required
+                               placeholder="Ex: 0.50">
+
+                        <p id="unidade-medida" aria-live="polite"></p>
+                    </div>
+
+                    <div style="margin-top:1rem;">
+                        <button type="submit" class="BotaoVerde">Confirmar</button>
+                        <a href="{{ url_for('produto') }}" class="BotaoVermelho" style="margin-left:0.5rem;">Voltar</a>
+                    </div>
+                </form>
             </div>
         </section>
     </main>
-
-
-<!-- select com option para pesquisa -->
-<!-- um imput para colocar quantidade de uso do insumo para o produto-->
-
-
 
     <footer>
         <div>
@@ -70,7 +96,7 @@
         <div class="contato">
             <div>
                 <img src="../../static/img/Icone_localização.png" alt="Ícone de localização">
-                <p>Rua Barão do Rio Branco - Birigui/SP</p>
+                <p>Rua Barão do Rio Branco - Birigui/SP</p>
             </div>
             <div>
                 <img src="../../static/img/Icone_telefone.png" alt="Ícone de telefone">
@@ -83,6 +109,4 @@
         </div>
     </footer>
 </body>
-
-
 </html>
