@@ -67,7 +67,7 @@
 
                 <div>
                     <label class="tel-edicao-perfil">Telefone</label>
-                    <input class="edicaoP" type="number" name="tel-edicao-perfil" value="{{ usuario[3] }}" required>
+                    <input class="edicaoP" id="telefone" type="tel" name="tel-edicao-perfil" value="{{ usuario[3] }}" required>
                 </div>
 
                 <div>
@@ -106,6 +106,14 @@
             </div>
         </div>
     </footer>
+
+    <script defer>
+        window.onload = () => {
+            var tel = document.getElementById("telefone")
+            var formata = formatarTelefone(tel.value)
+            tel.value = formata
+        }
+    </script>
 </body>
 
 </html>

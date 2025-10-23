@@ -60,34 +60,91 @@ window.document.addEventListener("DOMContentLoaded", function () {
             }
         });
 
-    });                                                          
+    }); 
 
-    //Limitar Caractere telefone
+    //Maskara
+   (function () {
+      const input = document.getElementById('telefone');
 
-    const telefone = document.getElementById('telefone');/* pega a inforção do input*/
-    if (telefone){
-    const limite = 11;
+      if (input){
+      input.addEventListener('input', function (e) {
+        const raw = this.value;
+        // posição do cursor antes da formatação
+        const cursorPos = this.selectionStart;
 
-    telefone.addEventListener('input', function() { //O addEventListener é para funcionar com evento e o input
-                                                    //é um evento e o function é uma função anonima onde ele pega as
-                                                    //as informações do telefone
+        // quantos dígitos existiam antes do cursor
+        const digitsBeforeCursor = raw.slice(0, cursorPos).replace(/\D/g, '').length;
 
-      if (this.value.length > limite) { //this refere-se ao próprio elemento HTML que disparou o evento
-                                        //(neste caso, o input com o id="telefone").this.value.length retorna a
-                                        //quantidade de caracteres que o usuário digitou no campo.
+        // pega só dígitos e limita a 11
+        let digits = raw.replace(/\D/g, '').slice(0, 11);
 
-        this.value = this.value.slice(0, limite); //this.value.slice(0, limite) usa o método slice() para "fatiar"
-                                                  //a string de texto do campo.
-                                                  //O resultado é uma nova string com no máximo 11 caracteres,
-                                                  //que é então atribuída de volta ao valor do campo (this.value = ...),
-                                                  //efetivamente "cortando" qualquer caractere extra que o usuário tenha
-                                                  //digitado
+        // formata
+        const formatted = formatarTelefone(digits);
+        console.log(formatted)
+
+        // escreve no campo
+        this.value = formatted;
+
+        // calcula nova posição do cursor: acha a posição do N-ésimo dígito na string formatada
+        let newPos = 0;
+        if (digitsBeforeCursor === 0) {
+          newPos = 0;
+        } else {
+          let count = 0;
+          for (let i = 0; i < formatted.length; i++) {
+            if (/\d/.test(formatted[i])) count++;
+            if (count === digitsBeforeCursor) {
+              // cursor logo após esse dígito
+              newPos = i + 1;
+              break;
+            }
+          }
+          // se o usuário estava no final (p. ex. digitsBeforeCursor == total digits), ajustar pro fim
+          if (count < digitsBeforeCursor) {
+            newPos = formatted.length;
+          }
+        }
+
+        // garante que newPos esteja dentro do intervalo
+        newPos = Math.max(0, Math.min(newPos, formatted.length));
+        this.setSelectionRange(newPos, newPos);
+      });
       }
-    });
-   }
+      // opcional: prevenir caracteres não-numéricos no keypress
+      input.addEventListener('keydown', function(e){
+        // permite backspace, delete, setas, tab, ctrl/cmd combos etc.
+        const allowedKeys = ['Backspace','Delete','ArrowLeft','ArrowRight','Tab','Home','End'];
+        if (allowedKeys.includes(e.key) || e.ctrlKey || e.metaKey) return;
+        // bloqueia letras
+        if (!/[0-9]/.test(e.key)) e.preventDefault();
+      });
+    })();
+
+
 });
 
 // Check caixa no selecionar
 
 
+function formatarTelefone(digitos) {
+        // digitos: só números, já limitado a 11
+        console.log(digitos)
+        if (digitos.length === 0) return '';
+        if (digitos.length <= 2) return '(' + digitos;
 
+        const ddd = digitos.slice(0,2);
+        const local = digitos.slice(2); // parte após DDD
+        let resultado = '(' + ddd + ') ';
+
+        if (local.length <= 4) {
+          resultado += local;
+        } else if (local.length <= 8) {
+          // número fixo com 8 dígitos (ou local com até 8 dígitos)
+          resultado += local.slice(0,4) + (local.length > 4 ? '-' + local.slice(4) : '');
+        } else {
+          // celular com 9 dígitos locais (total 11)
+          resultado += local.slice(0,5) + '-' + local.slice(5);
+        }
+
+        return resultado;
+      }
