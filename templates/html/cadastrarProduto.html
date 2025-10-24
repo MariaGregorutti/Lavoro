@@ -59,17 +59,20 @@
 
             <div class="cardastro">
                 <!-- FORM CORRIGIDO -->
-                <form method="POST" action="{{ url_for('cadastroProduto') }}">
+                <form method="POST" action="{{ url_for('cadastrarProduto') }}">
                     <label for="produto">Nome do produto</label>
                     <input type="text" id="produto" name="produto" required>
 
                     <label for="tempo">Tempo de preparo</label>
                     <input type="text" id="tempo" name="tempo">
 
+                    <labe for ="margemDelucro">Margem de lucro</labe>
+                    <input type="text" name="margemDelucro" id="margemDelucro" required>
+
                     <div class="ingredientes d-flex">
                         <p>Ingredientes:</p>
                         <button type="button" class="BotaoMarrom">
-                            <a href="{{ url_for('cadastroDeInsumos') }}">+</a>
+                            <a href="{{ url_for('cadastroDeInsumo') }}">+</a>
                         </button>
                     </div>
 

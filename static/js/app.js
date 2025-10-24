@@ -109,7 +109,7 @@ window.document.addEventListener("DOMContentLoaded", function () {
         newPos = Math.max(0, Math.min(newPos, formatted.length));
         this.setSelectionRange(newPos, newPos);
       });
-      }
+
       // opcional: prevenir caracteres não-numéricos no keypress
       input.addEventListener('keydown', function(e){
         // permite backspace, delete, setas, tab, ctrl/cmd combos etc.
@@ -118,7 +118,31 @@ window.document.addEventListener("DOMContentLoaded", function () {
         // bloqueia letras
         if (!/[0-9]/.test(e.key)) e.preventDefault();
       });
+      }
+      
     })();
+
+
+    const campoBusca = document.getElementById('buscarInsumos');
+
+
+campoBusca.addEventListener('keyup', function() {
+  const termoBusca = campoBusca.value.toLowerCase().trim(); // texto digitado
+
+  const itens = document.querySelectorAll('[data-titulo]');
+
+  itens.forEach(item => {
+    const titulo = item.getAttribute('data-titulo').toLowerCase();
+
+    // Se o campo estiver vazio, mostra tudo
+    // Senão, mostra apenas se contiver o termo digitado
+    if (termoBusca === '' || titulo.includes(termoBusca)) {
+      item.style.display = 'flex';
+    } else {
+      item.style.display = 'none';
+    }
+  });
+});
 
 
 });
@@ -148,3 +172,4 @@ function formatarTelefone(digitos) {
 
         return resultado;
       }
+

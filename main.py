@@ -1,12 +1,13 @@
 from flask import Flask , render_template, request, flash, redirect, url_for, session, send_file, send_from_directory
 import fdb
 from flask_bcrypt import generate_password_hash, check_password_hash
+import re
 
 app = Flask(__name__)
 app.secret_key = 'OI'
 
 host = 'localhost'
-database = r'C:\Users\Aluno\Desktop\isadora\Lavoro\BANCO.FDB'
+database = r'C:\Users\Aluno\Desktop\Lavoro\BANCO.FDB'
 user = 'SYSDBA'
 password = 'sysdba'
 
@@ -24,7 +25,7 @@ def cadastrar():
 def cadastro():
     if request.method == 'POST':
         nome = request.form['nome']
-        telefone = request.form['telefone']
+        telefone_mask = request.form['telefone']
         email = request.form['email']
         senha_V = request.form['senha']
         confirmarSenha = request.form['senha_c']
@@ -56,6 +57,9 @@ def cadastro():
         if not (e_igual == True):
             flash('Senha não se coincidem')
             return render_template('html/cadastro.html')
+
+        # A expressão '[^0-9]' ou '\D' busca por qualquer caractere que NÃO seja um dígito (0-9)
+        telefone = re.sub(r'[^0-9]', '', telefone_mask)
 
         cursor = con.cursor()
 
@@ -236,7 +240,7 @@ def editarperfil(id):
         if request.method == 'POST':
             nome = request.form.get('nome-edicao-perfil')
             email = request.form.get('email-edicao-perfil')
-            telefone = request.form.get('tel-edicao-perfil')
+            telefone_mask = request.form.get('tel-edicao-perfil')
             senha = request.form.get('senha')
             # senha_confirm = request.form.get('senha-confirmar')  # se usar confirmação
 
@@ -267,6 +271,9 @@ def editarperfil(id):
                 senha_hash = generate_password_hash(senha)
             else:
                 senha_hash = usuario[4]
+
+            # A expressão '[^0-9]' ou '\D' busca por qualquer caractere que NÃO seja um dígito (0-9)
+            telefone = re.sub(r'[^0-9]', '', telefone_mask)
 
             cursor.execute("""
                 UPDATE USUARIOS 
@@ -412,6 +419,29 @@ def cadastrarProduto():
         return redirect(url_for('login'))
     else:
         return render_template('html/cadastrarProduto.html')
+
+@app.route('/cadastroProduto/<int:id>',methods=['POST'])
+def cadastroProduto():
+    if 'id_pessoa' not in session:
+        flash('Você precisa estar logado para acessar seu perfil')
+        return redirect(url_for('login'))
+    if request.method == 'POST':
+        produto = request.form['produto']
+        tempo = request.form['tempo']
+        margemDelucro = request.form['margemDelucro']
+
+    cursor = con.cursor()
+    try:
+        # verificar se o nome do produto ja existe, se ja existir mensagem
+        # senao vai dar insert
+        cursor.execute("SELECT ID_PRODUTO FROM PRODUTOS WHERE NOME = ?", (produto,))
+
+        if cursor.fetchone():  # se existir ja o prodtuo
+            flash("Poduto já cadastrado", 'error')
+            return render_template('html/cadastrarProduto.html')
+    finally:
+        flash("Cadastro feito com sucesso", 'success')
+        return redirect(url_for('produto'))
 
 @app.route('/editarProduto')
 def editarProduto():

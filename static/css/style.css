@@ -52,6 +52,11 @@ html {
     --TamanhoBotao--: 0.5rem 2rem;
     --TamanhoBotaoAd--: 0.4rem 1rem;
 }
+
+.escondido {
+    display: none;
+   }
+
 /*Flash*/
 /* Estilo das mensagens de flash */
 .flash-messages {
